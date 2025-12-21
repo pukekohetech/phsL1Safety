@@ -2,7 +2,7 @@
 // Update cache name to force cache busting when assets change. 
 // Bump the cache version whenever core assets change. This forces the
 // service worker to re-cache updated files like script.js and questions.json.
-const CACHE_NAME = 'phs-materials-v1249';
+const CACHE_NAME = 'phs-sfaety-l1';
 const CORE_ASSETS = [
   './', './index.html', './script.js', './styles.css', './questions.json',
   './manifest.webmanifest', './icon-192.png', './icon-512.png',
