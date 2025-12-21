@@ -153,7 +153,7 @@
         {
           "id": "q1f_welding_helmet",
           "text": "Match the appropriate eye protection PPE to the hazard by selecting it from below\n\nPPE Type: Welding helmet",
-          "image": "SafetyQuestion1.png",
+          "image": "SafetyQuestion2.png",
           "hint": "For arc welding, a welding helmet with the correct lenses must be worn.",
           "type": "mc",
           "maxPoints": 1,
@@ -176,7 +176,7 @@
         {
           "id": "q2a_sanding_timber",
           "text": "Activity: 1 Sanding timber – what is the appropriate respiratory protection?",
-          "image": "blank.jpg",
+          "image": "SafetyQuestion2.png",
           "hint": "Use the extraction system and wear a dust mask over the nose and mouth (page 35).",
           "type": "mc",
           "maxPoints": 1,
@@ -197,7 +197,7 @@
         {
           "id": "q2b_arc_welding",
           "text": "Activity: 2 Arc welding – what is the appropriate respiratory protection?",
-          "image": "blank.jpg",
+          "image": "SafetyQuestion2.png",
           "hint": "Wear an appropriate respirator (page 36).",
           "type": "mc",
           "maxPoints": 1,
@@ -218,7 +218,7 @@
         {
           "id": "q2c_spraying_glue",
           "text": "Activity: 3 Spraying glue – what is the appropriate respiratory protection?",
-          "image": "blank.jpg",
+          "image": "SafetyQuestion2.png",
           "hint": "Wear a respirator fitted with filters appropriate to the job. Dust masks are not suitable (page 37).",
           "type": "mc",
           "maxPoints": 1,
@@ -239,7 +239,7 @@
         {
           "id": "q2d_spraying_two_pot",
           "text": "Activity: 4 Spraying ‘two-pot’ paint – what is the appropriate respiratory protection?",
-          "image": "blank.jpg",
+          "image": "SafetyQuestion2.png",
           "hint": "You must wear a special breathing apparatus that has its own pure air supply (page 37).",
           "type": "mc",
           "maxPoints": 1,
