@@ -3,11 +3,27 @@
   "VERSION": "2025.12-clean",
   "APP_TITLE": "US 24352 – Safety Knowledge",
   "APP_SUBTITLE": "PHS - L1 Building – Assessment",
-  "DEADLINE": { "day": 24, "month": 12, "label": "Submission deadline" },
+  "DEADLINE": {
+    "day": 24,
+    "month": 12,
+    "label": "Submission deadline"
+  },
   "TEACHERS": [
-    { "id": "RY", "name": "Mr Reynolds", "email": "ry@pukekohehigh.school.nz" },
-    { "id": "RNR", "name": "Mr Ranson", "email": "rnr@pukekohehigh.school.nz" },
-    { "id": "Other", "name": "Other Teacher", "email": "technology@pukekohehigh.school.nz" }
+    {
+      "id": "RY",
+      "name": "Mr Reynolds",
+      "email": "ry@pukekohehigh.school.nz"
+    },
+    {
+      "id": "RNR",
+      "name": "Mr Ranson",
+      "email": "rnr@pukekohehigh.school.nz"
+    },
+    {
+      "id": "Other",
+      "name": "Other Teacher",
+      "email": "technology@pukekohehigh.school.nz"
+    }
   ],
   "ASSESSMENTS": [
     {
@@ -26,7 +42,13 @@
           "hint": "Think about fast-moving chips/particles and the need to protect more than just the eyes.",
           "type": "mc",
           "maxPoints": 1,
-          "rubric": [{ "points": 1, "check": "^High velocity particles$", "flags": "i" }],
+          "rubric": [
+            {
+              "points": 1,
+              "check": "^High velocity particles$",
+              "flags": "i"
+            }
+          ],
           "options": [
             "Low velocity flying particles and objects",
             "Medium velocity small flying particles",
@@ -43,7 +65,13 @@
           "hint": "If it seals, what kind of hazard is it trying to keep OUT of your breathing/eye area?",
           "type": "mc",
           "maxPoints": 1,
-          "rubric": [{ "points": 1, "check": "^Gas vapours, dust and fumes$", "flags": "i" }],
+          "rubric": [
+            {
+              "points": 1,
+              "check": "^Gas vapours, dust and fumes$",
+              "flags": "i"
+            }
+          ],
           "options": [
             "Low velocity flying particles and objects",
             "Medium velocity small flying particles",
@@ -57,10 +85,16 @@
           "id": "q1c_wide_goggles",
           "text": "Match the appropriate eye protection PPE to the hazard.\n\nPPE Type: Wide vision goggles",
           "image": "SafetyQuestion1.png",
-          "hint": "Think about higher-energy chips than normal classroom tasks (more impact protection than basic glasses).",
+          "hint": "Think about higher-energy chips than normal workshop tasks (more impact protection than basic glasses).",
           "type": "mc",
           "maxPoints": 1,
-          "rubric": [{ "points": 1, "check": "^Medium velocity small flying particles$", "flags": "i" }],
+          "rubric": [
+            {
+              "points": 1,
+              "check": "^Medium velocity small flying particles$",
+              "flags": "i"
+            }
+          ],
           "options": [
             "Low velocity flying particles and objects",
             "Medium velocity small flying particles",
@@ -77,7 +111,13 @@
           "hint": "General workshop protection for typical jobs with small chips.",
           "type": "mc",
           "maxPoints": 1,
-          "rubric": [{ "points": 1, "check": "^Low velocity flying particles and objects$", "flags": "i" }],
+          "rubric": [
+            {
+              "points": 1,
+              "check": "^Low velocity flying particles and objects$",
+              "flags": "i"
+            }
+          ],
           "options": [
             "Low velocity flying particles and objects",
             "Medium velocity small flying particles",
@@ -94,7 +134,13 @@
           "hint": "Filter lenses reduce glare/brightness from certain hot-work processes.",
           "type": "mc",
           "maxPoints": 1,
-          "rubric": [{ "points": 1, "check": "^Non-ionizing radiation and glare$", "flags": "i" }],
+          "rubric": [
+            {
+              "points": 1,
+              "check": "^Non-ionizing radiation and glare$",
+              "flags": "i"
+            }
+          ],
           "options": [
             "Low velocity flying particles and objects",
             "Medium velocity small flying particles",
@@ -111,7 +157,13 @@
           "hint": "Consider the type of light/energy produced during arc welding.",
           "type": "mc",
           "maxPoints": 1,
-          "rubric": [{ "points": 1, "check": "^Infrared and UV radiation \\(arc welding\\)$", "flags": "i" }],
+          "rubric": [
+            {
+              "points": 1,
+              "check": "^Infrared and UV radiation \\(arc welding\\)$",
+              "flags": "i"
+            }
+          ],
           "options": [
             "Low velocity flying particles and objects",
             "Medium velocity small flying particles",
@@ -128,7 +180,13 @@
           "hint": "Think: dust in the air (particulate).",
           "type": "mc",
           "maxPoints": 1,
-          "rubric": [{ "points": 1, "check": "^Dust mask / particulate respirator for sanding timber$", "flags": "i" }],
+          "rubric": [
+            {
+              "points": 1,
+              "check": "^Dust mask / particulate respirator for sanding timber$",
+              "flags": "i"
+            }
+          ],
           "options": [
             "Dust mask / particulate respirator for sanding timber",
             "Welding respirator for arc welding",
@@ -143,7 +201,13 @@
           "hint": "Think: fumes/smoke created by the process (not just dust).",
           "type": "mc",
           "maxPoints": 1,
-          "rubric": [{ "points": 1, "check": "^Welding respirator for arc welding$", "flags": "i" }],
+          "rubric": [
+            {
+              "points": 1,
+              "check": "^Welding respirator for arc welding$",
+              "flags": "i"
+            }
+          ],
           "options": [
             "Dust mask / particulate respirator for sanding timber",
             "Welding respirator for arc welding",
@@ -158,7 +222,13 @@
           "hint": "Think: chemical vapours/aerosols (filters matter).",
           "type": "mc",
           "maxPoints": 1,
-          "rubric": [{ "points": 1, "check": "^Respirator with appropriate filters for spraying glue$", "flags": "i" }],
+          "rubric": [
+            {
+              "points": 1,
+              "check": "^Respirator with appropriate filters for spraying glue$",
+              "flags": "i"
+            }
+          ],
           "options": [
             "Dust mask / particulate respirator for sanding timber",
             "Welding respirator for arc welding",
@@ -173,7 +243,13 @@
           "hint": "Think: the highest-risk spray process in the list (needs its own clean air supply).",
           "type": "mc",
           "maxPoints": 1,
-          "rubric": [{ "points": 1, "check": "^Air-fed breathing apparatus for two-pot paint$", "flags": "i" }],
+          "rubric": [
+            {
+              "points": 1,
+              "check": "^Air-fed breathing apparatus for two-pot paint$",
+              "flags": "i"
+            }
+          ],
           "options": [
             "Dust mask / particulate respirator for sanding timber",
             "Welding respirator for arc welding",
@@ -183,7 +259,6 @@
         }
       ]
     },
-
     {
       "id": "24352-selfreflection2",
       "title": "Learner Self-reflection 2 – 24352 (v3)",
@@ -201,14 +276,46 @@
           "type": "long",
           "maxPoints": 8,
           "rubric": [
-            { "points": 1, "check": "\\b(PPE|safety (glasses|goggles)|eye protection|ear(muffs|plugs)|mask|respirator|gloves|boots|helmet|apron|overalls)\\b", "flags": "i" },
-            { "points": 1, "check": "\\b(tidy|clean|sweep|put away|store tools|keep (bench|floor) clear)\\b", "flags": "i" },
-            { "points": 1, "check": "\\b(no (running|horseplay)|don'?t (mess about|distract))\\b", "flags": "i" },
-            { "points": 1, "check": "\\b(tie back (hair|long hair)|hair restraint)\\b", "flags": "i" },
-            { "points": 1, "check": "\\b(no (loose|baggy) (clothing|sleeves)|remove (jewellery|jewelry)|no (necklace|ring|bracelet))\\b", "flags": "i" },
-            { "points": 1, "check": "\\b(report|tell (the )?teacher|faulty|broken|damaged|unsafe\\b", "flags": "i" },
-            { "points": 1, "check": "\\b(ask|permission|supervision|teacher)\\b", "flags": "i" },
-            { "points": 1, "check": "\\b(lift(ing)?|manual handling|bend (your )?knees|team lift|ask for help)\\b", "flags": "i" }
+            {
+              "points": 1,
+              "check": "\\b(PPE|safety (glasses|goggles)|eye protection|ear(muffs|plugs)|mask|respirator|gloves|boots|helmet|apron|overalls)\\b",
+              "flags": "i"
+            },
+            {
+              "points": 1,
+              "check": "\\b(tidy|clean|sweep|put away|store tools|keep (bench|floor) clear)\\b",
+              "flags": "i"
+            },
+            {
+              "points": 1,
+              "check": "\\b(no (running|horseplay)|don'?t (mess about|distract))\\b",
+              "flags": "i"
+            },
+            {
+              "points": 1,
+              "check": "\\b(tie back (hair|long hair)|hair restraint)\\b",
+              "flags": "i"
+            },
+            {
+              "points": 1,
+              "check": "\\b(no (loose|baggy) (clothing|sleeves)|remove (jewellery|jewelry)|no (necklace|ring|bracelet))\\b",
+              "flags": "i"
+            },
+            {
+              "points": 1,
+              "check": "\\b(report|tell (the )?teacher|faulty|broken|damaged|unsafe)\\b",
+              "flags": "i"
+            },
+            {
+              "points": 1,
+              "check": "\\b(ask|permission|supervision|teacher)\\b",
+              "flags": "i"
+            },
+            {
+              "points": 1,
+              "check": "\\b(lift(ing)?|manual handling|bend (your )?knees|team lift|ask for help)\\b",
+              "flags": "i"
+            }
           ]
         },
         {
@@ -219,14 +326,46 @@
           "type": "long",
           "maxPoints": 8,
           "rubric": [
-            { "points": 1, "check": "\\b(eye|blind|vision|sight|spark|chip|particle)\\b", "flags": "i" },
-            { "points": 1, "check": "\\b(hearing|deaf|tinnitus|ringing|ear)\\b", "flags": "i" },
-            { "points": 1, "check": "\\b(hair).*(caught|pulled|entangle)|\\bscalp\\b", "flags": "i" },
-            { "points": 1, "check": "\\b(clothing|jewell?ery).*(caught|pulled|entangle)\\b", "flags": "i" },
-            { "points": 1, "check": "\\b(trip|slip|fall|clutter|mess)\\b", "flags": "i" },
-            { "points": 1, "check": "\\b(back|strain|sprain|lift(ing)?|manual handling)\\b", "flags": "i" },
-            { "points": 1, "check": "\\b(dust|fumes|vapou?r|lungs?|breath|asthma|cancer|silicosis)\\b", "flags": "i" },
-            { "points": 1, "check": "\\b(unsafe|injur(y|ies)|accident|hurt|harm)\\b", "flags": "i" }
+            {
+              "points": 1,
+              "check": "\\b(eye|blind|vision|sight|spark|chip|particle)\\b",
+              "flags": "i"
+            },
+            {
+              "points": 1,
+              "check": "\\b(hearing|deaf|tinnitus|ringing|ear)\\b",
+              "flags": "i"
+            },
+            {
+              "points": 1,
+              "check": "\\b(hair).*(caught|pulled|entangle)|\\bscalp\\b",
+              "flags": "i"
+            },
+            {
+              "points": 1,
+              "check": "\\b(clothing|jewell?ery).*(caught|pulled|entangle)\\b",
+              "flags": "i"
+            },
+            {
+              "points": 1,
+              "check": "\\b(trip|slip|fall|clutter|mess)\\b",
+              "flags": "i"
+            },
+            {
+              "points": 1,
+              "check": "\\b(back|strain|sprain|lift(ing)?|manual handling)\\b",
+              "flags": "i"
+            },
+            {
+              "points": 1,
+              "check": "\\b(dust|fumes|vapou?r|lungs?|breath|asthma|cancer|silicosis)\\b",
+              "flags": "i"
+            },
+            {
+              "points": 1,
+              "check": "\\b(unsafe|injur(y|ies)|accident|hurt|harm)\\b",
+              "flags": "i"
+            }
           ]
         },
         {
@@ -237,7 +376,11 @@
           "type": "short",
           "maxPoints": 1,
           "rubric": [
-            { "points": 1, "check": "\\b(open toe|toes? exposed|no protection|bare|not (safe|protective)|drop(ped)?|crush|nail|sharp|slip(p)?|poor grip)\\b", "flags": "i" }
+            {
+              "points": 1,
+              "check": "\\b(open toe|toes? exposed|no protection|bare|not (safe|protective)|drop(ped)?|crush|nail|sharp|slip(p)?|poor grip)\\b",
+              "flags": "i"
+            }
           ]
         },
         {
@@ -248,7 +391,11 @@
           "type": "short",
           "maxPoints": 1,
           "rubric": [
-            { "points": 1, "check": "\\b(synthetic|polyester|nylon|acrylic|melts?)\\b|\\b(shorts|singlet|t-?shirt|thin clothing|bare skin)\\b", "flags": "i" }
+            {
+              "points": 1,
+              "check": "\\b(synthetic|polyester|nylon|acrylic|melts?)\\b|\\b(shorts|singlet|t-?shirt|thin clothing|bare skin)\\b",
+              "flags": "i"
+            }
           ]
         },
         {
@@ -259,7 +406,11 @@
           "type": "short",
           "maxPoints": 1,
           "rubric": [
-            { "points": 1, "check": "\\b(loose|baggy|dangling)\\b.*\\b(clothing|sleeves?)\\b|\\b(tie|scarf)\\b|\\b(jewell?ery|necklace|bracelet|ring)\\b", "flags": "i" }
+            {
+              "points": 1,
+              "check": "\\b(loose|baggy|dangling)\\b.*\\b(clothing|sleeves?)\\b|\\b(tie|scarf)\\b|\\b(jewell?ery|necklace|bracelet|ring)\\b",
+              "flags": "i"
+            }
           ]
         },
         {
@@ -270,7 +421,11 @@
           "type": "short",
           "maxPoints": 1,
           "rubric": [
-            { "points": 1, "check": "\\b(shorts|t-?shirt|singlet|school uniform|no overalls?|bare (arms?|legs?)|exposed skin)\\b", "flags": "i" }
+            {
+              "points": 1,
+              "check": "\\b(shorts|t-?shirt|singlet|school uniform|no overalls?|bare (arms?|legs?)|exposed skin)\\b",
+              "flags": "i"
+            }
           ]
         },
         {
@@ -281,7 +436,11 @@
           "type": "short",
           "maxPoints": 1,
           "rubric": [
-            { "points": 1, "check": "\\b(hair).*(caught|entangle(d)?|pulled|dragged)\\b.*\\b(machine|machinery|moving)\\b|\\b(scalp|ripped out|torn out)\\b", "flags": "i" }
+            {
+              "points": 1,
+              "check": "\\b(hair).*(caught|entangle(d)?|pulled|dragged)\\b.*\\b(machine|machinery|moving)\\b|\\b(scalp|ripped out|torn out)\\b",
+              "flags": "i"
+            }
           ]
         },
         {
@@ -292,8 +451,16 @@
           "type": "long",
           "maxPoints": 2,
           "rubric": [
-            { "points": 1, "check": "\\b(keep clear|stay (away|back)|do not approach|keep distance)\\b", "flags": "i" },
-            { "points": 1, "check": "\\b(moving parts?|entangle(ment)?|caught|crush(ing)?|injur(y|ies))\\b", "flags": "i" }
+            {
+              "points": 1,
+              "check": "\\b(keep clear|stay (away|back)|do not approach|keep distance)\\b",
+              "flags": "i"
+            },
+            {
+              "points": 1,
+              "check": "\\b(moving parts?|entangle(ment)?|caught|crush(ing)?|injur(y|ies))\\b",
+              "flags": "i"
+            }
           ]
         },
         {
@@ -304,8 +471,16 @@
           "type": "long",
           "maxPoints": 2,
           "rubric": [
-            { "points": 1, "check": "\\b(wear (a )?(mask|respirator)|mask required)\\b", "flags": "i" },
-            { "points": 1, "check": "\\b(dust|inhal(e|ation)|lungs?|respiratory)\\b", "flags": "i" }
+            {
+              "points": 1,
+              "check": "\\b(wear (a )?(mask|respirator)|mask required)\\b",
+              "flags": "i"
+            },
+            {
+              "points": 1,
+              "check": "\\b(dust|inhal(e|ation)|lungs?|respiratory)\\b",
+              "flags": "i"
+            }
           ]
         },
         {
@@ -316,7 +491,11 @@
           "type": "short",
           "maxPoints": 1,
           "rubric": [
-            { "points": 1, "check": "\\b(flying|ricochet|chip|splinter|nail)\\b.*\\b(eye|eyes)\\b|\\b(eye).*(hit|struck)\\b", "flags": "i" }
+            {
+              "points": 1,
+              "check": "\\b(flying|ricochet|chip|splinter|nail)\\b.*\\b(eye|eyes)\\b|\\b(eye).*(hit|struck)\\b",
+              "flags": "i"
+            }
           ]
         },
         {
@@ -327,8 +506,16 @@
           "type": "long",
           "maxPoints": 2,
           "rubric": [
-            { "points": 1, "check": "\\b(reduced|less|won't|doesn't)\\b.*\\b(protect|protection|effective)\\b", "flags": "i" },
-            { "points": 1, "check": "\\b(dirty|damaged|poor fit|leak|infection|extra risk|additional hazard)\\b", "flags": "i" }
+            {
+              "points": 1,
+              "check": "\\b(reduced|less|won't|doesn't)\\b.*\\b(protect|protection|effective)\\b",
+              "flags": "i"
+            },
+            {
+              "points": 1,
+              "check": "\\b(dirty|damaged|poor fit|leak|infection|extra risk|additional hazard)\\b",
+              "flags": "i"
+            }
           ]
         },
         {
@@ -339,8 +526,16 @@
           "type": "long",
           "maxPoints": 2,
           "rubric": [
-            { "points": 1, "check": "\\b(can't see|hard to see|blur|obscured|scratched)\\b", "flags": "i" },
-            { "points": 1, "check": "\\b(infection|germs|bacteria|dirty)\\b", "flags": "i" }
+            {
+              "points": 1,
+              "check": "\\b(can't see|hard to see|blur|obscured|scratched)\\b",
+              "flags": "i"
+            },
+            {
+              "points": 1,
+              "check": "\\b(infection|germs|bacteria|dirty)\\b",
+              "flags": "i"
+            }
           ]
         },
         {
@@ -351,8 +546,16 @@
           "type": "long",
           "maxPoints": 2,
           "rubric": [
-            { "points": 1, "check": "\\b(filter(s)?|seal|leak|fit)\\b|\\b(breath(ing)?|lungs?)\\b", "flags": "i" },
-            { "points": 1, "check": "\\b(asthma|cancer|silicosis|long[- ]?term|chronic)\\b", "flags": "i" }
+            {
+              "points": 1,
+              "check": "\\b(filter(s)?|seal|leak|fit)\\b|\\b(breath(ing)?|lungs?)\\b",
+              "flags": "i"
+            },
+            {
+              "points": 1,
+              "check": "\\b(asthma|cancer|silicosis|long[- ]?term|chronic)\\b",
+              "flags": "i"
+            }
           ]
         },
         {
@@ -363,8 +566,16 @@
           "type": "long",
           "maxPoints": 2,
           "rubric": [
-            { "points": 1, "check": "\\b(poor fit|seal|pads?|gap|leak)\\b", "flags": "i" },
-            { "points": 1, "check": "\\b(hearing loss|tinnitus|ringing|deaf)\\b", "flags": "i" }
+            {
+              "points": 1,
+              "check": "\\b(poor fit|seal|pads?|gap|leak)\\b",
+              "flags": "i"
+            },
+            {
+              "points": 1,
+              "check": "\\b(hearing loss|tinnitus|ringing|deaf)\\b",
+              "flags": "i"
+            }
           ]
         },
         {
@@ -375,8 +586,16 @@
           "type": "long",
           "maxPoints": 2,
           "rubric": [
-            { "points": 1, "check": "\\b(crack|split|damage(d)?)\\b", "flags": "i" },
-            { "points": 1, "check": "\\b(head|skull|brain|concussion|injur(y|ies))\\b", "flags": "i" }
+            {
+              "points": 1,
+              "check": "\\b(crack|split|damage(d)?)\\b",
+              "flags": "i"
+            },
+            {
+              "points": 1,
+              "check": "\\b(head|skull|brain|concussion|injur(y|ies))\\b",
+              "flags": "i"
+            }
           ]
         },
         {
@@ -387,8 +606,16 @@
           "type": "long",
           "maxPoints": 2,
           "rubric": [
-            { "points": 1, "check": "\\b(hole|tear|worn|damage(d)?)\\b", "flags": "i" },
-            { "points": 1, "check": "\\b(cut|abrasion|splinter|chemical|burn|irritation|dermatitis)\\b", "flags": "i" }
+            {
+              "points": 1,
+              "check": "\\b(hole|tear|worn|damage(d)?)\\b",
+              "flags": "i"
+            },
+            {
+              "points": 1,
+              "check": "\\b(cut|abrasion|splinter|chemical|burn|irritation|dermatitis)\\b",
+              "flags": "i"
+            }
           ]
         },
         {
@@ -399,10 +626,26 @@
           "type": "long",
           "maxPoints": 4,
           "rubric": [
-            { "points": 1, "check": "\\b(eye|glasses|goggles|face shield|chips?|particles?)\\b", "flags": "i" },
-            { "points": 1, "check": "\\b(dust|mask|respirator|extraction|lungs?)\\b", "flags": "i" },
-            { "points": 1, "check": "\\b(noise|ear(muffs|plugs)|hearing)\\b", "flags": "i" },
-            { "points": 1, "check": "\\b(boots?|shoes?|steel cap|foot|drop(ped)?|falling)\\b", "flags": "i" }
+            {
+              "points": 1,
+              "check": "\\b(eye|glasses|goggles|face shield|chips?|particles?)\\b",
+              "flags": "i"
+            },
+            {
+              "points": 1,
+              "check": "\\b(dust|mask|respirator|extraction|lungs?)\\b",
+              "flags": "i"
+            },
+            {
+              "points": 1,
+              "check": "\\b(noise|ear(muffs|plugs)|hearing)\\b",
+              "flags": "i"
+            },
+            {
+              "points": 1,
+              "check": "\\b(boots?|shoes?|steel cap|foot|drop(ped)?|falling)\\b",
+              "flags": "i"
+            }
           ]
         },
         {
@@ -413,9 +656,21 @@
           "type": "long",
           "maxPoints": 3,
           "rubric": [
-            { "points": 1, "check": "\\b(eye|glasses|goggles|debris|flying)\\b", "flags": "i" },
-            { "points": 1, "check": "\\b(dust|mask|respirator)\\b|\\b(lungs?|inhal(e|ation))\\b", "flags": "i" },
-            { "points": 1, "check": "\\b(boots?|shoes?|steel cap|foot)\\b|\\b(gloves?|hand protection|blister|impact|abrasion)\\b", "flags": "i" }
+            {
+              "points": 1,
+              "check": "\\b(eye|glasses|goggles|debris|flying)\\b",
+              "flags": "i"
+            },
+            {
+              "points": 1,
+              "check": "\\b(dust|mask|respirator)\\b|\\b(lungs?|inhal(e|ation))\\b",
+              "flags": "i"
+            },
+            {
+              "points": 1,
+              "check": "\\b(boots?|shoes?|steel cap|foot)\\b|\\b(gloves?|hand protection|blister|impact|abrasion)\\b",
+              "flags": "i"
+            }
           ]
         },
         {
@@ -426,9 +681,21 @@
           "type": "long",
           "maxPoints": 3,
           "rubric": [
-            { "points": 1, "check": "\\b(face shield|goggles|eye|chips?|high (speed|velocity))\\b", "flags": "i" },
-            { "points": 1, "check": "\\b(dust|mask|respirator|extraction)\\b", "flags": "i" },
-            { "points": 1, "check": "\\b(ear(muffs|plugs)|hearing|noise)\\b|\\b(tie back hair|no loose clothing|entangle)\\b", "flags": "i" }
+            {
+              "points": 1,
+              "check": "\\b(face shield|goggles|eye|chips?|high (speed|velocity))\\b",
+              "flags": "i"
+            },
+            {
+              "points": 1,
+              "check": "\\b(dust|mask|respirator|extraction)\\b",
+              "flags": "i"
+            },
+            {
+              "points": 1,
+              "check": "\\b(ear(muffs|plugs)|hearing|noise)\\b|\\b(tie back hair|no loose clothing|entangle)\\b",
+              "flags": "i"
+            }
           ]
         },
         {
@@ -439,14 +706,25 @@
           "type": "long",
           "maxPoints": 3,
           "rubric": [
-            { "points": 1, "check": "\\b(lift(ing)?|manual handling|back|strain|team lift)\\b", "flags": "i" },
-            { "points": 1, "check": "\\b(gloves?|splinter|sharp edge|abrasion)\\b", "flags": "i" },
-            { "points": 1, "check": "\\b(boots?|shoes?|steel cap|foot|drop(ped)?|falling)\\b", "flags": "i" }
+            {
+              "points": 1,
+              "check": "\\b(lift(ing)?|manual handling|back|strain|team lift)\\b",
+              "flags": "i"
+            },
+            {
+              "points": 1,
+              "check": "\\b(gloves?|splinter|sharp edge|abrasion)\\b",
+              "flags": "i"
+            },
+            {
+              "points": 1,
+              "check": "\\b(boots?|shoes?|steel cap|foot|drop(ped)?|falling)\\b",
+              "flags": "i"
+            }
           ]
         }
       ]
     },
-
     {
       "id": "assessment-record-1",
       "title": "Assessment Record Sheet - 24352 (v3) 1/6",
@@ -463,7 +741,13 @@
           "hint": "Example: stool, toolbox, picture frame, coffee table, etc.",
           "type": "short",
           "maxPoints": 1,
-          "rubric": [{ "points": 1, "check": ".+", "flags": "" }]
+          "rubric": [
+            {
+              "points": 1,
+              "check": ".+",
+              "flags": ""
+            }
+          ]
         },
         {
           "id": "hazard_identified_1",
@@ -495,7 +779,7 @@
           "rubric": [
             {
               "points": 1,
-              "check": "\\b(safety (glasses|goggles)|face shield|welding helmet|mask|respirator|dust mask|ear(muffs|plugs)|gloves?|overalls?|apron|hard hat|steel[- ]?cap (boots?|shoes?)|safety boots?)\\b|\\bN/?A\\b",
+              "check": "\\b(safety (glasses|goggles)|face shield|welding helmet|mask|respirator|dust mask|ear(muffs|plugs)|gloves?|overalls?|apron|hard hat|steel[- ]?cap (boots?|shoes?)|safety boots?)\\b|\\bN\\/?A\\b",
               "flags": "i"
             }
           ]
@@ -508,13 +792,20 @@
           "type": "long",
           "maxPoints": 2,
           "rubric": [
-            { "points": 1, "check": "\\b(could|might|may|would|risk|result|cause|lead to)\\b", "flags": "i" },
-            { "points": 1, "check": "\\b(injur(y|ies)|hurt|cut|burn|eye|blind|hearing|tinnitus|trip|fall|shock|strain|damage|accident)\\b", "flags": "i" }
+            {
+              "points": 1,
+              "check": "\\b(could|might|may|would|risk|result|cause|lead to)\\b",
+              "flags": "i"
+            },
+            {
+              "points": 1,
+              "check": "\\b(injur(y|ies)|hurt|cut|burn|eye|blind|hearing|tinnitus|trip|fall|shock|strain|damage|accident)\\b",
+              "flags": "i"
+            }
           ]
         }
       ]
     },
-
     {
       "id": "assessment-record-2",
       "title": "Assessment Record Sheet - 24352 (v3) 2/6",
@@ -524,21 +815,78 @@
       "credits": 2,
       "standardType": "internal",
       "questions": [
-        { "id": "project_name_2", "text": "Name the project you were working on.", "image": "blank.jpg", "hint": "Example: stool, toolbox, picture frame, coffee table, etc.", "type": "short", "maxPoints": 1, "rubric": [{ "points": 1, "check": ".+", "flags": "" }] },
-        { "id": "hazard_identified_2", "text": "What hazard did you encounter?", "image": "blank.jpg", "hint": "Name a real hazard you noticed (dust, noise, sharp edge, loose cable, etc.).", "type": "long", "maxPoints": 2, "rubric": [
-          { "points": 1, "check": "\\b(dust|fumes?|vapou?r|noise|sharp|blade|splinter|chip|spark|hot|burn|chemical|spill|slip|trip|fall|electric|shock|unguarded|broken|faulty|frayed|loose|unstable|heavy|manual handling|back strain|hair|loose clothing|jandals?)\\b", "flags": "i" },
-          { "points": 1, "check": "\\b(saw|sander|router|drill|lathe|grinder|bench|machine|tool|cable|lead|extension|workshop|floor|walkway|storage|truck|plywood|timber|concrete)\\b", "flags": "i" }
-        ] },
-        { "id": "ppe_required_2", "text": "PPE required (specify or N/A).", "image": "blank.jpg", "hint": "List the PPE you actually used (e.g., safety glasses, ear muffs, dust mask).", "type": "short", "maxPoints": 1, "rubric": [
-          { "points": 1, "check": "\\b(safety (glasses|goggles)|face shield|welding helmet|mask|respirator|dust mask|ear(muffs|plugs)|gloves?|overalls?|apron|hard hat|steel[- ]?cap (boots?|shoes?)|safety boots?)\\b|\\bN/?A\\b", "flags": "i" }
-        ] },
-        { "id": "comments_2", "text": "What could have happened if this hazard went unchecked?", "image": "blank.jpg", "hint": "Describe a realistic outcome (injury, damage, accident).", "type": "long", "maxPoints": 2, "rubric": [
-          { "points": 1, "check": "\\b(could|might|may|would|risk|result|cause|lead to)\\b", "flags": "i" },
-          { "points": 1, "check": "\\b(injur(y|ies)|hurt|cut|burn|eye|blind|hearing|tinnitus|trip|fall|shock|strain|damage|accident)\\b", "flags": "i" }
-        ] }
+        {
+          "id": "project_name_2",
+          "text": "Name the project you were working on.",
+          "image": "blank.jpg",
+          "hint": "Example: stool, toolbox, picture frame, coffee table, etc.",
+          "type": "short",
+          "maxPoints": 1,
+          "rubric": [
+            {
+              "points": 1,
+              "check": ".+",
+              "flags": ""
+            }
+          ]
+        },
+        {
+          "id": "hazard_identified_2",
+          "text": "What hazard did you encounter?",
+          "image": "blank.jpg",
+          "hint": "Name a real hazard you noticed (dust, noise, sharp edge, loose cable, etc.).",
+          "type": "long",
+          "maxPoints": 2,
+          "rubric": [
+            {
+              "points": 1,
+              "check": "\\b(dust|fumes?|vapou?r|noise|sharp|blade|splinter|chip|spark|hot|burn|chemical|spill|slip|trip|fall|electric|shock|unguarded|broken|faulty|frayed|loose|unstable|heavy|manual handling|back strain|hair|loose clothing|jandals?)\\b",
+              "flags": "i"
+            },
+            {
+              "points": 1,
+              "check": "\\b(saw|sander|router|drill|lathe|grinder|bench|machine|tool|cable|lead|extension|workshop|floor|walkway|storage|truck|plywood|timber|concrete)\\b",
+              "flags": "i"
+            }
+          ]
+        },
+        {
+          "id": "ppe_required_2",
+          "text": "PPE required (specify or N/A).",
+          "image": "blank.jpg",
+          "hint": "List the PPE you actually used (e.g., safety glasses, ear muffs, dust mask).",
+          "type": "short",
+          "maxPoints": 1,
+          "rubric": [
+            {
+              "points": 1,
+              "check": "\\b(safety (glasses|goggles)|face shield|welding helmet|mask|respirator|dust mask|ear(muffs|plugs)|gloves?|overalls?|apron|hard hat|steel[- ]?cap (boots?|shoes?)|safety boots?)\\b|\\bN\\/?A\\b",
+              "flags": "i"
+            }
+          ]
+        },
+        {
+          "id": "comments_2",
+          "text": "What could have happened if this hazard went unchecked?",
+          "image": "blank.jpg",
+          "hint": "Describe a realistic outcome (injury, damage, accident).",
+          "type": "long",
+          "maxPoints": 2,
+          "rubric": [
+            {
+              "points": 1,
+              "check": "\\b(could|might|may|would|risk|result|cause|lead to)\\b",
+              "flags": "i"
+            },
+            {
+              "points": 1,
+              "check": "\\b(injur(y|ies)|hurt|cut|burn|eye|blind|hearing|tinnitus|trip|fall|shock|strain|damage|accident)\\b",
+              "flags": "i"
+            }
+          ]
+        }
       ]
     },
-
     {
       "id": "assessment-record-3",
       "title": "Assessment Record Sheet - 24352 (v3) 3/6",
@@ -548,21 +896,78 @@
       "credits": 2,
       "standardType": "internal",
       "questions": [
-        { "id": "project_name_3", "text": "Name the project you were working on.", "image": "blank.jpg", "hint": "Example: stool, toolbox, picture frame, coffee table, etc.", "type": "short", "maxPoints": 1, "rubric": [{ "points": 1, "check": ".+", "flags": "" }] },
-        { "id": "hazard_identified_3", "text": "What hazard did you encounter?", "image": "blank.jpg", "hint": "Name a real hazard you noticed (dust, noise, sharp edge, loose cable, etc.).", "type": "long", "maxPoints": 2, "rubric": [
-          { "points": 1, "check": "\\b(dust|fumes?|vapou?r|noise|sharp|blade|splinter|chip|spark|hot|burn|chemical|spill|slip|trip|fall|electric|shock|unguarded|broken|faulty|frayed|loose|unstable|heavy|manual handling|back strain|hair|loose clothing|jandals?)\\b", "flags": "i" },
-          { "points": 1, "check": "\\b(saw|sander|router|drill|lathe|grinder|bench|machine|tool|cable|lead|extension|workshop|floor|walkway|storage|truck|plywood|timber|concrete)\\b", "flags": "i" }
-        ] },
-        { "id": "ppe_required_3", "text": "PPE required (specify or N/A).", "image": "blank.jpg", "hint": "List the PPE you actually used (e.g., safety glasses, ear muffs, dust mask).", "type": "short", "maxPoints": 1, "rubric": [
-          { "points": 1, "check": "\\b(safety (glasses|goggles)|face shield|welding helmet|mask|respirator|dust mask|ear(muffs|plugs)|gloves?|overalls?|apron|hard hat|steel[- ]?cap (boots?|shoes?)|safety boots?)\\b|\\bN/?A\\b", "flags": "i" }
-        ] },
-        { "id": "comments_3", "text": "What could have happened if this hazard went unchecked?", "image": "blank.jpg", "hint": "Describe a realistic outcome (injury, damage, accident).", "type": "long", "maxPoints": 2, "rubric": [
-          { "points": 1, "check": "\\b(could|might|may|would|risk|result|cause|lead to)\\b", "flags": "i" },
-          { "points": 1, "check": "\\b(injur(y|ies)|hurt|cut|burn|eye|blind|hearing|tinnitus|trip|fall|shock|strain|damage|accident)\\b", "flags": "i" }
-        ] }
+        {
+          "id": "project_name_3",
+          "text": "Name the project you were working on.",
+          "image": "blank.jpg",
+          "hint": "Example: stool, toolbox, picture frame, coffee table, etc.",
+          "type": "short",
+          "maxPoints": 1,
+          "rubric": [
+            {
+              "points": 1,
+              "check": ".+",
+              "flags": ""
+            }
+          ]
+        },
+        {
+          "id": "hazard_identified_3",
+          "text": "What hazard did you encounter?",
+          "image": "blank.jpg",
+          "hint": "Name a real hazard you noticed (dust, noise, sharp edge, loose cable, etc.).",
+          "type": "long",
+          "maxPoints": 2,
+          "rubric": [
+            {
+              "points": 1,
+              "check": "\\b(dust|fumes?|vapou?r|noise|sharp|blade|splinter|chip|spark|hot|burn|chemical|spill|slip|trip|fall|electric|shock|unguarded|broken|faulty|frayed|loose|unstable|heavy|manual handling|back strain|hair|loose clothing|jandals?)\\b",
+              "flags": "i"
+            },
+            {
+              "points": 1,
+              "check": "\\b(saw|sander|router|drill|lathe|grinder|bench|machine|tool|cable|lead|extension|workshop|floor|walkway|storage|truck|plywood|timber|concrete)\\b",
+              "flags": "i"
+            }
+          ]
+        },
+        {
+          "id": "ppe_required_3",
+          "text": "PPE required (specify or N/A).",
+          "image": "blank.jpg",
+          "hint": "List the PPE you actually used (e.g., safety glasses, ear muffs, dust mask).",
+          "type": "short",
+          "maxPoints": 1,
+          "rubric": [
+            {
+              "points": 1,
+              "check": "\\b(safety (glasses|goggles)|face shield|welding helmet|mask|respirator|dust mask|ear(muffs|plugs)|gloves?|overalls?|apron|hard hat|steel[- ]?cap (boots?|shoes?)|safety boots?)\\b|\\bN\\/?A\\b",
+              "flags": "i"
+            }
+          ]
+        },
+        {
+          "id": "comments_3",
+          "text": "What could have happened if this hazard went unchecked?",
+          "image": "blank.jpg",
+          "hint": "Describe a realistic outcome (injury, damage, accident).",
+          "type": "long",
+          "maxPoints": 2,
+          "rubric": [
+            {
+              "points": 1,
+              "check": "\\b(could|might|may|would|risk|result|cause|lead to)\\b",
+              "flags": "i"
+            },
+            {
+              "points": 1,
+              "check": "\\b(injur(y|ies)|hurt|cut|burn|eye|blind|hearing|tinnitus|trip|fall|shock|strain|damage|accident)\\b",
+              "flags": "i"
+            }
+          ]
+        }
       ]
     },
-
     {
       "id": "assessment-record-4",
       "title": "Assessment Record Sheet - 24352 (v3) 4/6",
@@ -572,21 +977,78 @@
       "credits": 2,
       "standardType": "internal",
       "questions": [
-        { "id": "project_name_4", "text": "Name the project you were working on.", "image": "blank.jpg", "hint": "Example: stool, toolbox, picture frame, coffee table, etc.", "type": "short", "maxPoints": 1, "rubric": [{ "points": 1, "check": ".+", "flags": "" }] },
-        { "id": "hazard_identified_4", "text": "What hazard did you encounter?", "image": "blank.jpg", "hint": "Name a real hazard you noticed (dust, noise, sharp edge, loose cable, etc.).", "type": "long", "maxPoints": 2, "rubric": [
-          { "points": 1, "check": "\\b(dust|fumes?|vapou?r|noise|sharp|blade|splinter|chip|spark|hot|burn|chemical|spill|slip|trip|fall|electric|shock|unguarded|broken|faulty|frayed|loose|unstable|heavy|manual handling|back strain|hair|loose clothing|jandals?)\\b", "flags": "i" },
-          { "points": 1, "check": "\\b(saw|sander|router|drill|lathe|grinder|bench|machine|tool|cable|lead|extension|workshop|floor|walkway|storage|truck|plywood|timber|concrete)\\b", "flags": "i" }
-        ] },
-        { "id": "ppe_required_4", "text": "PPE required (specify or N/A).", "image": "blank.jpg", "hint": "List the PPE you actually used (e.g., safety glasses, ear muffs, dust mask).", "type": "short", "maxPoints": 1, "rubric": [
-          { "points": 1, "check": "\\b(safety (glasses|goggles)|face shield|welding helmet|mask|respirator|dust mask|ear(muffs|plugs)|gloves?|overalls?|apron|hard hat|steel[- ]?cap (boots?|shoes?)|safety boots?)\\b|\\bN/?A\\b", "flags": "i" }
-        ] },
-        { "id": "comments_4", "text": "What could have happened if this hazard went unchecked?", "image": "blank.jpg", "hint": "Describe a realistic outcome (injury, damage, accident).", "type": "long", "maxPoints": 2, "rubric": [
-          { "points": 1, "check": "\\b(could|might|may|would|risk|result|cause|lead to)\\b", "flags": "i" },
-          { "points": 1, "check": "\\b(injur(y|ies)|hurt|cut|burn|eye|blind|hearing|tinnitus|trip|fall|shock|strain|damage|accident)\\b", "flags": "i" }
-        ] }
+        {
+          "id": "project_name_4",
+          "text": "Name the project you were working on.",
+          "image": "blank.jpg",
+          "hint": "Example: stool, toolbox, picture frame, coffee table, etc.",
+          "type": "short",
+          "maxPoints": 1,
+          "rubric": [
+            {
+              "points": 1,
+              "check": ".+",
+              "flags": ""
+            }
+          ]
+        },
+        {
+          "id": "hazard_identified_4",
+          "text": "What hazard did you encounter?",
+          "image": "blank.jpg",
+          "hint": "Name a real hazard you noticed (dust, noise, sharp edge, loose cable, etc.).",
+          "type": "long",
+          "maxPoints": 2,
+          "rubric": [
+            {
+              "points": 1,
+              "check": "\\b(dust|fumes?|vapou?r|noise|sharp|blade|splinter|chip|spark|hot|burn|chemical|spill|slip|trip|fall|electric|shock|unguarded|broken|faulty|frayed|loose|unstable|heavy|manual handling|back strain|hair|loose clothing|jandals?)\\b",
+              "flags": "i"
+            },
+            {
+              "points": 1,
+              "check": "\\b(saw|sander|router|drill|lathe|grinder|bench|machine|tool|cable|lead|extension|workshop|floor|walkway|storage|truck|plywood|timber|concrete)\\b",
+              "flags": "i"
+            }
+          ]
+        },
+        {
+          "id": "ppe_required_4",
+          "text": "PPE required (specify or N/A).",
+          "image": "blank.jpg",
+          "hint": "List the PPE you actually used (e.g., safety glasses, ear muffs, dust mask).",
+          "type": "short",
+          "maxPoints": 1,
+          "rubric": [
+            {
+              "points": 1,
+              "check": "\\b(safety (glasses|goggles)|face shield|welding helmet|mask|respirator|dust mask|ear(muffs|plugs)|gloves?|overalls?|apron|hard hat|steel[- ]?cap (boots?|shoes?)|safety boots?)\\b|\\bN\\/?A\\b",
+              "flags": "i"
+            }
+          ]
+        },
+        {
+          "id": "comments_4",
+          "text": "What could have happened if this hazard went unchecked?",
+          "image": "blank.jpg",
+          "hint": "Describe a realistic outcome (injury, damage, accident).",
+          "type": "long",
+          "maxPoints": 2,
+          "rubric": [
+            {
+              "points": 1,
+              "check": "\\b(could|might|may|would|risk|result|cause|lead to)\\b",
+              "flags": "i"
+            },
+            {
+              "points": 1,
+              "check": "\\b(injur(y|ies)|hurt|cut|burn|eye|blind|hearing|tinnitus|trip|fall|shock|strain|damage|accident)\\b",
+              "flags": "i"
+            }
+          ]
+        }
       ]
     },
-
     {
       "id": "assessment-record-5",
       "title": "Assessment Record Sheet - 24352 (v3) 5/6",
@@ -596,21 +1058,78 @@
       "credits": 2,
       "standardType": "internal",
       "questions": [
-        { "id": "project_name_5", "text": "Name the project you were working on.", "image": "blank.jpg", "hint": "Example: stool, toolbox, picture frame, coffee table, etc.", "type": "short", "maxPoints": 1, "rubric": [{ "points": 1, "check": ".+", "flags": "" }] },
-        { "id": "hazard_identified_5", "text": "What hazard did you encounter?", "image": "blank.jpg", "hint": "Name a real hazard you noticed (dust, noise, sharp edge, loose cable, etc.).", "type": "long", "maxPoints": 2, "rubric": [
-          { "points": 1, "check": "\\b(dust|fumes?|vapou?r|noise|sharp|blade|splinter|chip|spark|hot|burn|chemical|spill|slip|trip|fall|electric|shock|unguarded|broken|faulty|frayed|loose|unstable|heavy|manual handling|back strain|hair|loose clothing|jandals?)\\b", "flags": "i" },
-          { "points": 1, "check": "\\b(saw|sander|router|drill|lathe|grinder|bench|machine|tool|cable|lead|extension|workshop|floor|walkway|storage|truck|plywood|timber|concrete)\\b", "flags": "i" }
-        ] },
-        { "id": "ppe_required_5", "text": "PPE required (specify or N/A).", "image": "blank.jpg", "hint": "List the PPE you actually used (e.g., safety glasses, ear muffs, dust mask).", "type": "short", "maxPoints": 1, "rubric": [
-          { "points": 1, "check": "\\b(safety (glasses|goggles)|face shield|welding helmet|mask|respirator|dust mask|ear(muffs|plugs)|gloves?|overalls?|apron|hard hat|steel[- ]?cap (boots?|shoes?)|safety boots?)\\b|\\bN/?A\\b", "flags": "i" }
-        ] },
-        { "id": "comments_5", "text": "What could have happened if this hazard went unchecked?", "image": "blank.jpg", "hint": "Describe a realistic outcome (injury, damage, accident).", "type": "long", "maxPoints": 2, "rubric": [
-          { "points": 1, "check": "\\b(could|might|may|would|risk|result|cause|lead to)\\b", "flags": "i" },
-          { "points": 1, "check": "\\b(injur(y|ies)|hurt|cut|burn|eye|blind|hearing|tinnitus|trip|fall|shock|strain|damage|accident)\\b", "flags": "i" }
-        ] }
+        {
+          "id": "project_name_5",
+          "text": "Name the project you were working on.",
+          "image": "blank.jpg",
+          "hint": "Example: stool, toolbox, picture frame, coffee table, etc.",
+          "type": "short",
+          "maxPoints": 1,
+          "rubric": [
+            {
+              "points": 1,
+              "check": ".+",
+              "flags": ""
+            }
+          ]
+        },
+        {
+          "id": "hazard_identified_5",
+          "text": "What hazard did you encounter?",
+          "image": "blank.jpg",
+          "hint": "Name a real hazard you noticed (dust, noise, sharp edge, loose cable, etc.).",
+          "type": "long",
+          "maxPoints": 2,
+          "rubric": [
+            {
+              "points": 1,
+              "check": "\\b(dust|fumes?|vapou?r|noise|sharp|blade|splinter|chip|spark|hot|burn|chemical|spill|slip|trip|fall|electric|shock|unguarded|broken|faulty|frayed|loose|unstable|heavy|manual handling|back strain|hair|loose clothing|jandals?)\\b",
+              "flags": "i"
+            },
+            {
+              "points": 1,
+              "check": "\\b(saw|sander|router|drill|lathe|grinder|bench|machine|tool|cable|lead|extension|workshop|floor|walkway|storage|truck|plywood|timber|concrete)\\b",
+              "flags": "i"
+            }
+          ]
+        },
+        {
+          "id": "ppe_required_5",
+          "text": "PPE required (specify or N/A).",
+          "image": "blank.jpg",
+          "hint": "List the PPE you actually used (e.g., safety glasses, ear muffs, dust mask).",
+          "type": "short",
+          "maxPoints": 1,
+          "rubric": [
+            {
+              "points": 1,
+              "check": "\\b(safety (glasses|goggles)|face shield|welding helmet|mask|respirator|dust mask|ear(muffs|plugs)|gloves?|overalls?|apron|hard hat|steel[- ]?cap (boots?|shoes?)|safety boots?)\\b|\\bN\\/?A\\b",
+              "flags": "i"
+            }
+          ]
+        },
+        {
+          "id": "comments_5",
+          "text": "What could have happened if this hazard went unchecked?",
+          "image": "blank.jpg",
+          "hint": "Describe a realistic outcome (injury, damage, accident).",
+          "type": "long",
+          "maxPoints": 2,
+          "rubric": [
+            {
+              "points": 1,
+              "check": "\\b(could|might|may|would|risk|result|cause|lead to)\\b",
+              "flags": "i"
+            },
+            {
+              "points": 1,
+              "check": "\\b(injur(y|ies)|hurt|cut|burn|eye|blind|hearing|tinnitus|trip|fall|shock|strain|damage|accident)\\b",
+              "flags": "i"
+            }
+          ]
+        }
       ]
     },
-
     {
       "id": "assessment-record-6",
       "title": "Assessment Record Sheet - 24352 (v3) 6/6",
@@ -620,18 +1139,76 @@
       "credits": 2,
       "standardType": "internal",
       "questions": [
-        { "id": "project_name_6", "text": "Name the project you were working on.", "image": "blank.jpg", "hint": "Example: stool, toolbox, picture frame, coffee table, etc.", "type": "short", "maxPoints": 1, "rubric": [{ "points": 1, "check": ".+", "flags": "" }] },
-        { "id": "hazard_identified_6", "text": "What hazard did you encounter?", "image": "blank.jpg", "hint": "Name a real hazard you noticed (dust, noise, sharp edge, loose cable, etc.).", "type": "long", "maxPoints": 2, "rubric": [
-          { "points": 1, "check": "\\b(dust|fumes?|vapou?r|noise|sharp|blade|splinter|chip|spark|hot|burn|chemical|spill|slip|trip|fall|electric|shock|unguarded|broken|faulty|frayed|loose|unstable|heavy|manual handling|back strain|hair|loose clothing|jandals?)\\b", "flags": "i" },
-          { "points": 1, "check": "\\b(saw|sander|router|drill|lathe|grinder|bench|machine|tool|cable|lead|extension|workshop|floor|walkway|storage|truck|plywood|timber|concrete)\\b", "flags": "i" }
-        ] },
-        { "id": "ppe_required_6", "text": "PPE required (specify or N/A).", "image": "blank.jpg", "hint": "List the PPE you actually used (e.g., safety glasses, ear muffs, dust mask).", "type": "short", "maxPoints": 1, "rubric": [
-          { "points": 1, "check": "\\b(safety (glasses|goggles)|face shield|welding helmet|mask|respirator|dust mask|ear(muffs|plugs)|gloves?|overalls?|apron|hard hat|steel[- ]?cap (boots?|shoes?)|safety boots?)\\b|\\bN/?A\\b", "flags": "i" }
-        ] },
-        { "id": "comments_6", "text": "What could have happened if this hazard went unchecked?", "image": "blank.jpg", "hint": "Describe a realistic outcome (injury, damage, accident).", "type": "long", "maxPoints": 2, "rubric": [
-          { "points": 1, "check": "\\b(could|might|may|would|risk|result|cause|lead to)\\b", "flags": "i" },
-          { "points": 1, "check": "\\b(injur(y|ies)|hurt|cut|burn|eye|blind|hearing|tinnitus|trip|fall|shock|strain|damage|accident)\\b", "flags": "i" }
-        ] }
+        {
+          "id": "project_name_6",
+          "text": "Name the project you were working on.",
+          "image": "blank.jpg",
+          "hint": "Example: stool, toolbox, picture frame, coffee table, etc.",
+          "type": "short",
+          "maxPoints": 1,
+          "rubric": [
+            {
+              "points": 1,
+              "check": ".+",
+              "flags": ""
+            }
+          ]
+        },
+        {
+          "id": "hazard_identified_6",
+          "text": "What hazard did you encounter?",
+          "image": "blank.jpg",
+          "hint": "Name a real hazard you noticed (dust, noise, sharp edge, loose cable, etc.).",
+          "type": "long",
+          "maxPoints": 2,
+          "rubric": [
+            {
+              "points": 1,
+              "check": "\\b(dust|fumes?|vapou?r|noise|sharp|blade|splinter|chip|spark|hot|burn|chemical|spill|slip|trip|fall|electric|shock|unguarded|broken|faulty|frayed|loose|unstable|heavy|manual handling|back strain|hair|loose clothing|jandals?)\\b",
+              "flags": "i"
+            },
+            {
+              "points": 1,
+              "check": "\\b(saw|sander|router|drill|lathe|grinder|bench|machine|tool|cable|lead|extension|workshop|floor|walkway|storage|truck|plywood|timber|concrete)\\b",
+              "flags": "i"
+            }
+          ]
+        },
+        {
+          "id": "ppe_required_6",
+          "text": "PPE required (specify or N/A).",
+          "image": "blank.jpg",
+          "hint": "List the PPE you actually used (e.g., safety glasses, ear muffs, dust mask).",
+          "type": "short",
+          "maxPoints": 1,
+          "rubric": [
+            {
+              "points": 1,
+              "check": "\\b(safety (glasses|goggles)|face shield|welding helmet|mask|respirator|dust mask|ear(muffs|plugs)|gloves?|overalls?|apron|hard hat|steel[- ]?cap (boots?|shoes?)|safety boots?)\\b|\\bN\\/?A\\b",
+              "flags": "i"
+            }
+          ]
+        },
+        {
+          "id": "comments_6",
+          "text": "What could have happened if this hazard went unchecked?",
+          "image": "blank.jpg",
+          "hint": "Describe a realistic outcome (injury, damage, accident).",
+          "type": "long",
+          "maxPoints": 2,
+          "rubric": [
+            {
+              "points": 1,
+              "check": "\\b(could|might|may|would|risk|result|cause|lead to)\\b",
+              "flags": "i"
+            },
+            {
+              "points": 1,
+              "check": "\\b(injur(y|ies)|hurt|cut|burn|eye|blind|hearing|tinnitus|trip|fall|shock|strain|damage|accident)\\b",
+              "flags": "i"
+            }
+          ]
+        }
       ]
     }
   ]
