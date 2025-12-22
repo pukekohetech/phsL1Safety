@@ -76,7 +76,7 @@ const DEBUG = false; // ← Debug logging off in production
 // ------------------------------------------------------------
 // Requirements
 // ------------------------------------------------------------
-const MIN_PCT_FOR_SUBMIT = 100; 
+const MIN_PCT_FOR_SUBMIT = 100;
 // Change this to e.g. 80 if you want 80% or better
 
 // ------------------------------------------------------------
@@ -432,7 +432,6 @@ function colourQuestions(results) {
   });
 }
 
-
 // ------------------------------------------------------------
 // Deadline helpers
 // ------------------------------------------------------------
@@ -656,6 +655,7 @@ function submitWork() {
     points: total,
     totalPoints,
     pct,
+    // ✅ Submission timestamp (used for PDF "Submitted:" line)
     timestamp: new Date().toISOString(),
     deadlineInfo: deadlineNow
   };
@@ -687,6 +687,10 @@ function back() {
 // repeating header on every page (no overlap with maroon bar)
 // with consistent width + more than one question per page
 // and device-native sharing when available
+//
+// ✅ Updates added:
+// - PDF shows "Submitted:" based on finalData.timestamp
+// - Filename includes StudentNo + StudentName + AssessmentTitle
 // ------------------------------------------------------------
 async function emailWork() {
   if (!finalData) return alert("Submit first!");
@@ -701,6 +705,16 @@ async function emailWork() {
   if (deadlineNow && deadlineNow.status === "overdue") {
     return alert("The submission deadline has passed – emailing is now disabled until next year.");
   }
+
+  // Formatting helpers
+  const formatDateTime = iso =>
+    iso ? new Date(iso).toLocaleString() : new Date().toLocaleString();
+
+  const safePart = s =>
+    (s || "")
+      .trim()
+      .replace(/\s+/g, "_")
+      .replace(/[^a-zA-Z0-9_\-]/g, "");
 
   // Dynamically load jsPDF + html2canvas if needed
   const load = src => new Promise((res, rej) => {
@@ -815,14 +829,23 @@ async function emailWork() {
             infoY
           );
         }
+
         infoY += 7;
+
+        // ✅ Submission date (when "Submit" was clicked)
         pdf.setTextColor(0, 0, 0);
         pdf.setFontSize(10);
-        pdf.text(`Generated: ${new Date().toLocaleString()}`, 10, infoY);
+        pdf.text(`Submitted: ${formatDateTime(finalData.timestamp)}`, 10, infoY);
+        infoY += 6;
+
+        // ✅ PDF generation time (when file was created)
+        pdf.text(`PDF Generated: ${new Date().toLocaleString()}`, 10, infoY);
       } else {
-        // No deadline info – still show generated line
+        // No deadline info – still show submitted + generated
+        pdf.setTextColor(0, 0, 0);
         pdf.setFontSize(10);
-        pdf.text(`Generated: ${new Date().toLocaleString()}`, 10, studentLineY + 36);
+        pdf.text(`Submitted: ${formatDateTime(finalData.timestamp)}`, 10, studentLineY + 36);
+        pdf.text(`PDF Generated: ${new Date().toLocaleString()}`, 10, studentLineY + 42);
       }
     } else {
       // Compact but still clear header on later pages
@@ -833,6 +856,10 @@ async function emailWork() {
         pdf.text(`Part: ${finalData.assessmentSubtitle}`, 10, studentLineY + 14);
         pdf.setFontSize(12);
       }
+      // If you want submission date on EVERY page too, uncomment:
+      // pdf.setFontSize(10);
+      // pdf.text(`Submitted: ${formatDateTime(finalData.timestamp)}`, 10, studentLineY + 21);
+      // pdf.setFontSize(12);
     }
   };
 
@@ -922,7 +949,12 @@ async function emailWork() {
 
   // ---------- EXPORT & SHARE / DOWNLOAD ----------
   const pdfBlob = pdf.output("blob");
-  const fileName = `${finalData.studentId || "student"}_${finalData.assessmentTitle.replace(/\s+/g, "_")}.pdf`;
+
+  // ✅ File = StudentNo + StudentName + AssessmentTitle
+  const fileName =
+    `${safePart(finalData.studentId || "student")}_` +
+    `${safePart(finalData.studentName || "name")}_` +
+    `${safePart(finalData.assessmentTitle || "assessment")}.pdf`;
 
   let pdfFile = null;
   if (window.File && typeof File === "function") {
