@@ -153,7 +153,7 @@
         {
           "id": "q1f_welding_helmet",
           "text": "Match the appropriate eye protection PPE to the hazard by selecting it from below\n\nPPE Type: Welding helmet",
-          "image": "SafetyQuestion2.png",
+          "image": "SafetyQuestion1.png",
           "hint": "For arc welding, a welding helmet with the correct lenses must be worn.",
           "type": "mc",
           "maxPoints": 1,
