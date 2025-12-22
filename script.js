@@ -264,21 +264,21 @@ function loadAssessment() {
     const header = document.createElement("div");
     header.className = "question-header";
 
-   const markSpan = document.createElement("span");
+    const markSpan = document.createElement("span");
 
-// Clean display ID: "q5" -> "Q5", others -> uppercased
-let displayId;
-const simpleMatch = q.id.match(/^q(\d+)$/i);
-if (simpleMatch) {
-  // IDs like "q1", "q2", "q15" become "Q1", "Q2", "Q15"
-  displayId = "Q" + simpleMatch[1];
-} else {
-  // Anything else (e.g. "mat1_q1") just uppercase
-  displayId = q.id.toUpperCase();
-}
+    // Clean display ID: "q5" -> "Q5", others -> uppercased
+    let displayId;
+    const simpleMatch = q.id.match(/^q(\d+)$/i);
+    if (simpleMatch) {
+      // IDs like "q1", "q2", "q15" become "Q1", "Q2", "Q15"
+      displayId = "Q" + simpleMatch[1];
+    } else {
+      // Anything else (e.g. "mat1_q1") just uppercase
+      displayId = q.id.toUpperCase();
+    }
 
-markSpan.textContent = `${displayId} – ${q.maxPoints} mark${q.maxPoints !== 1 ? "s" : ""}`;
-header.appendChild(markSpan);
+    markSpan.textContent = `${displayId} – ${q.maxPoints} mark${q.maxPoints !== 1 ? "s" : ""}`;
+    header.appendChild(markSpan);
 
     const typeSpan = document.createElement("span");
     typeSpan.textContent = q.type === "mc" ? "Multi-choice" :
@@ -290,8 +290,8 @@ header.appendChild(markSpan);
 
     const p = document.createElement("p");
     // If your question text includes HTML (like links/br), use innerHTML instead of textContent
-  p.innerHTML = q.text;
-  wrap.appendChild(p);
+    p.innerHTML = q.text;
+    wrap.appendChild(p);
 
     if (q.image) {
       const img = document.createElement("img");
@@ -683,7 +683,10 @@ function back() {
 }
 
 // ------------------------------------------------------------
-// Email / PDF – 900px CAPTURE + CLEAN A4 SLICING + HEADER/FOOTER
+// Email / PDF – per-block capture (no mid-question cuts) +
+// repeating header on every page (no overlap with maroon bar)
+// with consistent width + more than one question per page
+// and device-native sharing when available
 // ------------------------------------------------------------
 async function emailWork() {
   if (!finalData) return alert("Submit first!");
@@ -713,36 +716,12 @@ async function emailWork() {
     await load("https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js");
   }
 
+  if (!window.jspdf || !window.html2canvas) {
+    alert("PDF libraries failed to load. Please check your internet connection.");
+    return;
+  }
+
   const { jsPDF } = window.jspdf;
-
-  // ---------- 900px OFF-SCREEN CLONE (keeps PDF layout consistent) ----------
-  const resultSection = document.getElementById("result");
-  const clone = resultSection.cloneNode(true);
-
-  const offscreenContainer = document.createElement("div");
-  offscreenContainer.style.position = "fixed";
-  offscreenContainer.style.left = "-9999px";
-  offscreenContainer.style.top = "0";
-  offscreenContainer.style.width = "900px";
-  offscreenContainer.style.background = "white";
-
-  clone.style.width = "900px";
-  clone.style.maxWidth = "900px";
-
-  offscreenContainer.appendChild(clone);
-  document.body.appendChild(offscreenContainer);
-
-  const canvas = await window.html2canvas(clone, {
-    scale: 2,
-    useCORS: true,
-    scrollX: 0,
-    scrollY: -window.scrollY
-  });
-
-  const imgData = canvas.toDataURL("image/png");
-
-  // Clean up the off-screen DOM
-  document.body.removeChild(offscreenContainer);
 
   // ---------- CREATE PDF + GLOBAL PAGE DIMENSIONS ----------
   const pdf = new jsPDF("p", "mm", "a4");
@@ -791,7 +770,7 @@ async function emailWork() {
     pdf.setFontSize(12);
     pdf.text(APP_SUBTITLE || "Technology Assessment", 35, 22);
 
-    // Meta text (in black) under header
+    // Meta text (in black) under header – never overlaps maroon bar
     pdf.setTextColor(0, 0, 0);
     pdf.setFontSize(12);
 
@@ -806,7 +785,11 @@ async function emailWork() {
       if (finalData.assessmentSubtitle) {
         pdf.text(`Part: ${finalData.assessmentSubtitle}`, 10, studentLineY + 22);
       }
-      pdf.text(`Score: ${finalData.points}/${finalData.totalPoints} (${finalData.pct}%)`, 10, studentLineY + 29);
+      pdf.text(
+        `Score: ${finalData.points}/${finalData.totalPoints} (${finalData.pct}%)`,
+        10,
+        studentLineY + 29
+      );
 
       // Deadline info from submitWork()
       let infoY = studentLineY + 36;
@@ -842,51 +825,84 @@ async function emailWork() {
         pdf.text(`Generated: ${new Date().toLocaleString()}`, 10, studentLineY + 36);
       }
     } else {
-      // Compact header for later pages, still with student name
+      // Compact but still clear header on later pages
       pdf.text(`Student: ${finalData.studentName} (${finalData.studentId})`, 10, studentLineY);
       pdf.text(`Assessment: ${finalData.assessmentTitle}`, 10, studentLineY + 7);
+      if (finalData.assessmentSubtitle) {
+        pdf.setFontSize(11);
+        pdf.text(`Part: ${finalData.assessmentSubtitle}`, 10, studentLineY + 14);
+        pdf.setFontSize(12);
+      }
     }
   };
 
-  // ---------- IMAGE SIZE & A4 SLICING SETUP ----------
-  const imgProps = pdf.getImageProperties(imgData);
-
+  // ---------- LAYOUT CONSTANTS ----------
   const marginLeft = 10;
   const marginRight = 10;
-  const marginTop = 90;   // space for header + meta
-  const marginBottom = 15; // space for page number footer
-
-  const pdfWidth = pageWidth - marginLeft - marginRight;
-  const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
-
+  const marginTop = 70;     // space for header + meta
+  const marginBottom = 10;  // footer
   const usableHeight = pageHeight - marginTop - marginBottom;
 
-  let remainingHeight = pdfHeight;
-  let offsetY = 0;
-  let pageNum = 1;
+  // Use a fixed "virtual" width so PDFs look consistent across devices
+  const TARGET_WIDTH = 900; // px – pretend the content is this wide for html2canvas
 
-  // ---------- DRAW PAGES WITH SLICED IMAGE ----------
-  while (remainingHeight > 0) {
-    // Draw page header (full on first page, compact later)
-    drawHeader(pageNum === 1);
+  // ---------- BUILD LIST OF BLOCKS TO CAPTURE ----------
+  const resultSection = document.getElementById("result");
+  const blocks = [];
 
-    // Add the screenshot image, vertically shifted to "slice" for this page
-    pdf.addImage(
-      imgData,
-      "PNG",
-      marginLeft,
-      marginTop - offsetY,
-      pdfWidth,
-      pdfHeight
-    );
+  const resultHeader = resultSection.querySelector(".result-header");
+  if (resultHeader) blocks.push(resultHeader);
 
-    remainingHeight -= usableHeight;
-    offsetY += usableHeight;
+  resultSection.querySelectorAll(".feedback").forEach(el => blocks.push(el));
 
-    if (remainingHeight > 0) {
-      pdf.addPage();
-      pageNum++;
+  // Safety: if somehow no blocks found, fall back to whole section
+  if (blocks.length === 0) {
+    blocks.push(resultSection);
+  }
+
+  // ---------- DRAW FIRST PAGE HEADER ----------
+  drawHeader(true);
+  let currentY = marginTop;
+
+  // ---------- CAPTURE EACH BLOCK SEPARATELY (NO MID-QUESTION CUTS) ----------
+  for (const block of blocks) {
+    const canvas = await window.html2canvas(block, {
+      scale: 2,
+      width: TARGET_WIDTH,
+      windowWidth: TARGET_WIDTH,
+      useCORS: true,
+      scrollX: 0,
+      scrollY: -window.scrollY
+    });
+
+    const imgData = canvas.toDataURL("image/png");
+    const imgProps = pdf.getImageProperties(imgData);
+
+    // Start from a max width based on margins
+    const maxContentWidth = pageWidth - marginLeft - marginRight;
+    let imgWidth = maxContentWidth;
+    let imgHeight = (imgProps.height * imgWidth) / imgProps.width;
+
+    // If this block is taller than ~90% of the usable space, scale it down a bit
+    const maxBlockHeight = usableHeight * 0.9;
+    if (imgHeight > maxBlockHeight) {
+      const scale = maxBlockHeight / imgHeight;
+      imgWidth *= scale;
+      imgHeight = maxBlockHeight;
     }
+
+    // Center horizontally on the page
+    const xPos = (pageWidth - imgWidth) / 2;
+
+    // If it won't fit on the current page, go to a new page
+    if (currentY + imgHeight > pageHeight - marginBottom) {
+      pdf.addPage();
+      drawHeader(false);
+      currentY = marginTop;
+    }
+
+    pdf.addImage(imgData, "PNG", xPos, currentY, imgWidth, imgHeight);
+    currentY += imgHeight + 5; // 5mm gap between blocks
   }
 
   // ---------- PAGE NUMBERS IN FOOTER ----------
@@ -908,10 +924,13 @@ async function emailWork() {
   const pdfBlob = pdf.output("blob");
   const fileName = `${finalData.studentId || "student"}_${finalData.assessmentTitle.replace(/\s+/g, "_")}.pdf`;
 
-  const pdfFile = new File([pdfBlob], fileName, { type: "application/pdf" });
+  let pdfFile = null;
+  if (window.File && typeof File === "function") {
+    pdfFile = new File([pdfBlob], fileName, { type: "application/pdf" });
+  }
 
-  // Try native share sheet first (on phones/tablets)
-  if (navigator.canShare && navigator.canShare({ files: [pdfFile] })) {
+  // 1) Try device-native share sheet (phones/tablets, some desktops)
+  if (pdfFile && navigator.canShare && navigator.canShare({ files: [pdfFile] })) {
     try {
       await navigator.share({
         title: "Assessment PDF",
@@ -919,33 +938,20 @@ async function emailWork() {
         files: [pdfFile]
       });
       showToast("Shared via device share sheet.");
-      return;
+      return; // we’re done
     } catch (e) {
-      console.warn("Share cancelled or failed, falling back to download/mailto.", e);
+      console.warn("Share cancelled or failed, falling back to download:", e);
     }
   }
 
-  // Fallback: download the file
+  // 2) Fallback: download the file
   const url = URL.createObjectURL(pdfBlob);
   const a = document.createElement("a");
   a.href = url;
   a.download = fileName;
   a.click();
   URL.revokeObjectURL(url);
-
-  // And open mailto with summary (PDF is saved on device)
-  const mailto = `mailto:?subject=${encodeURIComponent("Assessment submission: " + finalData.studentName)}&body=${encodeURIComponent(
-    `Student: ${finalData.studentName} (${finalData.studentId})
-Teacher: ${finalData.teacherName}
-Assessment: ${finalData.assessmentTitle} ${finalData.assessmentSubtitle ? "(" + finalData.assessmentSubtitle + ")" : ""}
-
-Score: ${finalData.points}/${finalData.totalPoints} (${finalData.pct}%)
-
-A PDF copy has been downloaded on this device.`
-  )}`;
-  window.location.href = mailto;
 }
-
 
 // ------------------------------------------------------------
 // Simple clipboard clear (best-effort)
@@ -966,6 +972,7 @@ function attachProtection() {
     f.addEventListener("paste", e => { e.preventDefault(); showToast(PASTE_BLOCKED_MESSAGE, false); clearClipboard(); });
   });
 }
+
 // Limit context menu blocking to the question area only (still allow on inputs)
 document.addEventListener("contextmenu", e => {
   const inQuestionsArea = e.target.closest("#questions");
