@@ -1,5 +1,5 @@
 /* ============================================================
-   THEME VARIABLES
+   THEME VARIABLES 
    ============================================================ */
 :root {
   --phs-maroon: #6e1818;
@@ -16,6 +16,12 @@
   --shadow-subtle: 0 4px 12px rgba(15, 23, 42, 0.08);
   --transition-fast: 0.18s ease-out;
 }
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
 
 /* ============================================================
    GLOBAL RESET & BASE
@@ -249,12 +255,10 @@ textarea {
 /* Optional image under the question */
 .question img {
   max-width: 100%;
-  display: block;
-  margin: 10px auto;   /* centers horizontally */
   border-radius: 10px;
+  margin: 10px 0;
   border: 1px solid rgba(148, 163, 184, 0.35);
 }
-
 
 /* ============================================================
    MARKING STATES (Correct / Partial / Wrong)
