@@ -646,6 +646,9 @@ function submitWork() {
 
   const deadlineNow = getDeadlineStatus(new Date());
 
+  // ✅ Freeze submission time ONCE (so PDF always shows "Submitted:" correctly)
+  const submittedAtIso = new Date().toISOString();
+
   finalData = {
     studentName,
     studentId: document.getElementById("id").value.trim(),
@@ -655,8 +658,7 @@ function submitWork() {
     points: total,
     totalPoints,
     pct,
-    // ✅ Submission timestamp (used for PDF "Submitted:" line)
-    timestamp: new Date().toISOString(),
+    timestamp: submittedAtIso,
     deadlineInfo: deadlineNow
   };
 
@@ -688,8 +690,8 @@ function back() {
 // with consistent width + more than one question per page
 // and device-native sharing when available
 //
-// ✅ Updates added:
-// - PDF shows "Submitted:" based on finalData.timestamp
+// ✅ Includes:
+// - PDF header shows Submitted date/time (from submitWork timestamp)
 // - Filename includes StudentNo + StudentName + AssessmentTitle
 // ------------------------------------------------------------
 async function emailWork() {
@@ -707,8 +709,13 @@ async function emailWork() {
   }
 
   // Formatting helpers
-  const formatDateTime = iso =>
-    iso ? new Date(iso).toLocaleString() : new Date().toLocaleString();
+  const formatDateTime = iso => {
+    try {
+      return iso ? new Date(iso).toLocaleString() : "";
+    } catch {
+      return "";
+    }
+  };
 
   const safePart = s =>
     (s || "")
@@ -805,8 +812,9 @@ async function emailWork() {
         studentLineY + 29
       );
 
-      // Deadline info from submitWork()
+      // Deadline info (optional)
       let infoY = studentLineY + 36;
+
       if (finalData.deadlineInfo) {
         const info = finalData.deadlineInfo;
         pdf.setFontSize(11);
@@ -831,22 +839,15 @@ async function emailWork() {
         }
 
         infoY += 7;
-
-        // ✅ Submission date (when "Submit" was clicked)
-        pdf.setTextColor(0, 0, 0);
-        pdf.setFontSize(10);
-        pdf.text(`Submitted: ${formatDateTime(finalData.timestamp)}`, 10, infoY);
-        infoY += 6;
-
-        // ✅ PDF generation time (when file was created)
-        pdf.text(`PDF Generated: ${new Date().toLocaleString()}`, 10, infoY);
-      } else {
-        // No deadline info – still show submitted + generated
-        pdf.setTextColor(0, 0, 0);
-        pdf.setFontSize(10);
-        pdf.text(`Submitted: ${formatDateTime(finalData.timestamp)}`, 10, studentLineY + 36);
-        pdf.text(`PDF Generated: ${new Date().toLocaleString()}`, 10, studentLineY + 42);
       }
+
+      // ✅ ALWAYS show submission timestamp + PDF generated timestamp
+      pdf.setTextColor(0, 0, 0);
+      pdf.setFontSize(10);
+      const submittedStr = formatDateTime(finalData.timestamp);
+      pdf.text(`Submitted: ${submittedStr || "Unknown"}`, 10, infoY);
+      infoY += 6;
+      pdf.text(`PDF Generated: ${new Date().toLocaleString()}`, 10, infoY);
     } else {
       // Compact but still clear header on later pages
       pdf.text(`Student: ${finalData.studentName} (${finalData.studentId})`, 10, studentLineY);
@@ -856,10 +857,6 @@ async function emailWork() {
         pdf.text(`Part: ${finalData.assessmentSubtitle}`, 10, studentLineY + 14);
         pdf.setFontSize(12);
       }
-      // If you want submission date on EVERY page too, uncomment:
-      // pdf.setFontSize(10);
-      // pdf.text(`Submitted: ${formatDateTime(finalData.timestamp)}`, 10, studentLineY + 21);
-      // pdf.setFontSize(12);
     }
   };
 
