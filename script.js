@@ -867,7 +867,7 @@ async function emailWork() {
   // ---------- CAPTURE EACH BLOCK SEPARATELY (NO MID-QUESTION CUTS) ----------
   for (const block of blocks) {
     const canvas = await window.html2canvas(block, {
-      scale: 1.5,
+      scale: 2,
       width: TARGET_WIDTH,
       windowWidth: TARGET_WIDTH,
       useCORS: true,
