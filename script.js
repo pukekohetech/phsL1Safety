@@ -764,7 +764,7 @@ async function emailWork() {
   // otherwise the html2canvas images cover the header lines.
   const marginLeft = 10;
   const marginRight = 10;
-  const marginTop = 95;     // ✅ prevents overlap (was 70)
+  const marginTop = 80;     // ✅ prevents overlap (was 70)
   const marginBottom = 10;
   const usableHeight = pageHeight - marginTop - marginBottom;
 
