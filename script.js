@@ -863,7 +863,7 @@ async function emailWork() {
   // ---------- LAYOUT CONSTANTS ----------
   const marginLeft = 10;
   const marginRight = 10;
-  const marginTop = 70;     // space for header + meta
+  const marginTop = 95;     // space for header + meta
   const marginBottom = 10;  // footer
   const usableHeight = pageHeight - marginTop - marginBottom;
 
