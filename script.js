@@ -289,12 +289,26 @@ function loadAssessment() {
     p.innerHTML = q.text;
     wrap.appendChild(p);
 
-    if (q.image) {
-      const img = document.createElement("img");
-      img.src = q.image;
-      img.alt = "Question image";
-      wrap.appendChild(img);
+if (q.image) {
+  const img = document.createElement("img");
+  img.alt = "Question image";
+  img.loading = "lazy"; // optional
+
+  img.onerror = function () {
+    // prevent infinite loop if blank.jpg is also missing
+    if (!this.dataset.fallbackTried) {
+      this.dataset.fallbackTried = "1";
+      this.src = "blank.jpg"; // or "images/blank.jpg" if it's in a folder
+    } else {
+      // last resort: hide the broken image icon
+      this.style.display = "none";
     }
+  };
+
+  img.src = q.image;
+  wrap.appendChild(img);
+}
+
 
     let field;
     const fieldId = "q" + q.id;
