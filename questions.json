@@ -219,7 +219,7 @@
         {
           "id": "q2c_spraying_glue",
           "text": "Activity 3: Spraying glue – what is the appropriate respiratory protection?",
-          "image": "q2c_spraying_glue.jpg",
+          "image": "q2d_spraying_two_pot.jpg",
           "hint": "Think: chemical vapours/aerosols (filters matter).",
           "type": "mc",
           "maxPoints": 1,
@@ -240,7 +240,7 @@
         {
           "id": "q2d_spraying_two_pot",
           "text": "Activity 4: Spraying ‘two-pot’ paint – what is the appropriate respiratory protection?",
-          "image": "q2d_spraying_two_pot.jpg",
+          "image": "q2c_spraying_glue.jpg",
           "hint": "Think: the highest-risk spray process in the list (needs its own clean air supply).",
           "type": "mc",
           "maxPoints": 1,
