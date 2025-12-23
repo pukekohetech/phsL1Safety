@@ -256,11 +256,12 @@ textarea {
 
 
 .question img {
-  display: block;              /* important: allows auto margins to work */
-  max-width: 100%;
-  height: auto;
+  display: block;
+  width: 100%;
+  height: 240px;       /* fixed height */
+  object-fit: cover;   /* crops to fill */
   border-radius: 10px;
-  margin: 10px auto 12px;      /* centers horizontally */
+  margin: 10px auto 12px;
   border: 1px solid rgba(148, 163, 184, 0.35);
 }
 
