@@ -160,7 +160,8 @@
           "rubric": [
             {
               "points": 1,
-              "check": "^Infrared and UV radiation \(arc welding\)$",
+             "check": "^Infrared and UV radiation \\(arc welding\\)$",
+
               "flags": "i"
             }
           ],
