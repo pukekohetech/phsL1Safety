@@ -258,7 +258,7 @@ textarea {
 .question img {
   display: block;
   max-width: 100%;
-  max-height: 240px;   /* change this */
+  max-height: 340px;   /* change this */
   height: auto;
   width: auto;
   object-fit: contain;
