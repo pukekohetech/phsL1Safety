@@ -269,56 +269,56 @@
       "credits": 2,
       "standardType": "internal",
       "questions": [
-        {
-          "id": "q1_rules",
-          "text": "Compile a list of rules/codes of conduct that would ensure safe working practices in a BCATS environment.\n\nExample: Wear appropriate eye protection at all times.",
-          "image": "q1_rules.jpg",
-          "hint": "Cover behaviour, PPE, clothing/hair, housekeeping, supervision, and reporting hazards.",
-          "type": "long",
-          "maxPoints": 8,
-          "rubric": [
-            {
-              "points": 1,
-              "check": "\\b(PPE|safety (glasses|goggles)|eye protection|ear(muffs|plugs)|mask|respirator|gloves|boots|helmet|apron|overalls)\\b",
-              "flags": "i"
-            },
-            {
-              "points": 1,
-              "check": "\\b(tidy|clean|sweep|put away|store tools|keep (bench|floor) clear)\\b",
-              "flags": "i"
-            },
-            {
-              "points": 1,
-              "check": "\\b(no (running|horseplay)|don'?t (mess about|distract))\\b",
-              "flags": "i"
-            },
-            {
-              "points": 1,
-              "check": "\\b(tie back (hair|long hair)|hair restraint)\\b",
-              "flags": "i"
-            },
-            {
-              "points": 1,
-              "check": "\\b(no (loose|baggy) (clothing|sleeves)|remove (jewellery|jewelry)|no (necklace|ring|bracelet))\\b",
-              "flags": "i"
-            },
-            {
-              "points": 1,
-              "check": "\\b(report|tell (the )?teacher|faulty|broken|damaged|unsafe)\\b",
-              "flags": "i"
-            },
-            {
-              "points": 1,
-              "check": "\\b(ask|permission|supervision|teacher)\\b",
-              "flags": "i"
-            },
-            {
-              "points": 1,
-              "check": "\\b(lift(ing)?|manual handling|bend (your )?knees|team lift|ask for help)\\b",
-              "flags": "i"
-            }
-          ]
-        },
+{
+"id": "q1_rules",
+"text": "Compile a list of rules/codes of conduct that would ensure safe working practices in a BCATS environment.\n\nExample: Wear appropriate eye protection at all times.",
+"image": "q1_rules.jpg",
+"hint": "Cover behaviour, PPE, clothing/hair, housekeeping, supervision, and reporting hazards.",
+"type": "long",
+"maxPoints": 8,
+"rubric": [
+{
+"points": 1,
+"check": "\b(PPE|personal protective equipment|protective (equipment|gear|clothing)|safety (gear|equipment)|eye protection|safety (glasses|goggles)|goggles|glasses|hearing protection|ear\s?(muffs|plugs)|earmuffs|earplugs|respirator|dust mask|face mask|mask|gloves|protective gloves|boots|safety boots|sturdy footwear|closed\s?-?toe(d)? (shoes|footwear)|steel\s?-?(toe|cap) boots?|helmet|hard hat|apron|overalls)\b",
+"flags": "i"
+},
+{
+"points": 1,
+"check": "\b(tidy|clean|housekeeping|organis(e|z)ed|pack\s?up|tidy\s?up|clean\s?up|sweep|vacuum|wipe\s?up|put\s?away|put\s?(tools|equipment)\s?(away|back)|return\s?(tools|equipment)|store\s?(tools|materials|equipment)|dispose\s?of|rubbish|bin|offcuts|sawdust|wood\s?shavings|spill(s)?|keep\s?(bench|benches|floor|floors|walkways|pathways|aisles)\s?clear|bench\s?clear|floor\s?clear|don'?t\s?leave\s?(tools|cords|offcuts)\s?(on\s?the\s?floor|lying\s?around))\b",
+"flags": "i"
+},
+{
+"points": 1,
+"check": "\b(no\s?running|don'?t\s?run|do\s?not\s?run|walk\s?at\s?all\s?times|always\s?walk|walk,?\s?don'?t\s?run|move\s?carefully|no\s?horseplay|no\s?(messing|mucking|fooling|playing)\s?around|don'?t\s?(mess|muck|fool|play)\s?around|no\s?roughhousing|no\s?larking\s?around|no\s?pranks?|no\s?pushing|no\s?shoving|no\s?throwing|don'?t\s?distract|do\s?not\s?distract|no\s?distractions?|don'?t\s?interfere|do\s?not\s?interfere|stay\s?focused|pay\s?attention|be\s?(responsible|sensible)|act\s?responsibly|behav(e|i)our|no\s?(yelling|shouting)|no\s?loud\s?behaviou?r)\b",
+"flags": "i"
+},
+{
+"points": 1,
+"check": "\b(tie\s?back\s?(long\s?)?hair|tie\s?(your\s?)?hair\s?(back|up)|put\s?(your\s?)?hair\s?up|secure\s?(your\s?)?hair|hair\s?restraint|hair\s?net|ponytail|bun|no\s?loose\s?hair|hair\s?must\s?be\s?(tied|restrained|secured))\b",
+"flags": "i"
+},
+{
+"points": 1,
+"check": "\b(no\s?(loose|baggy)\s?(clothing|clothes)|don'?t\s?wear\s?(loose|baggy)\s?(clothing|clothes)|avoid\s?loose\s?sleeves|no\s?loose\s?sleeves|roll\s?up\s?(your\s?)?sleeves|secure\s?sleeves|wear\s?(fitted|tight)\s?(clothing|clothes)|tuck\s?in\s?(clothing|shirt)|remove\s?jewell?ery|take\s?off\s?jewell?ery|no\s?jewell?ery|don'?t\s?wear\s?jewell?ery|no\s?(rings?|bracelets?|necklaces?|chains?)|take\s?off\s?(rings?|bracelets?|necklaces?|watches?)|no\s?watches?|no\s?dangling\s?earrings?|no\s?scarves?|no\s?ties?|no\s?drawstrings?|hoodie\s?strings?|tie\s?up\s?(hoodie\s?)?strings?)\b",
+"flags": "i"
+},
+{
+"points": 1,
+"check": "\b(report|tell\s?(the\s?)?(teacher|instructor)|inform\s?(the\s?)?(teacher|instructor)|let\s?(the\s?)?(teacher|instructor)\s?know|report\s?(hazards?|problems?|issues?|concerns?|accidents?|injuries?|near\s?misses?)|unsafe\s?(behaviou?r|conditions?)|hazard(s)?|faulty|broken|damaged|unsafe\s?(tool|tools|equipment|machine|machines)|do\s?not\s?use\s?(broken|faulty|damaged)\s?(tools|equipment)|if\s?something\s?is\s?(broken|unsafe)\s?,?\s?tell\s?(the\s?)?teacher)\b",
+"flags": "i"
+},
+{
+"points": 1,
+"check": "\b(ask\s?(the\s?)?teacher|ask\s?permission|get\s?permission|check\s?with\s?(the\s?)?teacher|only\s?use\s?(machines|equipment|tools)\s?(with|under)\s?(teacher\s?)?supervision|teacher\s?supervision|with\s?the\s?teacher\s?present|teacher\s?present|follow\s?(the\s?)?teacher('?s)?\s?(instructions|rules)|listen\s?to\s?(the\s?)?teacher|wait\s?for\s?instructions|don'?t\s?touch\s?(machines|tools)\s?(unless|until)\s?(told|shown)|get\s?trained|trained\s?before\s?using|only\s?use\s?tools\s?you\s?have\s?been\s?trained\s?on|ask\s?for\s?help\s?if\s?unsure|if\s?you('?re|\s?are)\s?unsure\s?ask|never\s?work\s?alone|always\s?work\s?under\s?supervision)\b",
+"flags": "i"
+},
+{
+"points": 1,
+"check": "\b(lift(ing)?|manual\s?handling|handle\s?safely|safe\s?lifting|correct\s?lifting|lift\s?correctly|lift\s?with\s?(your\s?)?legs|bend\s?(your\s?)?knees|keep\s?(your\s?)?back\s?straight|don'?t\s?lift\s?with\s?(your\s?)?back|ask\s?for\s?help\s?(lifting|to\s?lift)?|get\s?help\s?lifting|team\s?lift|lift\s?as\s?a\s?team|two\s?person\s?lift|use\s?a\s?trolley|use\s?a\s?cart|don'?t\s?lift\s?(heavy|too\s?heavy)|don'?t\s?carry\s?(heavy|too\s?heavy)|carry\s?materials\s?safely)\b",
+"flags": "i"
+}
+]
+},
         {
           "id": "q1b_consequences",
           "text": "For each rule listed in Question 1 (a–h), describe a possible consequence if that rule is not followed.",
