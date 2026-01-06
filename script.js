@@ -660,7 +660,7 @@ async function fetchOptionalPdf(url) {
 }
 
 
-async function mergePdfs(frontPdfArrayBuffer, mainPdfBlob) {
+async function appendPdf(mainPdfBlob, extraPdfArrayBuffer) {
   // Load pdf-lib if needed
   const load = src => new Promise((res, rej) => {
     const s = document.createElement("script");
@@ -676,7 +676,7 @@ async function mergePdfs(frontPdfArrayBuffer, mainPdfBlob) {
 
   if (!window.PDFLib) {
     console.warn("pdf-lib failed to load; sending original PDF only.");
-    return mainPdfBlob; // fallback: return original
+    return mainPdfBlob;
   }
 
   const { PDFDocument } = window.PDFLib;
@@ -685,16 +685,17 @@ async function mergePdfs(frontPdfArrayBuffer, mainPdfBlob) {
   const mainDoc = await PDFDocument.load(mainBytes);
   const mergedDoc = await PDFDocument.create();
 
-  // 1) Copy all pages from assessment.pdf first
-  if (frontPdfArrayBuffer) {
-    const frontDoc = await PDFDocument.load(frontPdfArrayBuffer);
-    const frontPages = await mergedDoc.copyPages(frontDoc, frontDoc.getPageIndices());
-    frontPages.forEach(p => mergedDoc.addPage(p));
-  }
-
-  // 2) Copy all pages from the generated jsPDF PDF second
+  // 1) Copy all generated pages first
   const mainPages = await mergedDoc.copyPages(mainDoc, mainDoc.getPageIndices());
   mainPages.forEach(p => mergedDoc.addPage(p));
+
+  // 2) Then copy the assessment PDF pages last
+  if (extraPdfArrayBuffer) {
+    const extraDoc = await PDFDocument.load(extraPdfArrayBuffer);
+    
+    const extraPages = await mergedDoc.copyPages(extraDoc, [0]);
+    extraPages.forEach(p => mergedDoc.addPage(p));
+  }
 
   const mergedBytes = await mergedDoc.save();
   return new Blob([mergedBytes], { type: "application/pdf" });
@@ -901,12 +902,17 @@ async function emailWork() {
 
 let pdfBlob = pdf.output("blob");
 
-// ✅ If assessment.pdf exists, merge it in as FRONT pages
+// ✅ If assessment.pdf exists, append it to the END
 const assessmentBuf = await fetchOptionalPdf("assessment.pdf");
 if (assessmentBuf) {
-  pdfBlob = await mergePdfs(assessmentBuf, pdfBlob);
+  try {
+    pdfBlob = await appendPdf(pdfBlob, assessmentBuf);
+  } catch (e) {
+    console.warn("assessment.pdf merge failed, sending original PDF only:", e);
+  }
 }
 
+  
   const fileName =
     `${safePart(finalData.studentId || "student")}_` +
     `${safePart(finalData.studentName || "name")}_` +
