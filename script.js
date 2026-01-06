@@ -989,7 +989,7 @@ let pdfBlob = pdf.output("blob");
 
 // ✅ Fill + append sign-off sheet as last page(s)
 try {
-  const signoffBytes = await fetchOptionalPdfBytes("assessment_signoff.pdf");
+  const signoffBytes = await fetchOptionalPdfBytes("assessment.pdf");
   // ^ name it whatever you want — see note below
 
   if (signoffBytes) {
