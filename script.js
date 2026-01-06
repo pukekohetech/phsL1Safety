@@ -84,6 +84,91 @@ const MIN_PCT_FOR_SUBMIT = 100;
 // ------------------------------------------------------------
 // Load questions.json (now also extracts APP_ID & VERSION & DEADLINE)
 // ------------------------------------------------------------
+async function loadScriptOnce(src) {
+  if (document.querySelector(`script[src="${src}"]`)) return;
+  await new Promise((res, rej) => {
+    const s = document.createElement("script");
+    s.src = src;
+    s.onload = res;
+    s.onerror = rej;
+    document.head.appendChild(s);
+  });
+}
+
+async function fetchOptionalPdfBytes(url) {
+  try {
+    const res = await fetch(url, { cache: "no-cache" });
+    if (!res.ok) return null;
+    const buf = await res.arrayBuffer();
+    if (!buf || buf.byteLength < 100) return null;
+    return buf;
+  } catch {
+    return null;
+  }
+}
+
+async function fillPdfForm(pdfBytes, finalData) {
+  // Load pdf-lib if needed
+  if (!window.PDFLib) {
+    await loadScriptOnce("https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js");
+  }
+  if (!window.PDFLib) throw new Error("pdf-lib failed to load");
+
+  const { PDFDocument } = window.PDFLib;
+
+  const doc = await PDFDocument.load(pdfBytes);
+  const form = doc.getForm();
+
+  // ✅ Fill fields by name
+  const safeSet = (fieldName, value) => {
+    try {
+      form.getTextField(fieldName).setText(value || "");
+    } catch (e) {
+      console.warn(`Field not found: ${fieldName}`);
+    }
+  };
+
+  safeSet("StudentName", finalData.studentName);
+  safeSet("AssessorName", finalData.teacherName);
+  safeSet("Date", new Date().toLocaleDateString("en-NZ")); // dd/mm/yyyy
+
+  // Optional extras
+  // safeSet("Result", finalData.pct >= 100 ? "A" : "N");
+  // safeSet("AssessorSignature", ""); // leave blank
+
+  // ✅ Make it print-ready and stop further editing
+  form.flatten();
+
+  return await doc.save();
+}
+
+async function appendPdfBytesToBlob(mainPdfBlob, extraPdfBytes) {
+  if (!window.PDFLib) {
+    await loadScriptOnce("https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js");
+  }
+  if (!window.PDFLib) throw new Error("pdf-lib failed to load");
+
+  const { PDFDocument } = window.PDFLib;
+
+  const mainBytes = await mainPdfBlob.arrayBuffer();
+  const mainDoc = await PDFDocument.load(mainBytes);
+  const extraDoc = await PDFDocument.load(extraPdfBytes);
+
+  const merged = await PDFDocument.create();
+
+  // main pages first
+  const mainPages = await merged.copyPages(mainDoc, mainDoc.getPageIndices());
+  mainPages.forEach(p => merged.addPage(p));
+
+  // extra pages last
+  const extraPages = await merged.copyPages(extraDoc, extraDoc.getPageIndices());
+  extraPages.forEach(p => merged.addPage(p));
+
+  const mergedBytes = await merged.save();
+  return new Blob([mergedBytes], { type: "application/pdf" });
+}
+
+
 async function loadQuestions() {
   const loadingEl = document.getElementById("loading");
   if (loadingEl) loadingEl.textContent = "Loading questions…";
@@ -901,6 +986,20 @@ async function emailWork() {
   }
 
 let pdfBlob = pdf.output("blob");
+
+// ✅ Fill + append sign-off sheet as last page(s)
+try {
+  const signoffBytes = await fetchOptionalPdfBytes("assessment_signoff.pdf");
+  // ^ name it whatever you want — see note below
+
+  if (signoffBytes) {
+    const filledBytes = await fillPdfForm(signoffBytes, finalData);
+    pdfBlob = await appendPdfBytesToBlob(pdfBlob, filledBytes);
+  }
+} catch (e) {
+  console.warn("Sign-off sheet fill/append failed, continuing without it:", e);
+}
+
 
 // ✅ If assessment.pdf exists, append it to the END
 const assessmentBuf = await fetchOptionalPdf("assessment.pdf");
