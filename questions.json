@@ -635,111 +635,122 @@
   ]
 }
 ,
-        {
-          "id": "q8a_router",
-          "text": "Q8(a): You are using an electric router to shape the edges of a rimu table top.\nIdentify at least FOUR hazards and the PPE that will help.",
-          "image": "q8a_router.jpg",
-          "hint": "Consider hazards to eyes, lungs, hearing, body/clothing, and feet.",
-          "type": "long",
-          "maxPoints": 4,
-          "rubric": [
-            {
-              "points": 1,
-              "check": "\\b(eye|glasses|goggles|face shield|chips?|particles?)\\b",
-              "flags": "i"
-            },
-            {
-              "points": 1,
-              "check": "\\b(dust|mask|respirator|extraction|lungs?)\\b",
-              "flags": "i"
-            },
-            {
-              "points": 1,
-              "check": "\\b(noise|ear(muffs|plugs)|hearing)\\b",
-              "flags": "i"
-            },
-            {
-              "points": 1,
-              "check": "\\b(boots?|shoes?|steel cap|foot|drop(ped)?|falling)\\b",
-              "flags": "i"
-            }
-          ]
-        },
-        {
-          "id": "q8b_concrete",
-          "text": "Q8(b): You are breaking up a concrete path using a sledge hammer.\nIdentify at least THREE hazards and the PPE that will help.",
-          "image": "q8b_concrete.jpg",
-          "hint": "Think: flying debris, dust, impact noise, hands, and feet.",
-          "type": "long",
-          "maxPoints": 3,
-          "rubric": [
-            {
-              "points": 1,
-              "check": "\\b(eye|glasses|goggles|debris|flying)\\b",
-              "flags": "i"
-            },
-            {
-              "points": 1,
-              "check": "\\b(dust|mask|respirator)\\b|\\b(lungs?|inhal(e|ation))\\b",
-              "flags": "i"
-            },
-            {
-              "points": 1,
-              "check": "\\b(boots?|shoes?|steel cap|foot)\\b|\\b(gloves?|hand protection|blister|impact|abrasion)\\b",
-              "flags": "i"
-            }
-          ]
-        },
-        {
-          "id": "q8c_lathe",
-          "text": "Q8(c): You are turning a bowl on a wood lathe.\nIdentify at least THREE hazards and the PPE that will help.",
-          "image": "q8c_lathe.jpg",
-          "hint": "Think: high-speed chips, dust, hearing, hair/clothing.",
-          "type": "long",
-          "maxPoints": 3,
-          "rubric": [
-            {
-              "points": 1,
-              "check": "\\b(face shield|goggles|eye|chips?|high (speed|velocity))\\b",
-              "flags": "i"
-            },
-            {
-              "points": 1,
-              "check": "\\b(dust|mask|respirator|extraction)\\b",
-              "flags": "i"
-            },
-            {
-              "points": 1,
-              "check": "\\b(ear(muffs|plugs)|hearing|noise)\\b|\\b(tie back hair|no loose clothing|entangle)\\b",
-              "flags": "i"
-            }
-          ]
-        },
-        {
-          "id": "q8d_unloading_plywood",
-          "text": "Q8(d): You are unloading sheets of plywood off a truck and stacking them in a storage shed.\nIdentify at least THREE hazards and the PPE that will help.",
-          "image": "q8d_unloading_plywood.jpg",
-          "hint": "Think: manual handling, sharp edges/splinters, and feet if sheets drop.",
-          "type": "long",
-          "maxPoints": 3,
-          "rubric": [
-            {
-              "points": 1,
-              "check": "\\b(lift(ing)?|manual handling|back|strain|team lift)\\b",
-              "flags": "i"
-            },
-            {
-              "points": 1,
-              "check": "\\b(gloves?|splinter|sharp edge|abrasion)\\b",
-              "flags": "i"
-            },
-            {
-              "points": 1,
-              "check": "\\b(boots?|shoes?|steel cap|foot|drop(ped)?|falling)\\b",
-              "flags": "i"
-            }
-          ]
-        }
+{
+  "id": "q8a_router",
+  "text": "Q8(a): You are using an electric router to shape the edges of a rimu table top.\nIdentify at least FOUR hazards and the PPE that will help.",
+  "image": "q8a_router.jpg",
+  "hint": "Consider hazards to eyes, lungs, hearing, body/clothing, hands and feet.",
+  "type": "long",
+  "maxPoints": 4,
+  "rubric": [
+    {
+      "points": 1,
+      "check": "\\b(eye|eyes|safety\\s?glasses|glasses|goggles|face\\s?shield|visor|chip(s)?|splinter(s)?|debris|particle(s)?|flying)\\b",
+      "flags": "i"
+    },
+    {
+      "points": 1,
+      "check": "\\b(dust|sawdust|wood\\s?dust|fine\\s?dust|mask|dust\\s?mask|respirator|extraction|vacuum|lungs?|breath(ing)?|inhale(d)?)\\b",
+      "flags": "i"
+    },
+    {
+      "points": 1,
+      "check": "\\b(noise|loud|hearing|hearing\\s?loss|tinnitus|ringing\\s?in\\s?ears|ear\\s?muffs?|earmuffs?|ear\\s?plugs?|earplugs?)\\b",
+      "flags": "i"
+    },
+    {
+      "points": 1,
+      "check": "\\b(boots?|safety\\s?boots?|shoes?|closed\\s?toe(d)?\\s?(shoes?|footwear)|steel\\s?(cap|toe)|foot|feet|toe(s)?|drop(ped)?|fall(ing)?|crush(ed|ing)?)\\b",
+      "flags": "i"
+    },
+    {
+      "points": 1,
+      "check": "\\b(gloves?|hand\\s?protection|hands?|blister(s)?|abrasion(s)?|cut(s)?|scratch(es|ed)?|splinter(s)?|sharp\\s?edge)\\b",
+      "flags": "i"
+    },
+    {
+      "points": 1,
+      "check": "\\b(body\\s?protection|overalls?|apron|long\\s?sleeves?|long\\s?pants?|cover\\s?up|protective\\s?clothing|close\\s?fitting|tight\\s?clothing|no\\s?loose\\s?clothing|tie\\s?back\\s?hair|hair\\s?(tied|secured)|remove\\s?jewell?ery|entangle(d)?|caught|pulled\\s?in)\\b",
+      "flags": "i"
+    }
+  ]
+},
+{
+  "id": "q8b_concrete",
+  "text": "Q8(b): You are breaking up a concrete path using a sledge hammer.\nIdentify at least THREE hazards and the PPE that will help.",
+  "image": "q8b_concrete.jpg",
+  "hint": "Think: flying debris, dust, impact noise, hands, and feet.",
+  "type": "long",
+  "maxPoints": 3,
+  "rubric": [
+    {
+      "points": 1,
+      "check": "\\b(eye|eyes|safety\\s?glasses|glasses|goggles|face\\s?shield|visor|flying|debris|chip(s)?|fragment(s)?|shard(s)?|particles?|pieces?\\s?of\\s?concrete|rock(s)?|stone(s)?)\\b",
+      "flags": "i"
+    },
+    {
+      "points": 1,
+      "check": "\\b(dust|concrete\\s?dust|cement\\s?dust|silica|fine\\s?dust|mask|dust\\s?mask|respirator|lungs?|breath(ing)?|breathe\\s?in|inhale(d)?|respiratory)\\b",
+      "flags": "i"
+    },
+    {
+      "points": 1,
+      "check": "\\b(noise|loud|impact\\s?noise|hearing|hearing\\s?loss|tinnitus|ringing\\s?in\\s?ears|ear\\s?muffs?|earmuffs?|ear\\s?plugs?|earplugs?)\\b|\\b(gloves?|hand\\s?protection|hands?|blister(s)?|abrasion(s)?|impact|vibration)\\b|\\b(boots?|safety\\s?boots?|shoes?|closed\\s?toe(d)?\\s?(shoes?|footwear)|steel\\s?(cap|toe)|foot|feet|toe(s)?|drop(ped)?|fall(ing)?|crush(ed|ing)?)\\b|\\b(overalls?|coveralls?|protective\\s?clothing|long\\s?sleeves?|body\\s?protection|abrasion(s)?|bruise(s)?)\\b",
+      "flags": "i"
+    }
+  ]
+},
+{
+  "id": "q8c_lathe",
+  "text": "Q8(c): You are turning a bowl on a wood lathe.\nIdentify at least THREE hazards and the PPE that will help.",
+  "image": "q8c_lathe.jpg",
+  "hint": "Think: high-speed chips, dust, hearing, hair/clothing.",
+  "type": "long",
+  "maxPoints": 3,
+  "rubric": [
+    {
+      "points": 1,
+      "check": "\\b(face\\s?shield|visor|goggles|safety\\s?glasses|glasses|eye|eyes|chip(s)?|splinter(s)?|shavings|debris|flying|high\\s?(speed|velocity)|bowl\\s?(breaks?|comes?\\s?off)|piece\\s?flies?)\\b",
+      "flags": "i"
+    },
+    {
+      "points": 1,
+      "check": "\\b(dust|sawdust|wood\\s?dust|fine\\s?dust|mask|dust\\s?mask|respirator|extraction|vacuum|lungs?|breath(ing)?|inhale(d)?|respiratory)\\b",
+      "flags": "i"
+    },
+    {
+      "points": 1,
+      "check": "\\b(noise|loud|hearing|hearing\\s?loss|tinnitus|ringing\\s?in\\s?ears|ear\\s?muffs?|earmuffs?|ear\\s?plugs?|earplugs?)\\b|\\b(hair|long\\s?hair|clothing|sleeve(s)?|jewell?ery|necklace|bracelet|ring|watch|drawstring(s)?|hoodie\\s?string(s)?)\\b.*\\b(caught|entangle(d)?|tangle(d)?|pulled\\s?in|dragged\\s?in|wrapped)\\b|\\b(tie\\s?back\\s?hair|remove\\s?jewell?ery|no\\s?loose\\s?clothing|close\\s?fitting|roll\\s?up\\s?sleeves?)\\b",
+      "flags": "i"
+    }
+  ]
+},
+{
+  "id": "q8d_unloading_plywood",
+  "text": "Q8(d): You are unloading sheets of plywood off a truck and stacking them in a storage shed.\nIdentify at least THREE hazards and the PPE that will help.",
+  "image": "q8d_unloading_plywood.jpg",
+  "hint": "Think: manual handling, sharp edges/splinters, and feet if sheets drop.",
+  "type": "long",
+  "maxPoints": 3,
+  "rubric": [
+    {
+      "points": 1,
+      "check": "\\b(lift(ing)?|manual\\s?handling|heavy|back|back\\s?strain|strain(ed)?|sprain(ed)?|muscle|bend\\s?(your\\s?)?knees|lift\\s?with\\s?(your\\s?)?legs|team\\s?lift|two\\s?person\\s?lift|ask\\s?for\\s?help|trolley|cart)\\b",
+      "flags": "i"
+    },
+    {
+      "points": 1,
+      "check": "\\b(gloves?|hand\\s?protection|splinter(s)?|sharp\\s?edge(s)?|cut(s)?|scratch(es|ed)?|abrasion(s)?|puncture(s)?|pinch(ed)?|hands?)\\b",
+      "flags": "i"
+    },
+    {
+      "points": 1,
+      "check": "\\b(boots?|safety\\s?boots?|shoes?|closed\\s?toe(d)?\\s?(shoes?|footwear)|steel\\s?(cap|toe)|foot|feet|toe(s)?|drop(ped)?|fall(ing)?|crush(ed|ing)?)\\b|\\b(trip(ped)?|slip(ped)?|fall|stumble(d)?|clutter|mess|unsafe\\s?stack|unstable\\s?stack|sheet(s)?\\s?fall(ing)?)\\b|\\b(overalls?|coveralls?|long\\s?sleeves?|protective\\s?clothing|body\\s?protection|bruise(s)?|impact)\\b|\\b(dust|mask|respirator|sawdust|wood\\s?dust|eye|eyes|glasses|goggles)\\b",
+      "flags": "i"
+    }
+  ]
+}
+
       ]
     },
     {
