@@ -645,6 +645,66 @@ function back() {
 // Email / PDF – streamlined header: ONLY deadline-relative submission line
 // + filename StudentNo_StudentName_AssessmentTitle.pdf
 // ------------------------------------------------------------
+async function fetchOptionalPdf(url) {
+  try {
+    const res = await fetch(url, { cache: "no-cache" });
+
+    // If missing, return null (same behaviour as your current code)
+    if (!res.ok) return null;
+
+    const buf = await res.arrayBuffer();
+
+    // If it's empty, also treat as missing
+    if (!buf || buf.byteLength < 100) return null;
+
+    return buf;
+  } catch (e) {
+    return null;
+  }
+}
+
+async function mergePdfs(frontPdfArrayBuffer, mainPdfBlob) {
+  // Load pdf-lib if needed
+  const load = src => new Promise((res, rej) => {
+    const s = document.createElement("script");
+    s.src = src;
+    s.onload = res;
+    s.onerror = rej;
+    document.head.appendChild(s);
+  });
+
+  if (!window.PDFLib) {
+    await load("https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js");
+  }
+
+  if (!window.PDFLib) {
+    console.warn("pdf-lib failed to load; sending original PDF only.");
+    return mainPdfBlob; // fallback: return original
+  }
+
+  const { PDFDocument } = window.PDFLib;
+
+  const mainBytes = await mainPdfBlob.arrayBuffer();
+  const mainDoc = await PDFDocument.load(mainBytes);
+  const mergedDoc = await PDFDocument.create();
+
+  // 1) Copy all pages from assessment.pdf first
+  if (frontPdfArrayBuffer) {
+    const frontDoc = await PDFDocument.load(frontPdfArrayBuffer);
+    const frontPages = await mergedDoc.copyPages(frontDoc, frontDoc.getPageIndices());
+    frontPages.forEach(p => mergedDoc.addPage(p));
+  }
+
+  // 2) Copy all pages from the generated jsPDF PDF second
+  const mainPages = await mergedDoc.copyPages(mainDoc, mainDoc.getPageIndices());
+  mainPages.forEach(p => mergedDoc.addPage(p));
+
+  const mergedBytes = await mergedDoc.save();
+  return new Blob([mergedBytes], { type: "application/pdf" });
+}
+
+
+
 async function emailWork() {
   if (!finalData) return alert("Submit first!");
 
@@ -842,7 +902,13 @@ async function emailWork() {
     pdf.text(`Page ${i} of ${pageCount}`, pageWidth / 2, pageHeight - 6, { align: "center" });
   }
 
-  const pdfBlob = pdf.output("blob");
+let pdfBlob = pdf.output("blob");
+
+// ✅ If assessment.pdf exists, merge it in as FRONT pages
+const assessmentBuf = await fetchOptionalPdf("assessment.pdf");
+if (assessmentBuf) {
+  pdfBlob = await mergePdfs(assessmentBuf, pdfBlob);
+}
 
   const fileName =
     `${safePart(finalData.studentId || "student")}_` +
