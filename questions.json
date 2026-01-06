@@ -785,16 +785,17 @@
           "type": "long",
           "maxPoints": 2,
           "rubric": [
-            {
-              "points": 1,
-              "check": "\\b(dust|fumes?|vapou?r|noise|sharp|blade|splinter|chip|spark|hot|burn|chemical|spill|slip|trip|fall|electric|shock|unguarded|broken|faulty|frayed|loose|unstable|heavy|manual handling|back strain|hair|loose clothing|jandals?)\\b",
-              "flags": "i"
-            },
-            {
-              "points": 1,
-              "check": "\\b(saw|sander|router|drill|lathe|grinder|bench|machine|tool|cable|lead|extension|workshop|floor|walkway|storage|truck|plywood|timber|concrete)\\b",
-              "flags": "i"
-            }
+          {
+  "points": 1,
+  "check": "\\b(dust|sawdust|wood\\s?dust|fine\\s?dust|MDF\\s?dust|concrete\\s?dust|cement\\s?dust|silica|fumes?|vapou?r|spray|noise|loud|vibration|sharp|blade|cut|splinter|chip|debris|fragment(s)?|shard(s)?|spark(s)?|hot|heat|burn(s)?|fire|flammable|chemical(s)?|paint|glue|solvent(s)?|thinners?|spill(s)?|wet\\s?floor|clutter|mess|offcuts?|slip|trip|fall|electric(ity)?|shock|live\\s?wire|exposed\\s?wire|unguarded|guard\\s?missing|broken|faulty|frayed|unstable|heavy|manual\\s?handling|back\\s?strain|kickback|hair|jewell?ery|ring(s)?|bracelet(s)?|necklace(s)?|loose\\s?clothing|drawstring(s)?|hoodie\\s?string(s)?)\\b",
+  "flags": "i"
+}
+,
+{
+  "points": 1,
+  "check": "\\b(saw|drop\\s?saw|circular\\s?saw|mitre\\s?saw|sander|belt\\s?sander|router|drill|lathe|grinder|angle\\s?grinder|nail\\s?gun|hammer|chisel|bench|work\\s?bench|vice|clamp(s)?|machine|tool|cable|cord|lead|power\\s?lead|extension|workshop|floor|walkway|storage|shed|truck|plywood|sheet(s)?|timber|wood|concrete)\\b",
+  "flags": "i"
+}
           ]
         },
         {
@@ -866,16 +867,17 @@
           "type": "long",
           "maxPoints": 2,
           "rubric": [
-            {
-              "points": 1,
-              "check": "\\b(dust|fumes?|vapou?r|noise|sharp|blade|splinter|chip|spark|hot|burn|chemical|spill|slip|trip|fall|electric|shock|unguarded|broken|faulty|frayed|loose|unstable|heavy|manual handling|back strain|hair|loose clothing|jandals?)\\b",
-              "flags": "i"
-            },
-            {
-              "points": 1,
-              "check": "\\b(saw|sander|router|drill|lathe|grinder|bench|machine|tool|cable|lead|extension|workshop|floor|walkway|storage|truck|plywood|timber|concrete)\\b",
-              "flags": "i"
-            }
+           {
+  "points": 1,
+  "check": "\\b(dust|sawdust|wood\\s?dust|fine\\s?dust|MDF\\s?dust|concrete\\s?dust|cement\\s?dust|silica|fumes?|vapou?r|spray|noise|loud|vibration|sharp|blade|cut|splinter|chip|debris|fragment(s)?|shard(s)?|spark(s)?|hot|heat|burn(s)?|fire|flammable|chemical(s)?|paint|glue|solvent(s)?|thinners?|spill(s)?|wet\\s?floor|clutter|mess|offcuts?|slip|trip|fall|electric(ity)?|shock|live\\s?wire|exposed\\s?wire|unguarded|guard\\s?missing|broken|faulty|frayed|unstable|heavy|manual\\s?handling|back\\s?strain|kickback|hair|jewell?ery|ring(s)?|bracelet(s)?|necklace(s)?|loose\\s?clothing|drawstring(s)?|hoodie\\s?string(s)?)\\b",
+  "flags": "i"
+}
+,
+{
+  "points": 1,
+  "check": "\\b(saw|drop\\s?saw|circular\\s?saw|mitre\\s?saw|sander|belt\\s?sander|router|drill|lathe|grinder|angle\\s?grinder|nail\\s?gun|hammer|chisel|bench|work\\s?bench|vice|clamp(s)?|machine|tool|cable|cord|lead|power\\s?lead|extension|workshop|floor|walkway|storage|shed|truck|plywood|sheet(s)?|timber|wood|concrete)\\b",
+  "flags": "i"
+}
           ]
         },
         {
@@ -947,16 +949,17 @@
           "type": "long",
           "maxPoints": 2,
           "rubric": [
-            {
-              "points": 1,
-              "check": "\\b(dust|fumes?|vapou?r|noise|sharp|blade|splinter|chip|spark|hot|burn|chemical|spill|slip|trip|fall|electric|shock|unguarded|broken|faulty|frayed|loose|unstable|heavy|manual handling|back strain|hair|loose clothing|jandals?)\\b",
-              "flags": "i"
-            },
-            {
-              "points": 1,
-              "check": "\\b(saw|sander|router|drill|lathe|grinder|bench|machine|tool|cable|lead|extension|workshop|floor|walkway|storage|truck|plywood|timber|concrete)\\b",
-              "flags": "i"
-            }
+           {
+  "points": 1,
+  "check": "\\b(dust|sawdust|wood\\s?dust|fine\\s?dust|MDF\\s?dust|concrete\\s?dust|cement\\s?dust|silica|fumes?|vapou?r|spray|noise|loud|vibration|sharp|blade|cut|splinter|chip|debris|fragment(s)?|shard(s)?|spark(s)?|hot|heat|burn(s)?|fire|flammable|chemical(s)?|paint|glue|solvent(s)?|thinners?|spill(s)?|wet\\s?floor|clutter|mess|offcuts?|slip|trip|fall|electric(ity)?|shock|live\\s?wire|exposed\\s?wire|unguarded|guard\\s?missing|broken|faulty|frayed|unstable|heavy|manual\\s?handling|back\\s?strain|kickback|hair|jewell?ery|ring(s)?|bracelet(s)?|necklace(s)?|loose\\s?clothing|drawstring(s)?|hoodie\\s?string(s)?)\\b",
+  "flags": "i"
+}
+,
+{
+  "points": 1,
+  "check": "\\b(saw|drop\\s?saw|circular\\s?saw|mitre\\s?saw|sander|belt\\s?sander|router|drill|lathe|grinder|angle\\s?grinder|nail\\s?gun|hammer|chisel|bench|work\\s?bench|vice|clamp(s)?|machine|tool|cable|cord|lead|power\\s?lead|extension|workshop|floor|walkway|storage|shed|truck|plywood|sheet(s)?|timber|wood|concrete)\\b",
+  "flags": "i"
+}
           ]
         },
         {
@@ -1029,15 +1032,16 @@
           "maxPoints": 2,
           "rubric": [
             {
-              "points": 1,
-              "check": "\\b(dust|fumes?|vapou?r|noise|sharp|blade|splinter|chip|spark|hot|burn|chemical|spill|slip|trip|fall|electric|shock|unguarded|broken|faulty|frayed|loose|unstable|heavy|manual handling|back strain|hair|loose clothing|jandals?)\\b",
-              "flags": "i"
-            },
-            {
-              "points": 1,
-              "check": "\\b(saw|sander|router|drill|lathe|grinder|bench|machine|tool|cable|lead|extension|workshop|floor|walkway|storage|truck|plywood|timber|concrete)\\b",
-              "flags": "i"
-            }
+  "points": 1,
+  "check": "\\b(dust|sawdust|wood\\s?dust|fine\\s?dust|MDF\\s?dust|concrete\\s?dust|cement\\s?dust|silica|fumes?|vapou?r|spray|noise|loud|vibration|sharp|blade|cut|splinter|chip|debris|fragment(s)?|shard(s)?|spark(s)?|hot|heat|burn(s)?|fire|flammable|chemical(s)?|paint|glue|solvent(s)?|thinners?|spill(s)?|wet\\s?floor|clutter|mess|offcuts?|slip|trip|fall|electric(ity)?|shock|live\\s?wire|exposed\\s?wire|unguarded|guard\\s?missing|broken|faulty|frayed|unstable|heavy|manual\\s?handling|back\\s?strain|kickback|hair|jewell?ery|ring(s)?|bracelet(s)?|necklace(s)?|loose\\s?clothing|drawstring(s)?|hoodie\\s?string(s)?)\\b",
+  "flags": "i"
+}
+,
+{
+  "points": 1,
+  "check": "\\b(saw|drop\\s?saw|circular\\s?saw|mitre\\s?saw|sander|belt\\s?sander|router|drill|lathe|grinder|angle\\s?grinder|nail\\s?gun|hammer|chisel|bench|work\\s?bench|vice|clamp(s)?|machine|tool|cable|cord|lead|power\\s?lead|extension|workshop|floor|walkway|storage|shed|truck|plywood|sheet(s)?|timber|wood|concrete)\\b",
+  "flags": "i"
+}
           ]
         },
         {
@@ -1110,15 +1114,16 @@
           "maxPoints": 2,
           "rubric": [
             {
-              "points": 1,
-              "check": "\\b(dust|fumes?|vapou?r|noise|sharp|blade|splinter|chip|spark|hot|burn|chemical|spill|slip|trip|fall|electric|shock|unguarded|broken|faulty|frayed|loose|unstable|heavy|manual handling|back strain|hair|loose clothing|jandals?)\\b",
-              "flags": "i"
-            },
-            {
-              "points": 1,
-              "check": "\\b(saw|sander|router|drill|lathe|grinder|bench|machine|tool|cable|lead|extension|workshop|floor|walkway|storage|truck|plywood|timber|concrete)\\b",
-              "flags": "i"
-            }
+  "points": 1,
+  "check": "\\b(dust|sawdust|wood\\s?dust|fine\\s?dust|MDF\\s?dust|concrete\\s?dust|cement\\s?dust|silica|fumes?|vapou?r|spray|noise|loud|vibration|sharp|blade|cut|splinter|chip|debris|fragment(s)?|shard(s)?|spark(s)?|hot|heat|burn(s)?|fire|flammable|chemical(s)?|paint|glue|solvent(s)?|thinners?|spill(s)?|wet\\s?floor|clutter|mess|offcuts?|slip|trip|fall|electric(ity)?|shock|live\\s?wire|exposed\\s?wire|unguarded|guard\\s?missing|broken|faulty|frayed|unstable|heavy|manual\\s?handling|back\\s?strain|kickback|hair|jewell?ery|ring(s)?|bracelet(s)?|necklace(s)?|loose\\s?clothing|drawstring(s)?|hoodie\\s?string(s)?)\\b",
+  "flags": "i"
+}
+,
+           {
+  "points": 1,
+  "check": "\\b(saw|drop\\s?saw|circular\\s?saw|mitre\\s?saw|sander|belt\\s?sander|router|drill|lathe|grinder|angle\\s?grinder|nail\\s?gun|hammer|chisel|bench|work\\s?bench|vice|clamp(s)?|machine|tool|cable|cord|lead|power\\s?lead|extension|workshop|floor|walkway|storage|shed|truck|plywood|sheet(s)?|timber|wood|concrete)\\b",
+  "flags": "i"
+}
           ]
         },
         {
@@ -1190,16 +1195,16 @@
           "type": "long",
           "maxPoints": 2,
           "rubric": [
+           {
+  "points": 1,
+  "check": "\\b(dust|sawdust|wood\\s?dust|fine\\s?dust|MDF\\s?dust|concrete\\s?dust|cement\\s?dust|silica|fumes?|vapou?r|spray|noise|loud|vibration|sharp|blade|cut|splinter|chip|debris|fragment(s)?|shard(s)?|spark(s)?|hot|heat|burn(s)?|fire|flammable|chemical(s)?|paint|glue|solvent(s)?|thinners?|spill(s)?|wet\\s?floor|clutter|mess|offcuts?|slip|trip|fall|electric(ity)?|shock|live\\s?wire|exposed\\s?wire|unguarded|guard\\s?missing|broken|faulty|frayed|unstable|heavy|manual\\s?handling|back\\s?strain|kickback|hair|jewell?ery|ring(s)?|bracelet(s)?|necklace(s)?|loose\\s?clothing|drawstring(s)?|hoodie\\s?string(s)?)\\b",
+  "flags": "i"
+},
             {
-              "points": 1,
-              "check": "\\b(dust|fumes?|vapou?r|noise|sharp|blade|splinter|chip|spark|hot|burn|chemical|spill|slip|trip|fall|electric|shock|unguarded|broken|faulty|frayed|loose|unstable|heavy|manual handling|back strain|hair|loose clothing|jandals?)\\b",
-              "flags": "i"
-            },
-            {
-              "points": 1,
-              "check": "\\b(saw|sander|router|drill|lathe|grinder|bench|machine|tool|cable|lead|extension|workshop|floor|walkway|storage|truck|plywood|timber|concrete)\\b",
-              "flags": "i"
-            }
+  "points": 1,
+  "check": "\\b(saw|drop\\s?saw|circular\\s?saw|mitre\\s?saw|sander|belt\\s?sander|router|drill|lathe|grinder|angle\\s?grinder|nail\\s?gun|hammer|chisel|bench|work\\s?bench|vice|clamp(s)?|machine|tool|cable|cord|lead|power\\s?lead|extension|workshop|floor|walkway|storage|shed|truck|plywood|sheet(s)?|timber|wood|concrete)\\b",
+  "flags": "i"
+}
           ]
         },
         {
