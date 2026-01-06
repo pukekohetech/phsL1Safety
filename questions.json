@@ -279,42 +279,42 @@
 "rubric": [
 {
 "points": 1,
-"check": "\b(PPE|personal protective equipment|protective (equipment|gear|clothing)|safety (gear|equipment)|eye protection|safety (glasses|goggles)|goggles|glasses|hearing protection|ear\s?(muffs|plugs)|earmuffs|earplugs|respirator|dust mask|face mask|mask|gloves|protective gloves|boots|safety boots|sturdy footwear|closed\s?-?toe(d)? (shoes|footwear)|steel\s?-?(toe|cap) boots?|helmet|hard hat|apron|overalls)\b",
+"check": "\\b(PPE|personal protective equipment|protective (equipment|gear|clothing)|safety (gear|equipment)|eye protection|safety (glasses|goggles)|goggles|glasses|hearing protection|ear\s?(muffs|plugs)|earmuffs|earplugs|respirator|dust mask|face mask|mask|gloves|protective gloves|boots|safety boots|sturdy footwear|closed\s?-?toe(d)? (shoes|footwear)|steel\s?-?(toe|cap) boots?|helmet|hard hat|apron|overalls)\\b",
 "flags": "i"
 },
 {
 "points": 1,
-"check": "\b(tidy|clean|housekeeping|organis(e|z)ed|pack\s?up|tidy\s?up|clean\s?up|sweep|vacuum|wipe\s?up|put\s?away|put\s?(tools|equipment)\s?(away|back)|return\s?(tools|equipment)|store\s?(tools|materials|equipment)|dispose\s?of|rubbish|bin|offcuts|sawdust|wood\s?shavings|spill(s)?|keep\s?(bench|benches|floor|floors|walkways|pathways|aisles)\s?clear|bench\s?clear|floor\s?clear|don'?t\s?leave\s?(tools|cords|offcuts)\s?(on\s?the\s?floor|lying\s?around))\b",
+"check": "\\b(tidy|clean|housekeeping|organis(e|z)ed|pack\s?up|tidy\s?up|clean\s?up|sweep|vacuum|wipe\s?up|put\s?away|put\s?(tools|equipment)\s?(away|back)|return\s?(tools|equipment)|store\s?(tools|materials|equipment)|dispose\s?of|rubbish|bin|offcuts|sawdust|wood\s?shavings|spill(s)?|keep\s?(bench|benches|floor|floors|walkways|pathways|aisles)\s?clear|bench\s?clear|floor\s?clear|don'?t\s?leave\s?(tools|cords|offcuts)\s?(on\s?the\s?floor|lying\s?around))\\b",
 "flags": "i"
 },
 {
 "points": 1,
-"check": "\b(no\s?running|don'?t\s?run|do\s?not\s?run|walk\s?at\s?all\s?times|always\s?walk|walk,?\s?don'?t\s?run|move\s?carefully|no\s?horseplay|no\s?(messing|mucking|fooling|playing)\s?around|don'?t\s?(mess|muck|fool|play)\s?around|no\s?roughhousing|no\s?larking\s?around|no\s?pranks?|no\s?pushing|no\s?shoving|no\s?throwing|don'?t\s?distract|do\s?not\s?distract|no\s?distractions?|don'?t\s?interfere|do\s?not\s?interfere|stay\s?focused|pay\s?attention|be\s?(responsible|sensible)|act\s?responsibly|behav(e|i)our|no\s?(yelling|shouting)|no\s?loud\s?behaviou?r)\b",
+"check": "\\b(no\s?running|don'?t\s?run|do\s?not\s?run|walk\s?at\s?all\s?times|always\s?walk|walk,?\s?don'?t\s?run|move\s?carefully|no\s?horseplay|no\s?(messing|mucking|fooling|playing)\s?around|don'?t\s?(mess|muck|fool|play)\s?around|no\s?roughhousing|no\s?larking\s?around|no\s?pranks?|no\s?pushing|no\s?shoving|no\s?throwing|don'?t\s?distract|do\s?not\s?distract|no\s?distractions?|don'?t\s?interfere|do\s?not\s?interfere|stay\s?focused|pay\s?attention|be\s?(responsible|sensible)|act\s?responsibly|behav(e|i)our|no\s?(yelling|shouting)|no\s?loud\s?behaviou?r)\\b",
 "flags": "i"
 },
 {
 "points": 1,
-"check": "\b(tie\s?back\s?(long\s?)?hair|tie\s?(your\s?)?hair\s?(back|up)|put\s?(your\s?)?hair\s?up|secure\s?(your\s?)?hair|hair\s?restraint|hair\s?net|ponytail|bun|no\s?loose\s?hair|hair\s?must\s?be\s?(tied|restrained|secured))\b",
+"check": "\\b(tie\s?back\s?(long\s?)?hair|tie\s?(your\s?)?hair\s?(back|up)|put\s?(your\s?)?hair\s?up|secure\s?(your\s?)?hair|hair\s?restraint|hair\s?net|ponytail|bun|no\s?loose\s?hair|hair\s?must\s?be\s?(tied|restrained|secured))\b",
 "flags": "i"
 },
 {
 "points": 1,
-"check": "\b(no\s?(loose|baggy)\s?(clothing|clothes)|don'?t\s?wear\s?(loose|baggy)\s?(clothing|clothes)|avoid\s?loose\s?sleeves|no\s?loose\s?sleeves|roll\s?up\s?(your\s?)?sleeves|secure\s?sleeves|wear\s?(fitted|tight)\s?(clothing|clothes)|tuck\s?in\s?(clothing|shirt)|remove\s?jewell?ery|take\s?off\s?jewell?ery|no\s?jewell?ery|don'?t\s?wear\s?jewell?ery|no\s?(rings?|bracelets?|necklaces?|chains?)|take\s?off\s?(rings?|bracelets?|necklaces?|watches?)|no\s?watches?|no\s?dangling\s?earrings?|no\s?scarves?|no\s?ties?|no\s?drawstrings?|hoodie\s?strings?|tie\s?up\s?(hoodie\s?)?strings?)\b",
+"check": "\\b(no\s?(loose|baggy)\s?(clothing|clothes)|don'?t\s?wear\s?(loose|baggy)\s?(clothing|clothes)|avoid\s?loose\s?sleeves|no\s?loose\s?sleeves|roll\s?up\s?(your\s?)?sleeves|secure\s?sleeves|wear\s?(fitted|tight)\s?(clothing|clothes)|tuck\s?in\s?(clothing|shirt)|remove\s?jewell?ery|take\s?off\s?jewell?ery|no\s?jewell?ery|don'?t\s?wear\s?jewell?ery|no\s?(rings?|bracelets?|necklaces?|chains?)|take\s?off\s?(rings?|bracelets?|necklaces?|watches?)|no\s?watches?|no\s?dangling\s?earrings?|no\s?scarves?|no\s?ties?|no\s?drawstrings?|hoodie\s?strings?|tie\s?up\s?(hoodie\s?)?strings?)\\b",
 "flags": "i"
 },
 {
 "points": 1,
-"check": "\b(report|tell\s?(the\s?)?(teacher|instructor)|inform\s?(the\s?)?(teacher|instructor)|let\s?(the\s?)?(teacher|instructor)\s?know|report\s?(hazards?|problems?|issues?|concerns?|accidents?|injuries?|near\s?misses?)|unsafe\s?(behaviou?r|conditions?)|hazard(s)?|faulty|broken|damaged|unsafe\s?(tool|tools|equipment|machine|machines)|do\s?not\s?use\s?(broken|faulty|damaged)\s?(tools|equipment)|if\s?something\s?is\s?(broken|unsafe)\s?,?\s?tell\s?(the\s?)?teacher)\b",
+"check": "\\b(report|tell\s?(the\s?)?(teacher|instructor)|inform\s?(the\s?)?(teacher|instructor)|let\s?(the\s?)?(teacher|instructor)\s?know|report\s?(hazards?|problems?|issues?|concerns?|accidents?|injuries?|near\s?misses?)|unsafe\s?(behaviou?r|conditions?)|hazard(s)?|faulty|broken|damaged|unsafe\s?(tool|tools|equipment|machine|machines)|do\s?not\s?use\s?(broken|faulty|damaged)\s?(tools|equipment)|if\s?something\s?is\s?(broken|unsafe)\s?,?\s?tell\s?(the\s?)?teacher)\\b",
 "flags": "i"
 },
 {
 "points": 1,
-"check": "\b(ask\s?(the\s?)?teacher|ask\s?permission|get\s?permission|check\s?with\s?(the\s?)?teacher|only\s?use\s?(machines|equipment|tools)\s?(with|under)\s?(teacher\s?)?supervision|teacher\s?supervision|with\s?the\s?teacher\s?present|teacher\s?present|follow\s?(the\s?)?teacher('?s)?\s?(instructions|rules)|listen\s?to\s?(the\s?)?teacher|wait\s?for\s?instructions|don'?t\s?touch\s?(machines|tools)\s?(unless|until)\s?(told|shown)|get\s?trained|trained\s?before\s?using|only\s?use\s?tools\s?you\s?have\s?been\s?trained\s?on|ask\s?for\s?help\s?if\s?unsure|if\s?you('?re|\s?are)\s?unsure\s?ask|never\s?work\s?alone|always\s?work\s?under\s?supervision)\b",
+"check": "\\b(ask\s?(the\s?)?teacher|ask\s?permission|get\s?permission|check\s?with\s?(the\s?)?teacher|only\s?use\s?(machines|equipment|tools)\s?(with|under)\s?(teacher\s?)?supervision|teacher\s?supervision|with\s?the\s?teacher\s?present|teacher\s?present|follow\s?(the\s?)?teacher('?s)?\s?(instructions|rules)|listen\s?to\s?(the\s?)?teacher|wait\s?for\s?instructions|don'?t\s?touch\s?(machines|tools)\s?(unless|until)\s?(told|shown)|get\s?trained|trained\s?before\s?using|only\s?use\s?tools\s?you\s?have\s?been\s?trained\s?on|ask\s?for\s?help\s?if\s?unsure|if\s?you('?re|\s?are)\s?unsure\s?ask|never\s?work\s?alone|always\s?work\s?under\s?supervision)\\b",
 "flags": "i"
 },
 {
 "points": 1,
-"check": "\b(lift(ing)?|manual\s?handling|handle\s?safely|safe\s?lifting|correct\s?lifting|lift\s?correctly|lift\s?with\s?(your\s?)?legs|bend\s?(your\s?)?knees|keep\s?(your\s?)?back\s?straight|don'?t\s?lift\s?with\s?(your\s?)?back|ask\s?for\s?help\s?(lifting|to\s?lift)?|get\s?help\s?lifting|team\s?lift|lift\s?as\s?a\s?team|two\s?person\s?lift|use\s?a\s?trolley|use\s?a\s?cart|don'?t\s?lift\s?(heavy|too\s?heavy)|don'?t\s?carry\s?(heavy|too\s?heavy)|carry\s?materials\s?safely)\b",
+"check": "\\b(lift(ing)?|manual\s?handling|handle\s?safely|safe\s?lifting|correct\s?lifting|lift\s?correctly|lift\s?with\s?(your\s?)?legs|bend\s?(your\s?)?knees|keep\s?(your\s?)?back\s?straight|don'?t\s?lift\s?with\s?(your\s?)?back|ask\s?for\s?help\s?(lifting|to\s?lift)?|get\s?help\s?lifting|team\s?lift|lift\s?as\s?a\s?team|two\s?person\s?lift|use\s?a\s?trolley|use\s?a\s?cart|don'?t\s?lift\s?(heavy|too\s?heavy)|don'?t\s?carry\s?(heavy|too\s?heavy)|carry\s?materials\s?safely)\\b",
 "flags": "i"
 }
 ]
@@ -329,42 +329,42 @@
 "rubric": [
 {
 "points": 1,
-"check": "\b(eye(s)?|eyeball|vision|sight|blind(ness)?|go\s?blind|lose\s?(your\s?)?(vision|sight)|eye\s?damage|eye\s?injur(y|ies)|injur(e|ed)\s?(your\s?)?eye|scratch(ed)?\s?(your\s?)?eye|cut\s?(your\s?)?eye|something\s?in\s?(your\s?)?eye|dust\s?in\s?(your\s?)?eye|sawdust\s?in\s?(your\s?)?eye|splinter\s?in\s?(your\s?)?eye|chip(s)?\s?(in|into|to|hit)\s?(your\s?)?eye|shard(s)?\s?(in|into|to|hit)\s?(your\s?)?eye|particle(s)?\s?(in|into|to|hit)\s?(your\s?)?eye|spark(s)?\s?(in|into|to|hit|burn)\s?(your\s?)?eye|burn(ed)?\s?(your\s?)?eye)\b",
+"check": "\\b(eye(s)?|eyeball|vision|sight|blind(ness)?|go\s?blind|lose\s?(your\s?)?(vision|sight)|eye\s?damage|eye\s?injur(y|ies)|injur(e|ed)\s?(your\s?)?eye|scratch(ed)?\s?(your\s?)?eye|cut\s?(your\s?)?eye|something\s?in\s?(your\s?)?eye|dust\s?in\s?(your\s?)?eye|sawdust\s?in\s?(your\s?)?eye|splinter\s?in\s?(your\s?)?eye|chip(s)?\s?(in|into|to|hit)\s?(your\s?)?eye|shard(s)?\s?(in|into|to|hit)\s?(your\s?)?eye|particle(s)?\s?(in|into|to|hit)\s?(your\s?)?eye|spark(s)?\s?(in|into|to|hit|burn)\s?(your\s?)?eye|burn(ed)?\s?(your\s?)?eye)\\b",
 "flags": "i"
 },
 {
 "points": 1,
-"check": "\b(hear(ing)?|ear(s)?|deaf(ness)?|go\s?deaf|lose\s?(your\s?)?hearing|hearing\s?loss|hearing\s?damage|damage\s?(your\s?)?hearing|hurt\s?(your\s?)?ears|tinnitus|ringing\s?in\s?(your\s?)?ears|ear\s?ringing|ears\s?ring|noise\s?damage|loud\s?noise)\b",
+"check": "\\b(hear(ing)?|ear(s)?|deaf(ness)?|go\s?deaf|lose\s?(your\s?)?hearing|hearing\s?loss|hearing\s?damage|damage\s?(your\s?)?hearing|hurt\s?(your\s?)?ears|tinnitus|ringing\s?in\s?(your\s?)?ears|ear\s?ringing|ears\s?ring|noise\s?damage|loud\s?noise)\\b",
 "flags": "i"
 },
 {
 "points": 1,
-"check": "\b(hair|scalp|head|neck)\b.\b(caught|stuck|pulled|tangled|entangle(d)?|trapped|wrapped)\b|\bscalp\b|\bscalped\b|\bhair\b.\b(ripped\s?out|pulled\s?out)\b|\bhead\b.\b(pulled|dragged)\b",
+"check": "\\b(hair|scalp|head|neck)\\b.\\b(caught|stuck|pulled|tangled|entangle(d)?|trapped|wrapped)\\b|\\bscalp\\b|\\bscalped\\b|\\bhair\\b.\\b(ripped\s?out|pulled\s?out)\\b|\\bhead\\b.\\b(pulled|dragged)\\b",
 "flags": "i"
 },
 {
 "points": 1,
-"check": "\b(cloth(e|i)ng|shirt|sleeve(s)?|jumper|hoodie|drawstring(s)?|hoodie\s?string(s)?|scarf|tie|jewell?ery|ring(s)?|bracelet(s)?|necklace(s)?|chain(s)?|watch(es)?|earring(s)?)\b.\b(caught|snag(ged)?|pulled|tangled|entangle(d)?|stuck|wrapped|trapped|dragged)\b|\b(chok(e|ing|ed)|strangle(d)?)\b.\b(necklace|chain|scarf|tie)\b|\bring\b.\b(caught|snag(ged)?|pulled)\b",
+"check": "\\b(cloth(e|i)ng|shirt|sleeve(s)?|jumper|hoodie|drawstring(s)?|hoodie\s?string(s)?|scarf|tie|jewell?ery|ring(s)?|bracelet(s)?|necklace(s)?|chain(s)?|watch(es)?|earring(s)?)\\b.\\b(caught|snag(ged)?|pulled|tangled|entangle(d)?|stuck|wrapped|trapped|dragged)\\b|\b(chok(e|ing|ed)|strangle(d)?)\\b.\\b(necklace|chain|scarf|tie)\\b|\bring\\b.\\b(caught|snag(ged)?|pulled)\\b",
 "flags": "i"
 },
 {
 "points": 1,
-"check": "\b(trip(ped)?|slip(ped)?|fall|fell|falling|stumble(d)?|clutter|mess(y)?|rubbish|offcut(s)?|tool(s)?\s?on\s?the\s?floor|cord(s)?|lead(s)?|cable(s)?|sawdust|spill(s)?|wet\s?floor|broken\s?(bone|arm|leg)|sprain(ed)?|twist(ed)?\s?(ankle|wrist)|hit\s?(your\s?)?head)\b",
+"check": "\\b(trip(ped)?|slip(ped)?|fall|fell|falling|stumble(d)?|clutter|mess(y)?|rubbish|offcut(s)?|tool(s)?\s?on\s?the\s?floor|cord(s)?|lead(s)?|cable(s)?|sawdust|spill(s)?|wet\s?floor|broken\s?(bone|arm|leg)|sprain(ed)?|twist(ed)?\s?(ankle|wrist)|hit\s?(your\s?)?head)\\b",
 "flags": "i"
 },
 {
 "points": 1,
-"check": "\b(back|spine|manual\s?handling|lift(ing)?|lifting\s?wrong|lift\s?wrong|strain(ed)?|sprain(ed)?|pulled\s?muscle|muscle\s?strain|muscle\s?sprain|injur(y|ies)|hurt\s?(your\s?)?back|back\s?pain|shoulder\s?injury|neck\s?injury|drop(ped)?\s?(it|the\s?load|object)|dropped\s?(on\s?your\s?foot|on\s?someone)\b",
+"check": "\\b(back|spine|manual\s?handling|lift(ing)?|lifting\s?wrong|lift\s?wrong|strain(ed)?|sprain(ed)?|pulled\s?muscle|muscle\s?strain|muscle\s?sprain|injur(y|ies)|hurt\s?(your\s?)?back|back\s?pain|shoulder\s?injury|neck\s?injury|drop(ped)?\s?(it|the\s?load|object)|dropped\s?(on\s?your\s?foot|on\s?someone)\\b",
 "flags": "i"
 },
 {
 "points": 1,
-"check": "\b(dust|sawdust|MDF\s?dust|fine\s?dust|fume(s)?|vapou?r(s)?|spray|chemical(s)?|inhale(d)?|breathe\s?(in)?|breath(ing)?\s?problems|lungs?|lung\s?damage|respiratory|asthma|asthma\s?attack|cough(ing)?|wheeze|short(ness)?\s?of\s?breath|dizzy|faint|sick|silicosis|cancer)\b",
+"check": "\\b(dust|sawdust|MDF\s?dust|fine\s?dust|fume(s)?|vapou?r(s)?|spray|chemical(s)?|inhale(d)?|breathe\s?(in)?|breath(ing)?\s?problems|lungs?|lung\s?damage|respiratory|asthma|asthma\s?attack|cough(ing)?|wheeze|short(ness)?\s?of\s?breath|dizzy|faint|sick|silicosis|cancer)\\b",
 "flags": "i"
 },
 {
 "points": 1,
-"check": "\b(unsafe|injur(y|ies)|injured|hurt|harm|accident(s)?|incident(s)?|serious\s?injury|seriously\s?hurt|badly\s?hurt|preventable\s?accident|hospital|cuts?|bruise(s)?|burn(s)?|crush(ed)?|crushed\s?fingers?|smashed\s?fingers?)\b",
+"check": "\\b(unsafe|injur(y|ies)|injured|hurt|harm|accident(s)?|incident(s)?|serious\s?injury|seriously\s?hurt|badly\s?hurt|preventable\s?accident|hospital|cuts?|bruise(s)?|burn(s)?|crush(ed)?|crushed\s?fingers?|smashed\s?fingers?)\\b",
 "flags": "i"
 }
 ]
