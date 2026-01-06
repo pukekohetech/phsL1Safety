@@ -373,256 +373,268 @@
 }
 
 ,
+      {
+  "id": "q2_jandals",
+  "text": "Q2: Why should jandals never be worn on a work site?",
+  "image": "q2_jandals.jpg",
+  "hint": "Think about toe protection, grip, and what happens if something sharp/heavy lands on your foot.",
+  "type": "short",
+  "maxPoints": 1,
+  "rubric": [
+    {
+      "points": 1,
+      "check": "\\b(open\\s?toe|open\\s?-?toed|toes?\\s?(exposed|showing|out)|bare\\s?toes?|bare\\s?feet|no\\s?(toe|foot)\\s?protection|not\\s?(safe|protective)|unsafe\\s?(footwear|shoes?)|wrong\\s?(footwear|shoes?)|need\\s?(boots?|safety\\s?boots?|covered\\s?shoes?)|should\\s?wear\\s?(boots?|safety\\s?boots?|covered\\s?shoes?)|drop(ped)?\\s?(something|tool|hammer|timber)?\\s?(on\\s?(your\\s?)?foot|on\\s?(your\\s?)?toes?)|crush(ed|ing)?\\s?(foot|toes?)|smashed\\s?(foot|toes?)|break\\s?(your\\s?)?(foot|toe|toes)|step\\s?on\\s?(a\\s?)?(nail|screw|glass|sharp\\s?object|something\\s?sharp)|nail\\s?(in|through)\\s?(your\\s?)?foot|cut\\s?(your\\s?)?foot|stab(bed)?\\s?(your\\s?)?foot|puncture\\s?(wound)?|slip(ping|ped)?|poor\\s?grip|no\\s?grip|bad\\s?grip|no\\s?traction|poor\\s?traction|trip(ping|ped)?|fall\\s?over|lose\\s?(your\\s?)?footing|come\\s?off|falls?\\s?off|slip\\s?off|not\\s?secure)\\b",
+      "flags": "i"
+    }
+  ]
+},
+       {
+  "id": "q3a_heat_sparks",
+  "text": "Q3: Identify the hazard – What type of clothing would be a hazard to wear around heat or sparks?",
+  "image": "q3a_heat_sparks.jpg",
+  "hint": "Think about fabrics that melt or catch easily, and clothing that leaves skin exposed.",
+  "type": "short",
+  "maxPoints": 1,
+  "rubric": [
+    {
+      "points": 1,
+      "check": "\\b(synthetic|man\\s?made|polyester|nylon|acrylic|plastic|fleece|sports\\s?clothes?|rain\\s?coat|wind\\s?breaker|melts?|melt\\s?on(to)?\\s?(your\\s?)?skin|flammable|catch\\s?fire|burn(s|t)?\\s?easily|ignite(s|d)?)\\b|\\b(shorts|skirt|dress|singlet|tank\\s?top|sleeveless|t-?shirt|short\\s?sleeves?|thin\\s?clothing|bare\\s?skin|bare\\s?(arms?|legs?)|exposed\\s?skin|not\\s?covered\\s?up|school\\s?uniform)\\b",
+      "flags": "i"
+    }
+  ]
+},
+{
+  "id": "q3b_machinery_lathes",
+  "text": "Q3: Identify the hazard – What type of clothing would be a hazard to wear around machinery such as lathes?",
+  "image": "q3b_machinery_lathes.jpg",
+  "hint": "Think about anything that can get caught in moving parts.",
+  "type": "short",
+  "maxPoints": 1,
+  "rubric": [
+    {
+      "points": 1,
+      "check": "\\b(loose|baggy|dangl(e|ing)|hanging|oversized|flow(y|ing)|long\\s?sleeves?|loose\\s?sleeves?|baggy\\s?sleeves?|hoodie|jacket|coat|apron)\\b.*\\b(clothing|clothes|sleeves?|strings?|drawstrings?|cords?)\\b|\\b(hoodie\\s?strings?|drawstrings?|lanyard|ID\\s?card|tie|scarf|headphones?|earphones?)\\b|\\b(jewell?ery|jewelry|necklace|chain|bracelet|bangle|ring|watch|earrings?)\\b|\\b(get\\s?caught|caught\\s?in|get\\s?pulled\\s?in|pulled\\s?into|wrapped\\s?around|entangle(d)?|tangle(d)?)\\b",
+      "flags": "i"
+    }
+  ]
+}
+,
+{
+  "id": "q3c_spraying_paint",
+  "text": "Q3: Identify the hazard – What type of clothing would be a hazard to wear when spraying paint?",
+  "image": "q3c_spraying_paint.jpg",
+  "hint": "Think about overspray/chemicals contacting skin and clothing that doesn’t cover your body.",
+  "type": "short",
+  "maxPoints": 1,
+  "rubric": [
+    {
+      "points": 1,
+      "check": "\\b(shorts|t-?shirt|singlet|tank\\s?top|sleeveless|short\\s?sleeves?|school\\s?uniform|skirt|dress|thin\\s?clothing|bare\\s?(arms?|legs?)|exposed\\s?skin|bare\\s?skin|not\\s?covered\\s?up|no\\s?(overalls?|coveralls?|spray\\s?suit|protective\\s?clothing|apron))\\b|\\b(overspray|paint\\s?(spray)?|chemicals?)\\b.*\\b(skin|irritat(e|ion)|rash|burn(s)?|dermatitis)\\b",
+      "flags": "i"
+    }
+  ]
+}
+,
         {
-          "id": "q2_jandals",
-          "text": "Q2: Why should jandals never be worn on a work site?",
-          "image": "q2_jandals.jpg",
-          "hint": "Think about toe protection, grip, and what happens if something sharp/heavy lands on your foot.",
-          "type": "short",
-          "maxPoints": 1,
-          "rubric": [
-            {
-              "points": 1,
-              "check": "\\b(open toe|toes? exposed|no protection|bare|not (safe|protective)|drop(ped)?|crush|nail|sharp|slip(p)?|poor grip)\\b",
-              "flags": "i"
-            }
-          ]
-        },
+  "id": "q4_long_hair_machinery",
+  "text": "Q4: Identify the potential hazards of wearing long hair around machinery.",
+  "image": "q4_long_hair_machinery.jpg",
+  "hint": "What can moving parts do if they grab hair?",
+  "type": "short",
+  "maxPoints": 1,
+  "rubric": [
+    {
+      "points": 1,
+      "check": "\\b(long\\s?hair|hair)\\b.*\\b(caught|catch|grab(bed)?|stuck|tangle(d)?|entangle(d)?|wrap(ped)?|pulled|dragged|pulled\\s?in|dragged\\s?in)\\b.*\\b(machine|machinery|moving\\s?parts?|spinning|lathe|drill|chuck|spindle)\\b|\\b(scalp|scalped|ripped\\s?out|torn\\s?out|hair\\s?ripped\\s?out|head\\s?injury|neck\\s?injury|pulled\\s?toward(s)?\\s?the\\s?machine)\\b",
+      "flags": "i"
+    }
+  ]
+}
+,
+ {
+  "id": "q5a_moving_machinery_signage",
+  "text": "Q5a: Identify the purpose of the signage (warning to keep clear of moving machinery).",
+  "image": "q5a_moving_machinery_signage.jpg",
+  "hint": "What action is it telling you to take, and what injury is it trying to prevent?",
+  "type": "long",
+  "maxPoints": 2,
+  "rubric": [
+    {
+      "points": 1,
+      "check": "\\b(keep\\s?clear|stay\\s?(away|back)|stand\\s?back|keep\\s?away|keep\\s?distance|keep\\s?your\\s?distance|do\\s?not\\s?approach|don'?t\\s?approach|don'?t\\s?go\\s?near|do\\s?not\\s?go\\s?near|do\\s?not\\s?enter|no\\s?entry|restricted\\s?area|keep\\s?out|don'?t\\s?go\\s?past|stay\\s?behind)\\b",
+      "flags": "i"
+    },
+    {
+      "points": 1,
+      "check": "\\b(moving\\s?machinery|moving\\s?parts?|danger|hazard|unsafe|caught|entangle(d)?|tangle(d)?|pulled\\s?in|dragged\\s?in|crush(ed|ing)?|injur(y|ies)|hurt|harm|cut|amputat(e|ion)|lose\\s?(a\\s?)?(finger|hand)|serious\\s?injury)\\b",
+      "flags": "i"
+    }
+  ]
+}
+,
+{
+  "id": "q5b_dust_inhalation_signage",
+  "text": "Q5b: Identify the purpose of the signage (warning about dust inhalation / wearing a mask).",
+  "image": "q5b_dust_inhalation_signage.jpg",
+  "hint": "Think about lungs and airborne particles.",
+  "type": "long",
+  "maxPoints": 2,
+  "rubric": [
+    {
+      "points": 1,
+      "check": "\\b(wear\\s?(a\\s?)?(mask|respirator|dust\\s?mask)|put\\s?on\\s?(a\\s?)?(mask|respirator)|mask\\s?required|masks?\\s?must\\s?be\\s?worn|respirator\\s?required|respiratory\\s?protection|breathing\\s?protection)\\b",
+      "flags": "i"
+    },
+    {
+      "points": 1,
+      "check": "\\b(dust|dusty|airborne|particles?|inhal(e|ing|ation)|breathe\\s?in|lungs?|respiratory|breath(ing)?|asthma|lung\\s?damage|silicosis|cancer|long\\s?term)\\b",
+      "flags": "i"
+    }
+  ]
+}
+,
+      {
+  "id": "q6_nailing_timber_eye_hazard",
+  "text": "Q6: When nailing timber you should always wear eye protection. Describe an eye hazard associated with this activity.",
+  "image": "q6_nailing_timber_eye_hazard.jpg",
+  "hint": "Think about what can fly upward unexpectedly.",
+  "type": "short",
+  "maxPoints": 1,
+  "rubric": [
+    {
+      "points": 1,
+      "check": "\\b(eye|eyes)\\b.*\\b(hit|struck|strike|hurt|injur(y|ed)?|damage(d)?|scratch(ed)?|cut|poke(d)?|flick(ed)?|fly(ing)?|ricochet|bounce(d)?|ping(ed)?|something\\s?in\\s?(my|your)\\s?eye|chip(s)?|splinter(s)?|sawdust|wood\\s?(chip|chips|piece|pieces|fragment(s)?|debris)|nail(s)?)\\b|\\b(chip(s)?|splinter(s)?|sawdust|wood\\s?(chip|piece|fragment(s)?|debris)|nail(s)?|ricochet|bounce(d)?|ping(ed)?|fly(ing)?)\\b.*\\b(eye|eyes)\\b",
+      "flags": "i"
+    }
+  ]
+}
+,
+      {
+  "id": "q7_general_ppe_risk",
+  "text": "Q7: Describe the general risks of not maintaining PPE (cleaning, checking damage, correct storage).",
+  "image": "q7_general_ppe_risk.jpg",
+  "hint": "Think: reduced protection and new problems created by dirty/damaged PPE.",
+  "type": "long",
+  "maxPoints": 2,
+  "rubric": [
+    {
+      "points": 1,
+      "check": "\\b(won'?t\\s?work|doesn'?t\\s?work|not\\s?work(ing)?|less\\s?effective|reduced\\s?protection|doesn'?t\\s?protect|won'?t\\s?protect|not\\s?protect(ive)?|fails?|fail\\s?to\\s?protect|won'?t\\s?do\\s?its\\s?job|not\\s?do\\s?its\\s?job|not\\s?safe|unsafe)\\b|\\b(protect|protection|effective|safe)\\b.*\\b(reduced|less|won'?t|doesn'?t|not)\\b",
+      "flags": "i"
+    },
+    {
+      "points": 1,
+      "check": "\\b(dirty|unclean|hygiene|unhygienic|germs?|bacteria|infection|sick|rash|irritat(e|ion)|dermatitis|contaminat(e|ion)|damaged|broken|crack(ed)?|tear(s|ed)?|hole(s)?|worn\\s?out|poor\\s?fit|doesn'?t\\s?fit|fit\\s?properly|seal|poor\\s?seal|gap(s)?|leak(s|ing)?|fog(gy|ging)?|scratched|extra\\s?risk|additional\\s?hazard)\\b",
+      "flags": "i"
+    }
+  ]
+}
+,
+      {
+  "id": "q7a_safety_glasses",
+  "text": "Q7: Describe a risk of not maintaining safety glasses.",
+  "image": "q7a_safety_glasses.jpg",
+  "hint": "Think: seeing clearly and hygiene.",
+  "type": "long",
+  "maxPoints": 2,
+  "rubric": [
+    {
+      "points": 1,
+      "check": "\\b(can'?t\\s?see|cannot\\s?see|hard\\s?to\\s?see|see\\s?properly|see\\s?clearly|blurr(y|ed)|blur|obscured|scratched|scratch(es|ed)?|fog(gy|ging)?|fog\\s?up|cloud(y|ed)?|smudge(d)?|smudg(es)?|dirty\\s?lens(es)?|dust\\s?on\\s?(the\\s?)?lens(es)?|fingerprints?)\\b",
+      "flags": "i"
+    },
+    {
+      "points": 1,
+      "check": "\\b(dirty|germs?|bacteria|infection|eye\\s?infection|conjunctivitis|pink\\s?eye|irritat(e|ion)|rash|unhygienic|spread\\s?germs)\\b",
+      "flags": "i"
+    }
+  ]
+}
+,
         {
-          "id": "q3a_heat_sparks",
-          "text": "Q3: Identify the hazard – What type of clothing would be a hazard to wear around heat or sparks?",
-          "image": "q3a_heat_sparks.jpg",
-          "hint": "Think about fabrics that melt or catch easily, and clothing that leaves skin exposed.",
-          "type": "short",
-          "maxPoints": 1,
-          "rubric": [
-            {
-              "points": 1,
-              "check": "\\b(synthetic|polyester|nylon|acrylic|melts?)\\b|\\b(shorts|singlet|t-?shirt|thin clothing|bare skin)\\b",
-              "flags": "i"
-            }
-          ]
-        },
-        {
-          "id": "q3b_machinery_lathes",
-          "text": "Q3: Identify the hazard – What type of clothing would be a hazard to wear around machinery such as lathes?",
-          "image": "q3b_machinery_lathes.jpg",
-          "hint": "Think about anything that can get caught in moving parts.",
-          "type": "short",
-          "maxPoints": 1,
-          "rubric": [
-            {
-              "points": 1,
-              "check": "\\b(loose|baggy|dangling)\\b.*\\b(clothing|sleeves?)\\b|\\b(tie|scarf)\\b|\\b(jewell?ery|necklace|bracelet|ring)\\b",
-              "flags": "i"
-            }
-          ]
-        },
-        {
-          "id": "q3c_spraying_paint",
-          "text": "Q3: Identify the hazard – What type of clothing would be a hazard to wear when spraying paint?",
-          "image": "q3c_spraying_paint.jpg",
-          "hint": "Think about overspray/chemicals contacting skin and clothing that doesn’t cover your body.",
-          "type": "short",
-          "maxPoints": 1,
-          "rubric": [
-            {
-              "points": 1,
-              "check": "\\b(shorts|t-?shirt|singlet|school uniform|no overalls?|bare (arms?|legs?)|exposed skin)\\b",
-              "flags": "i"
-            }
-          ]
-        },
-        {
-          "id": "q4_long_hair_machinery",
-          "text": "Q4: Identify the potential hazards of wearing long hair around machinery.",
-          "image": "q4_long_hair_machinery.jpg",
-          "hint": "What can moving parts do if they grab hair?",
-          "type": "short",
-          "maxPoints": 1,
-          "rubric": [
-            {
-              "points": 1,
-              "check": "\\b(hair).*(caught|entangle(d)?|pulled|dragged)\\b.*\\b(machine|machinery|moving)\\b|\\b(scalp|ripped out|torn out)\\b",
-              "flags": "i"
-            }
-          ]
-        },
-        {
-          "id": "q5a_moving_machinery_signage",
-          "text": "Q5a: Identify the purpose of the signage (warning to keep clear of moving machinery).",
-          "image": "q5a_moving_machinery_signage.jpg",
-          "hint": "What action is it telling you to take, and what injury is it trying to prevent?",
-          "type": "long",
-          "maxPoints": 2,
-          "rubric": [
-            {
-              "points": 1,
-              "check": "\\b(keep clear|stay (away|back)|do not approach|keep distance)\\b",
-              "flags": "i"
-            },
-            {
-              "points": 1,
-              "check": "\\b(moving parts?|entangle(ment)?|caught|crush(ing)?|injur(y|ies))\\b",
-              "flags": "i"
-            }
-          ]
-        },
-        {
-          "id": "q5b_dust_inhalation_signage",
-          "text": "Q5b: Identify the purpose of the signage (warning about dust inhalation / wearing a mask).",
-          "image": "q5b_dust_inhalation_signage.jpg",
-          "hint": "Think about lungs and airborne particles.",
-          "type": "long",
-          "maxPoints": 2,
-          "rubric": [
-            {
-              "points": 1,
-              "check": "\\b(wear (a )?(mask|respirator)|mask required)\\b",
-              "flags": "i"
-            },
-            {
-              "points": 1,
-              "check": "\\b(dust|inhal(e|ation)|lungs?|respiratory)\\b",
-              "flags": "i"
-            }
-          ]
-        },
-        {
-          "id": "q6_nailing_timber_eye_hazard",
-          "text": "Q6: When nailing timber you should always wear eye protection. Describe an eye hazard associated with this activity.",
-          "image": "q6_nailing_timber_eye_hazard.jpg",
-          "hint": "Think about what can fly upward unexpectedly.",
-          "type": "short",
-          "maxPoints": 1,
-          "rubric": [
-            {
-              "points": 1,
-              "check": "\\b(flying|ricochet|chip|splinter|nail)\\b.*\\b(eye|eyes)\\b|\\b(eye).*(hit|struck)\\b",
-              "flags": "i"
-            }
-          ]
-        },
-        {
-          "id": "q7_general_ppe_risk",
-          "text": "Q7: Describe the general risks of not maintaining PPE (cleaning, checking damage, correct storage).",
-          "image": "q7_general_ppe_risk.jpg",
-          "hint": "Think: reduced protection and new problems created by dirty/damaged PPE.",
-          "type": "long",
-          "maxPoints": 2,
-          "rubric": [
-            {
-              "points": 1,
-              "check": "\\b(reduced|less|won't|doesn't)\\b.*\\b(protect|protection|effective)\\b",
-              "flags": "i"
-            },
-            {
-              "points": 1,
-              "check": "\\b(dirty|damaged|poor fit|leak|infection|extra risk|additional hazard)\\b",
-              "flags": "i"
-            }
-          ]
-        },
-        {
-          "id": "q7a_safety_glasses",
-          "text": "Q7: Describe a risk of not maintaining safety glasses.",
-          "image": "q7a_safety_glasses.jpg",
-          "hint": "Think: seeing clearly and hygiene.",
-          "type": "long",
-          "maxPoints": 2,
-          "rubric": [
-            {
-              "points": 1,
-              "check": "\\b(can't see|hard to see|blur|obscured|scratched)\\b",
-              "flags": "i"
-            },
-            {
-              "points": 1,
-              "check": "\\b(infection|germs|bacteria|dirty)\\b",
-              "flags": "i"
-            }
-          ]
-        },
-        {
-          "id": "q7b_respiratory_protection",
-          "text": "Q7: Describe a risk of not maintaining respiratory protection (mask/respirator).",
-          "image": "q7b_respiratory_protection.jpg",
-          "hint": "Think: filters, sealing, and long-term health effects.",
-          "type": "long",
-          "maxPoints": 2,
-          "rubric": [
-            {
-              "points": 1,
-              "check": "\\b(filter(s)?|seal|leak|fit)\\b|\\b(breath(ing)?|lungs?)\\b",
-              "flags": "i"
-            },
-            {
-              "points": 1,
-              "check": "\\b(asthma|cancer|silicosis|long[- ]?term|chronic)\\b",
-              "flags": "i"
-            }
-          ]
-        },
-        {
-          "id": "q7c_ear_muffs",
-          "text": "Q7: Describe a risk of not maintaining ear muffs/hearing protection.",
-          "image": "q7c_ear_muffs.jpg",
-          "hint": "Think: sealing around the ear and what noise does over time.",
-          "type": "long",
-          "maxPoints": 2,
-          "rubric": [
-            {
-              "points": 1,
-              "check": "\\b(poor fit|seal|pads?|gap|leak)\\b",
-              "flags": "i"
-            },
-            {
-              "points": 1,
-              "check": "\\b(hearing loss|tinnitus|ringing|deaf)\\b",
-              "flags": "i"
-            }
-          ]
-        },
-        {
-          "id": "q7d_hard_hat",
-          "text": "Q7: Describe a risk of not maintaining a hard hat.",
-          "image": "q7d_hard_hat.jpg",
-          "hint": "Think: cracks and impact protection.",
-          "type": "long",
-          "maxPoints": 2,
-          "rubric": [
-            {
-              "points": 1,
-              "check": "\\b(crack|split|damage(d)?)\\b",
-              "flags": "i"
-            },
-            {
-              "points": 1,
-              "check": "\\b(head|skull|brain|concussion|injur(y|ies))\\b",
-              "flags": "i"
-            }
-          ]
-        },
-        {
-          "id": "q7e_gloves",
-          "text": "Q7: Describe a risk of not maintaining gloves.",
-          "image": "q7e_gloves.jpg",
-          "hint": "Think: holes/tears and what hands contact in a workshop.",
-          "type": "long",
-          "maxPoints": 2,
-          "rubric": [
-            {
-              "points": 1,
-              "check": "\\b(hole|tear|worn|damage(d)?)\\b",
-              "flags": "i"
-            },
-            {
-              "points": 1,
-              "check": "\\b(cut|abrasion|splinter|chemical|burn|irritation|dermatitis)\\b",
-              "flags": "i"
-            }
-          ]
-        },
+  "id": "q7b_respiratory_protection",
+  "text": "Q7: Describe a risk of not maintaining respiratory protection (mask/respirator).",
+  "image": "q7b_respiratory_protection.jpg",
+  "hint": "Think: filters, sealing, and long-term health effects.",
+  "type": "long",
+  "maxPoints": 2,
+  "rubric": [
+    {
+      "points": 1,
+      "check": "\\b(filter(s)?|clog(ged)?|blocked|dirty\\s?filter|seal|sealed|fit|fitting|poor\\s?fit|doesn'?t\\s?fit|leak(s|ing)?|gap(s)?|strap(s)?|broken|damaged|hole(s)?|won'?t\\s?work|not\\s?effective|ineffective|lets?\\s?(dust|fumes?|vapou?r|chemicals?)\\s?(in|through)|breathe\\s?(in)?\\s?(dust|fumes?|vapou?r|chemicals?)|inhale(d)?\\s?(dust|fumes?|vapou?r|chemicals?)|dust\\s?gets\\s?through|fumes\\s?get\\s?through|lungs?|breath(ing)?)\\b",
+      "flags": "i"
+    },
+    {
+      "points": 1,
+      "check": "\\b(asthma|asthma\\s?attack|lung\\s?damage|lung\\s?disease|respiratory\\s?disease|breath(ing)?\\s?problems|short(ness)?\\s?of\\s?breath|chronic|long\\s?term|permanent|silicosis|cancer|COPD|black\\s?lung)\\b",
+      "flags": "i"
+    }
+  ]
+}
+,
+       {
+  "id": "q7c_ear_muffs",
+  "text": "Q7: Describe a risk of not maintaining ear muffs/hearing protection.",
+  "image": "q7c_ear_muffs.jpg",
+  "hint": "Think: sealing around the ear and what noise does over time.",
+  "type": "long",
+  "maxPoints": 2,
+  "rubric": [
+    {
+      "points": 1,
+      "check": "\\b(poor\\s?fit|doesn'?t\\s?fit|fit\\s?properly|seal|sealed|poor\\s?seal|gap(s)?|leak(s|ing)?|noise\\s?gets\\s?in|sound\\s?gets\\s?in|doesn'?t\\s?block\\s?noise|not\\s?effective|ineffective|pads?|pad\\s?damaged|worn\\s?out|foam|cushion(s)?|crack(ed)?|split|broken|damaged|headband|loose)\\b",
+      "flags": "i"
+    },
+    {
+      "points": 1,
+      "check": "\\b(hearing\\s?loss|lose\\s?(your\\s?)?hearing|hearing\\s?damage|ear\\s?damage|tinnitus|ringing\\s?in\\s?(your\\s?)?ears|ears\\s?ring|deaf|deafness|go\\s?deaf|permanent|long\\s?term|noise\\s?damage)\\b",
+      "flags": "i"
+    }
+  ]
+}
+,
+       {
+  "id": "q7d_hard_hat",
+  "text": "Q7: Describe a risk of not maintaining a hard hat.",
+  "image": "q7d_hard_hat.jpg",
+  "hint": "Think: cracks and impact protection.",
+  "type": "long",
+  "maxPoints": 2,
+  "rubric": [
+    {
+      "points": 1,
+      "check": "\\b(crack(ed)?|split|damage(d)?|broken|break(s|ing)?|weak|weaken(ed)?|brittle|worn\\s?out|old|UV|sun\\s?damage|strap(s)?|chin\\s?strap|loose|doesn'?t\\s?fit|fit\\s?properly|suspension|padding|inside\\s?band|fails?|won'?t\\s?work|not\\s?effective|less\\s?effective)\\b",
+      "flags": "i"
+    },
+    {
+      "points": 1,
+      "check": "\\b(head|skull|brain|concussion|knock(ed)?\\s?out|unconscious|head\\s?injur(y|ies)|brain\\s?injur(y|ies)|skull\\s?fracture|fracture(d)?\\s?skull|serious\\s?injury|injur(y|ies)|hurt|harm)\\b",
+      "flags": "i"
+    }
+  ]
+}
+,
+       {
+  "id": "q7e_gloves",
+  "text": "Q7: Describe a risk of not maintaining gloves.",
+  "image": "q7e_gloves.jpg",
+  "hint": "Think: holes/tears and what hands contact in a workshop.",
+  "type": "long",
+  "maxPoints": 2,
+  "rubric": [
+    {
+      "points": 1,
+      "check": "\\b(hole(s)?|tear(s|ed)?|ripped|split|worn\\s?out|worn|thin|damage(d)?|broken|crack(ed)?|leak(s|ing)?|loose|doesn'?t\\s?fit|fit\\s?properly|fall(s)?\\s?apart|not\\s?protect(ive)?|won'?t\\s?protect|ineffective)\\b",
+      "flags": "i"
+    },
+    {
+      "points": 1,
+      "check": "\\b(cut(s)?|scratch(es|ed)?|abrasion(s)?|splinter(s)?|sharp\\s?edge(s)?|stab(bed)?|burn(s|t)?|heat|sparks?|chemical(s)?|paint|glue|solvent(s)?|irritat(e|ion)|rash|dermatitis|allerg(y|ic)?|reaction|blister(s)?|friction|infection|germs?|bacteria)\\b",
+      "flags": "i"
+    }
+  ]
+}
+,
         {
           "id": "q8a_router",
           "text": "Q8(a): You are using an electric router to shape the edges of a rimu table top.\nIdentify at least FOUR hazards and the PPE that will help.",
