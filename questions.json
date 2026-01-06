@@ -320,56 +320,57 @@
 }
 ]
 },
-        {
-"id": "q1b_consequences",
-"text": "For each rule listed in Question 1 (a–h), describe a possible consequence if that rule is not followed.",
-"image": "q1b_consequences.jpg",
-"hint": "Link each rule to a realistic injury/accident (eyes, lungs, hearing, entanglement, trips/falls, strains).",
-"type": "long",
-"maxPoints": 8,
-"rubric": [
 {
-"points": 1,
-"check": "\\b(eye(s)?|eyeball|vision|sight|blind(ness)?|go\\s?blind|lose\\s?(your\\s?)?(vision|sight)|eye\\s?damage|eye\\s?injur(y|ies)|injur(e|ed)\\s?(your\\s?)?eye|scratch(ed)?\\s?(your\\s?)?eye|cut\\s?(your\\s?)?eye|something\\s?in\\s?(your\\s?)?eye|dust\\s?in\\s?(your\\s?)?eye|sawdust\\s?in\\s?(your\\s?)?eye|splinter\\s?in\\s?(your\\s?)?eye|chip(s)?\\s?(in|into|to|hit)\\s?(your\\s?)?eye|shard(s)?\\s?(in|into|to|hit)\\s?(your\\s?)?eye|particle(s)?\\s?(in|into|to|hit)\\s?(your\\s?)?eye|spark(s)?\\s?(in|into|to|hit|burn)\\s?(your\\s?)?eye|burn(ed)?\\s?(your\\s?)?eye)\\b",
-"flags": "i"
-},
-{
-"points": 1,
-"check": "\\b(hear(ing)?|ear(s)?|deaf(ness)?|go\\s?deaf|lose\\s?(your\\s?)?hearing|hearing\\s?loss|hearing\\s?damage|damage\\s?(your\\s?)?hearing|hurt\\s?(your\\s?)?ears|tinnitus|ringing\\s?in\\s?(your\\s?)?ears|ear\\s?ringing|ears\\s?ring|noise\\s?damage|loud\\s?noise)\\b",
-"flags": "i"
-},
-{
-"points": 1,
-"check": "\\b(hair|scalp|head|neck)\\b.\\b(caught|stuck|pulled|tangled|entangle(d)?|trapped|wrapped)\\b|\\bscalp\\b|\\bscalped\\b|\\bhair\\b.\\b(ripped\\s?out|pulled\\s?out)\\b|\\bhead\\b.\\b(pulled|dragged)\\b",
-"flags": "i"
-},
-{
-"points": 1,
-"check": "\\b(cloth(e|i)ng|shirt|sleeve(s)?|jumper|hoodie|drawstring(s)?|hoodie\\s?string(s)?|scarf|tie|jewell?ery|ring(s)?|bracelet(s)?|necklace(s)?|chain(s)?|watch(es)?|earring(s)?)\\b.\\b(caught|snag(ged)?|pulled|tangled|entangle(d)?|stuck|wrapped|trapped|dragged)\\b|\\b(chok(e|ing|ed)|strangle(d)?)\\b.\\b(necklace|chain|scarf|tie)\\b|\\bring\\b.\\b(caught|snag(ged)?|pulled)\\b",
-"flags": "i"
-},
-{
-"points": 1,
-"check": "\\b(trip(ped)?|slip(ped)?|fall|fell|falling|stumble(d)?|clutter|mess(y)?|rubbish|offcut(s)?|tool(s)?\\s?on\\s?the\\s?floor|cord(s)?|lead(s)?|cable(s)?|sawdust|spill(s)?|wet\\s?floor|broken\\s?(bone|arm|leg)|sprain(ed)?|twist(ed)?\\s?(ankle|wrist)|hit\\s?(your\\s?)?head)\\b",
-"flags": "i"
-},
-{
-"points": 1,
-"check": "\\b(back|spine|manual\\s?handling|lift(ing)?|lifting\\s?wrong|lift\\s?wrong|strain(ed)?|sprain(ed)?|pulled\\s?muscle|muscle\\s?strain|muscle\\s?sprain|injur(y|ies)|hurt\\s?(your\\s?)?back|back\\s?pain|shoulder\\s?injury|neck\\s?injury|drop(ped)?\\s?(it|the\\s?load|object)|dropped\\s?(on\\s?your\\s?foot|on\\s?someone)\\b",
-"flags": "i"
-},
-{
-"points": 1,
-"check": "\\b(dust|sawdust|MDF\\s?dust|fine\\s?dust|fume(s)?|vapou?r(s)?|spray|chemical(s)?|inhale(d)?|breathe\\s?(in)?|breath(ing)?\\s?problems|lungs?|lung\\s?damage|respiratory|asthma|asthma\\s?attack|cough(ing)?|wheeze|short(ness)?\\s?of\\s?breath|dizzy|faint|sick|silicosis|cancer)\\b",
-"flags": "i"
-},
-{
-"points": 1,
-"check": "\\b(unsafe|injur(y|ies)|injured|hurt|harm|accident(s)?|incident(s)?|serious\\s?injury|seriously\\s?hurt|badly\\s?hurt|preventable\\s?accident|hospital|cuts?|bruise(s)?|burn(s)?|crush(ed)?|crushed\\s?fingers?|smashed\\s?fingers?)\\b",
-"flags": "i"
+  "id": "q1b_consequences",
+  "text": "For each rule listed in Question 1 (a–h), describe a possible consequence if that rule is not followed.",
+  "image": "q1b_consequences.jpg",
+  "hint": "Link each rule to a realistic injury/accident (eyes, lungs, hearing, entanglement, trips/falls, strains).",
+  "type": "long",
+  "maxPoints": 8,
+  "rubric": [
+    {
+      "points": 1,
+      "check": "\\b(eye|eyes|vision|sight|blind|blindness|go\\s?blind|lose\\s?(your\\s?)?(vision|sight)|eye\\s?(injury|injuries|damage)|scratch(ed)?\\s?(your\\s?)?eye|cut\\s?(your\\s?)?eye|something\\s?in\\s?(your\\s?)?eye|dust\\s?in\\s?(your\\s?)?eye|sawdust\\s?in\\s?(your\\s?)?eye|splinter\\s?in\\s?(your\\s?)?eye|chip(s)?\\s?(in|into|to|hit)\\s?(your\\s?)?eye|particle(s)?\\s?(in|into|to|hit)\\s?(your\\s?)?eye|spark(s)?\\s?(in|into|to|hit|burn)\\s?(your\\s?)?eye)\\b",
+      "flags": "i"
+    },
+    {
+      "points": 1,
+      "check": "\\b(hearing|hear(ing)?\\s?loss|ears?|ear\\s?damage|hurt\\s?(your\\s?)?ears|deaf|deafness|go\\s?deaf|lose\\s?(your\\s?)?hearing|tinnitus|ringing\\s?in\\s?(your\\s?)?ears|ear\\s?ringing|ears\\s?ring|loud\\s?noise|noise\\s?damage)\\b",
+      "flags": "i"
+    },
+    {
+      "points": 1,
+      "check": "\\b(hair|scalp|head|neck)\\b.*\\b(caught|stuck|pulled|tangled|entangle(d)?|trapped|wrapped|dragged)\\b|\\bscalp\\b|\\bscalped\\b|\\bhair\\b.*\\b(ripped\\s?out|pulled\\s?out)\\b",
+      "flags": "i"
+    },
+    {
+      "points": 1,
+      "check": "\\b(cloth(e|i)ng|shirt|sleeve(s)?|jumper|hoodie|drawstring(s)?|hoodie\\s?string(s)?|scarf|tie|jewell?ery|ring(s)?|bracelet(s)?|necklace(s)?|chain(s)?|watch(es)?|earring(s)?)\\b.*\\b(caught|snag(ged)?|pulled|tangled|entangle(d)?|stuck|wrapped|trapped|dragged)\\b|\\b(chok(e|ing|ed)|strangle(d)?)\\b.*\\b(necklace|chain|scarf|tie)\\b",
+      "flags": "i"
+    },
+    {
+      "points": 1,
+      "check": "\\b(trip(ped)?|slip(ped)?|fall|fell|falling|stumble(d)?|clutter|mess(y)?|rubbish|offcut(s)?|tools?\\s?on\\s?the\\s?floor|cord(s)?|lead(s)?|cable(s)?|sawdust|spill(s)?|wet\\s?floor)\\b",
+      "flags": "i"
+    },
+    {
+      "points": 1,
+      "check": "\\b(back|spine|manual\\s?handling|lift(ing)?|lifting|lift\\s?wrong|lifting\\s?wrong|strain(ed)?|sprain(ed)?|pulled\\s?muscle|muscle\\s?strain|hurt\\s?(your\\s?)?back|back\\s?pain|shoulder\\s?injury|neck\\s?injury|drop(ped)?\\s?(it|the\\s?load|object))\\b",
+      "flags": "i"
+    },
+    {
+      "points": 1,
+      "check": "\\b(dust|sawdust|MDF\\s?dust|fine\\s?dust|fume(s)?|vapou?r(s)?|spray|chemical(s)?|inhale(d)?|breathe\\s?(in)?|breath(ing)?\\s?problems|lungs?|lung\\s?damage|respiratory|asthma|asthma\\s?attack|cough(ing)?|wheeze|short(ness)?\\s?of\\s?breath|dizzy|faint|sick|silicosis|cancer)\\b",
+      "flags": "i"
+    },
+    {
+      "points": 1,
+      "check": "\\b(unsafe|injur(y|ies)|injured|hurt|harm|accident(s)?|incident(s)?|serious\\s?injury|seriously\\s?hurt|badly\\s?hurt|preventable\\s?accident|hospital|cuts?|bruise(s)?|burn(s)?|crush(ed)?|crushed\\s?fingers?|smashed\\s?fingers?)\\b",
+      "flags": "i"
+    }
+  ]
 }
-]
-},
+,
         {
           "id": "q2_jandals",
           "text": "Q2: Why should jandals never be worn on a work site?",
