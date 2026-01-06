@@ -1002,14 +1002,14 @@ try {
 
 
 // ✅ If assessment.pdf exists, append it to the END
-const assessmentBuf = await fetchOptionalPdf("assessment.pdf");
-if (assessmentBuf) {
-  try {
-    pdfBlob = await appendPdf(pdfBlob, assessmentBuf);
-  } catch (e) {
-    console.warn("assessment.pdf merge failed, sending original PDF only:", e);
-  }
-}
+//const assessmentBuf = await fetchOptionalPdf("assessment.pdf");
+//if (assessmentBuf) {
+//  try {
+//    pdfBlob = await appendPdf(pdfBlob, assessmentBuf);
+ // } catch (e) {
+//    console.warn("assessment.pdf merge failed, sending original PDF only:", e);
+//  }
+//}
 
   
   const fileName =
