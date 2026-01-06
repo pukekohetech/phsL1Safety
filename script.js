@@ -988,17 +988,22 @@ async function emailWork() {
 let pdfBlob = pdf.output("blob");
 
 // ✅ Fill + append sign-off sheet as last page(s)
-try {
-  const signoffBytes = await fetchOptionalPdfBytes("assessment.pdf");
-  // ^ name it whatever you want — see note below
+// ✅ Fill + append sign-off sheet ONLY if assessment title contains the word "final"
+const isFinalAssessment = /\bfinal\b/i.test(finalData.assessmentTitle || "");
 
-  if (signoffBytes) {
-    const filledBytes = await fillPdfForm(signoffBytes, finalData);
-    pdfBlob = await appendPdfBytesToBlob(pdfBlob, filledBytes);
+if (isFinalAssessment) {
+  try {
+    const signoffBytes = await fetchOptionalPdfBytes("assessment.pdf");
+
+    if (signoffBytes) {
+      const filledBytes = await fillPdfForm(signoffBytes, finalData);
+      pdfBlob = await appendPdfBytesToBlob(pdfBlob, filledBytes);
+    }
+  } catch (e) {
+    console.warn("Sign-off sheet fill/append failed, continuing without it:", e);
   }
-} catch (e) {
-  console.warn("Sign-off sheet fill/append failed, continuing without it:", e);
 }
+
 
 
 // ✅ If assessment.pdf exists, append it to the END
