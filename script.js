@@ -648,20 +648,17 @@ function back() {
 async function fetchOptionalPdf(url) {
   try {
     const res = await fetch(url, { cache: "no-cache" });
-
-    // If missing, return null (same behaviour as your current code)
     if (!res.ok) return null;
 
     const buf = await res.arrayBuffer();
-
-    // If it's empty, also treat as missing
     if (!buf || buf.byteLength < 100) return null;
 
     return buf;
-  } catch (e) {
+  } catch {
     return null;
   }
 }
+
 
 async function mergePdfs(frontPdfArrayBuffer, mainPdfBlob) {
   // Load pdf-lib if needed
