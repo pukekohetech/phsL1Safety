@@ -330,46 +330,47 @@
   "rubric": [
     {
       "points": 1,
-      "check": "\\b(eye|eyes|vision|sight|blind|blindness|go\\s?blind|lose\\s?(your\\s?)?(vision|sight)|eye\\s?(injury|injuries|damage)|scratch(ed)?\\s?(your\\s?)?eye|cut\\s?(your\\s?)?eye|something\\s?in\\s?(your\\s?)?eye|dust\\s?in\\s?(your\\s?)?eye|sawdust\\s?in\\s?(your\\s?)?eye|splinter\\s?in\\s?(your\\s?)?eye|chip(s)?\\s?(in|into|to|hit)\\s?(your\\s?)?eye|particle(s)?\\s?(in|into|to|hit)\\s?(your\\s?)?eye|spark(s)?\\s?(in|into|to|hit|burn)\\s?(your\\s?)?eye)\\b",
+      "check": "\\b(eye|eyes|vision|sight|blind|blindness|something\\s?in\\s?my\\s?eye|chip\\s?in\\s?eye|dust\\s?in\\s?eye|spark|splinter|shard|scratch\\s?eye|eye\\s?injury|eye\\s?damage)\\b",
       "flags": "i"
     },
     {
       "points": 1,
-      "check": "\\b(hearing|hear(ing)?\\s?loss|ears?|ear\\s?damage|hurt\\s?(your\\s?)?ears|deaf|deafness|go\\s?deaf|lose\\s?(your\\s?)?hearing|tinnitus|ringing\\s?in\\s?(your\\s?)?ears|ear\\s?ringing|ears\\s?ring|loud\\s?noise|noise\\s?damage)\\b",
+      "check": "\\b(hearing|ears?|deaf|deafness|tinnitus|ringing\\s?in\\s?ears|ear\\s?ringing|hearing\\s?loss|noise\\s?damage|loud\\s?noise)\\b",
       "flags": "i"
     },
     {
       "points": 1,
-      "check": "\\b(hair|scalp|head|neck)\\b.*\\b(caught|stuck|pulled|tangled|entangle(d)?|trapped|wrapped|dragged)\\b|\\bscalp\\b|\\bscalped\\b|\\bhair\\b.*\\b(ripped\\s?out|pulled\\s?out)\\b",
+      "check": "\\b(hair|scalp|head|neck)\\b.*\\b(caught|pulled|tangled|entangle(d)?|dragged|stuck)\\b|\\bscalped\\b|\\bscalp\\b",
       "flags": "i"
     },
     {
       "points": 1,
-      "check": "\\b(cloth(e|i)ng|shirt|sleeve(s)?|jumper|hoodie|drawstring(s)?|hoodie\\s?string(s)?|scarf|tie|jewell?ery|ring(s)?|bracelet(s)?|necklace(s)?|chain(s)?|watch(es)?|earring(s)?)\\b.*\\b(caught|snag(ged)?|pulled|tangled|entangle(d)?|stuck|wrapped|trapped|dragged)\\b|\\b(chok(e|ing|ed)|strangle(d)?)\\b.*\\b(necklace|chain|scarf|tie)\\b",
+      "check": "\\b(cloth(e|i)ng|sleeve(s)?|hoodie|drawstring(s)?|scarf|tie|jewell?ery|necklace|ring|bracelet|watch|earrings?)\\b.*\\b(caught|snag(ged)?|pulled|tangled|entangle(d)?|dragged|stuck)\\b|\\bchok(e|ing|ed)|strangle(d)?\\b",
       "flags": "i"
     },
     {
       "points": 1,
-      "check": "\\b(trip(ped)?|slip(ped)?|fall|fell|falling|stumble(d)?|clutter|mess(y)?|rubbish|offcut(s)?|tools?\\s?on\\s?the\\s?floor|cord(s)?|lead(s)?|cable(s)?|sawdust|spill(s)?|wet\\s?floor)\\b",
+      "check": "\\b(trip(ped)?|slip(ped)?|fall|fell|stumble(d)?|clutter|mess(y)?|offcuts?|tools?\\s?on\\s?the\\s?floor|cords?|leads?|cables?|spill(s)?|wet\\s?floor|sawdust)\\b",
       "flags": "i"
     },
     {
       "points": 1,
-      "check": "\\b(back|spine|manual\\s?handling|lift(ing)?|lifting|lift\\s?wrong|lifting\\s?wrong|strain(ed)?|sprain(ed)?|pulled\\s?muscle|muscle\\s?strain|hurt\\s?(your\\s?)?back|back\\s?pain|shoulder\\s?injury|neck\\s?injury|drop(ped)?\\s?(it|the\\s?load|object))\\b",
+      "check": "\\b(back|spine|manual\\s?handling|lift(ing)?|strain(ed)?|sprain(ed)?|pulled\\s?muscle|hurt\\s?back|back\\s?pain|dropped\\s?(it|load|object))\\b",
       "flags": "i"
     },
     {
       "points": 1,
-      "check": "\\b(dust|sawdust|MDF\\s?dust|fine\\s?dust|fume(s)?|vapou?r(s)?|spray|chemical(s)?|inhale(d)?|breathe\\s?(in)?|breath(ing)?\\s?problems|lungs?|lung\\s?damage|respiratory|asthma|asthma\\s?attack|cough(ing)?|wheeze|short(ness)?\\s?of\\s?breath|dizzy|faint|sick|silicosis|cancer)\\b",
+      "check": "\\b(dust|sawdust|MDF\\s?dust|fume(s)?|vapou?r(s)?|spray|chemical(s)?|inhale(d)?|breathe\\s?in|lungs?|lung\\s?damage|respiratory|asthma|cough|wheeze|short\\s?of\\s?breath|silicosis|cancer|dizzy|faint|sick)\\b",
       "flags": "i"
     },
     {
       "points": 1,
-      "check": "\\b(unsafe|injur(y|ies)|injured|hurt|harm|accident(s)?|incident(s)?|serious\\s?injury|seriously\\s?hurt|badly\\s?hurt|preventable\\s?accident|hospital|cuts?|bruise(s)?|burn(s)?|crush(ed)?|crushed\\s?fingers?|smashed\\s?fingers?)\\b",
+      "check": "\\b(unsafe|injur(y|ies)|injured|hurt|harm|accident(s)?|incident(s)?|serious\\s?injury|hospital|cut(s)?|bruise(s)?|burn(s)?|crush(ed)?|smashed\\s?fingers?)\\b",
       "flags": "i"
     }
   ]
 }
+
 ,
         {
           "id": "q2_jandals",
