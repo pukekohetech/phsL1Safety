@@ -692,17 +692,19 @@ function submitWork() {
 
   const deadlineNow = getDeadlineStatus(new Date());
 
-  finalData = {
-    studentName,
-    studentId: document.getElementById("id").value.trim(),
-    teacherName,
-    assessmentTitle: ASSESSMENTS[assSel.value].title,
-    assessmentSubtitle: ASSESSMENTS[assSel.value].subtitle || "",
-    points: total,
-    totalPoints,
-    pct,
-    deadlineInfo: deadlineNow
-  };
+ finalData = {
+  studentName,
+  studentId: document.getElementById("id").value.trim(),
+  teacherName,
+  assessmentTitle: ASSESSMENTS[assSel.value].title,
+  assessmentSubtitle: ASSESSMENTS[assSel.value].subtitle || "",
+  attachSignoff: !!ASSESSMENTS[assSel.value].attachSignoff,
+  points: total,
+  totalPoints,
+  pct,
+  deadlineInfo: deadlineNow
+};
+
 
   const emailBtn = document.getElementById("emailBtn");
   if (pct >= MIN_PCT_FOR_SUBMIT && (!deadlineNow || deadlineNow.status !== "overdue")) {
@@ -989,9 +991,7 @@ let pdfBlob = pdf.output("blob");
 
 // ✅ Fill + append sign-off sheet as last page(s)
 // ✅ Fill + append sign-off sheet ONLY if assessment title contains the word "final"
-const isFinalAssessment = /\bfinal\b/i.test(finalData.assessmentTitle || "");
-
-if (isFinalAssessment) {
+if (finalData.attachSignoff) {
   try {
     const signoffBytes = await fetchOptionalPdfBytes("assessment.pdf");
 
