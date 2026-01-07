@@ -671,24 +671,53 @@ function submitWork() {
   const answersDiv = document.getElementById("answers");
   answersDiv.innerHTML = "";
 
-  results.forEach(r => {
-    const fb = document.createElement("div");
-    const status =
-      r.earned === r.max ? "correct" :
-      r.earned > 0       ? "partial" :
-                           "wrong";
-    fb.className = `feedback ${status}`;
-    fb.innerHTML = `
-      <h3>${r.id}: ${r.text}</h3>
-      <p><strong>Your answer:</strong> ${r.answer || "<em>No answer provided</em>"}</p>
-      <p><strong>Result:</strong> ${
-        status === "correct" ? "Correct" :
-        status === "partial" ? "Partially correct" :
-                               "Incorrect"
-      } (${r.earned}/${r.max} marks)</p>
-    `;
-    answersDiv.appendChild(fb);
-  });
+ results.forEach(r => {
+  const fb = document.createElement("div");
+
+  const status =
+    r.earned === r.max ? "correct" :
+    r.earned > 0       ? "partial" :
+                         "wrong";
+
+  fb.className = `feedback ${status}`;
+
+  // --- Title (question text may contain HTML from your JSON, keep as-is if you want formatting)
+  const h3 = document.createElement("h3");
+  h3.innerHTML = `${r.id}: ${r.text}`;  // r.text comes from your JSON, not the student
+  fb.appendChild(h3);
+
+  // --- Student answer (MUST be textContent to prevent XSS)
+  const pAns = document.createElement("p");
+  const strongAns = document.createElement("strong");
+  strongAns.textContent = "Your answer: ";
+  pAns.appendChild(strongAns);
+
+  const ansSpan = document.createElement("span");
+  ansSpan.textContent = r.answer ? r.answer : "No answer provided";
+  pAns.appendChild(ansSpan);
+
+  fb.appendChild(pAns);
+
+  // --- Result line
+  const pRes = document.createElement("p");
+  const strongRes = document.createElement("strong");
+  strongRes.textContent = "Result: ";
+  pRes.appendChild(strongRes);
+
+  const statusText =
+    status === "correct" ? "Correct" :
+    status === "partial" ? "Partially correct" :
+                           "Incorrect";
+
+  const resSpan = document.createElement("span");
+  resSpan.textContent = `${statusText} (${r.earned}/${r.max} marks)`;
+  pRes.appendChild(resSpan);
+
+  fb.appendChild(pRes);
+
+  answersDiv.appendChild(fb);
+});
+
 
   const deadlineNow = getDeadlineStatus(new Date());
 
@@ -732,61 +761,9 @@ function back() {
 // Email / PDF – streamlined header: ONLY deadline-relative submission line
 // + filename StudentNo_StudentName_AssessmentTitle.pdf
 // ------------------------------------------------------------
-async function fetchOptionalPdf(url) {
-  try {
-    const res = await fetch(url, { cache: "no-cache" });
-    if (!res.ok) return null;
-
-    const buf = await res.arrayBuffer();
-    if (!buf || buf.byteLength < 100) return null;
-
-    return buf;
-  } catch {
-    return null;
-  }
-}
 
 
-async function appendPdf(mainPdfBlob, extraPdfArrayBuffer) {
-  // Load pdf-lib if needed
-  const load = src => new Promise((res, rej) => {
-    const s = document.createElement("script");
-    s.src = src;
-    s.onload = res;
-    s.onerror = rej;
-    document.head.appendChild(s);
-  });
 
-  if (!window.PDFLib) {
-    await load("https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js");
-  }
-
-  if (!window.PDFLib) {
-    console.warn("pdf-lib failed to load; sending original PDF only.");
-    return mainPdfBlob;
-  }
-
-  const { PDFDocument } = window.PDFLib;
-
-  const mainBytes = await mainPdfBlob.arrayBuffer();
-  const mainDoc = await PDFDocument.load(mainBytes);
-  const mergedDoc = await PDFDocument.create();
-
-  // 1) Copy all generated pages first
-  const mainPages = await mergedDoc.copyPages(mainDoc, mainDoc.getPageIndices());
-  mainPages.forEach(p => mergedDoc.addPage(p));
-
-  // 2) Then copy the assessment PDF pages last
-  if (extraPdfArrayBuffer) {
-    const extraDoc = await PDFDocument.load(extraPdfArrayBuffer);
-    
-    const extraPages = await mergedDoc.copyPages(extraDoc, [0]);
-    extraPages.forEach(p => mergedDoc.addPage(p));
-  }
-
-  const mergedBytes = await mergedDoc.save();
-  return new Blob([mergedBytes], { type: "application/pdf" });
-}
 
 
 
@@ -808,19 +785,12 @@ async function emailWork() {
       .replace(/\s+/g, "_")
       .replace(/[^a-zA-Z0-9_\-]/g, "");
 
-  // Dynamically load jsPDF + html2canvas if needed
-  const load = src => new Promise((res, rej) => {
-    const s = document.createElement("script");
-    s.src = src;
-    s.onload = res;
-    s.onerror = rej;
-    document.head.appendChild(s);
-  });
 
-  if (!(window.jspdf && window.html2canvas)) {
-    await load("https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js");
-    await load("https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js");
-  }
+ if (!(window.jspdf && window.html2canvas)) {
+  await loadScriptOnce("https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js");
+  await loadScriptOnce("https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js");
+}
+
 
   if (!window.jspdf || !window.html2canvas) {
     alert("PDF libraries failed to load. Please check your internet connection.");
@@ -1003,18 +973,6 @@ if (finalData.attachSignoff) {
     console.warn("Sign-off sheet fill/append failed, continuing without it:", e);
   }
 }
-
-
-
-// ✅ If assessment.pdf exists, append it to the END
-//const assessmentBuf = await fetchOptionalPdf("assessment.pdf");
-//if (assessmentBuf) {
-//  try {
-//    pdfBlob = await appendPdf(pdfBlob, assessmentBuf);
- // } catch (e) {
-//    console.warn("assessment.pdf merge failed, sending original PDF only:", e);
-//  }
-//}
 
   
   const fileName =
