@@ -8,22 +8,56 @@ let STORAGE_KEY;               // will be set after questions load
 let data = { answers: {} };    // default
 let currentAssessmentId = null; // track which assessment is loaded
 
-function initStorage(appId, version = 'noversion') {
+function initStorage(appId, version = "noversion") {
   STORAGE_KEY = `${appId}_${version}_DATA`;
 
-  // ---- migrate old TECH_DATA (run once) ----
-  const OLD_KEY = "TECH_DATA";
-  if (localStorage.getItem(OLD_KEY) && !localStorage.getItem(STORAGE_KEY)) {
-    try {
-      const old = JSON.parse(localStorage.getItem(OLD_KEY));
-      if (old?.answers) {
-        localStorage.setItem(STORAGE_KEY, JSON.stringify(old));
+  // ------------------------------------------------------------
+  // 2) Migrate from previous version key (if new key missing)
+  // ------------------------------------------------------------
+  if (!localStorage.getItem(STORAGE_KEY)) {
+    const prevKey = findMostRecentStorageKeyForApp(appId, STORAGE_KEY);
+
+    if (prevKey) {
+      try {
+        const prev = JSON.parse(localStorage.getItem(prevKey));
+        if (prev && typeof prev === "object") {
+          prev.migratedFrom = prevKey;
+          prev.migratedAt = new Date().toISOString();
+          localStorage.setItem(STORAGE_KEY, JSON.stringify(prev));
+        }
+      } catch (e) {
+        console.warn("Migration from previous version failed:", e);
       }
-      localStorage.removeItem(OLD_KEY);
-    } catch (e) {
-      console.warn("Migration from TECH_DATA failed:", e);
     }
   }
+
+  // ------------------------------------------------------------
+  // 3) Load data from current key (now guaranteed best possible)
+  // ------------------------------------------------------------
+  data = { answers: {} }; // reset default before load
+
+  try {
+    const saved = localStorage.getItem(STORAGE_KEY);
+    if (saved) {
+      const parsed = JSON.parse(saved);
+      if (parsed && typeof parsed === "object") data = parsed;
+    }
+  } catch (e) {
+    console.warn("Failed to parse stored data:", e);
+  }
+
+  // ------------------------------------------------------------
+  // 4) OPTIONAL: cleanup old versions *after* migration succeeded
+  //    (Pick ONE of these approaches)
+  // ------------------------------------------------------------
+
+  // A) safest cleanup: keep last 3 versions
+  cleanupOldVersionsKeepLatest(appId, 3, STORAGE_KEY);
+
+  // B) OR aggressive cleanup: delete EVERYTHING except current
+  // cleanupOldVersionsDeleteAll(appId, STORAGE_KEY);
+}
+
 
   // load existing data if present
   try {
@@ -80,6 +114,61 @@ const DEBUG = false; // ← Debug logging off in production
 // ------------------------------------------------------------
 const MIN_PCT_FOR_SUBMIT = 100;
 // Change this to e.g. 80 if you want 80% or better
+
+function findMostRecentStorageKeyForApp(appId, currentKey) {
+  try {
+    const prefix = `${appId}_`;
+    let bestKey = null;
+    let bestLastSaved = 0;
+
+    for (let i = 0; i < localStorage.length; i++) {
+      const k = localStorage.key(i);
+      if (!k) continue;
+
+      if (
+        k.startsWith(prefix) &&
+        k.endsWith("_DATA") &&
+        k !== currentKey
+      ) {
+        const raw = localStorage.getItem(k);
+        let lastSaved = 0;
+
+        try {
+          const parsed = JSON.parse(raw);
+          lastSaved = parsed?.lastSaved ? Date.parse(parsed.lastSaved) : 0;
+        } catch {}
+
+        // If no lastSaved, still consider it but it will sort low
+        if (!bestKey || lastSaved > bestLastSaved) {
+          bestKey = k;
+          bestLastSaved = lastSaved;
+        }
+      }
+    }
+
+    return bestKey;
+  } catch (e) {
+    console.warn("findMostRecentStorageKeyForApp failed:", e);
+    return null;
+  }
+}
+function cleanupOldVersionsDeleteAll(appId, currentKey) {
+  try {
+    const prefix = `${appId}_`;
+
+    for (let i = localStorage.length - 1; i >= 0; i--) {
+      const k = localStorage.key(i);
+      if (!k) continue;
+
+      if (k.startsWith(prefix) && k.endsWith("_DATA") && k !== currentKey) {
+        localStorage.removeItem(k);
+      }
+    }
+  } catch (e) {
+    console.warn("cleanupOldVersionsDeleteAll failed:", e);
+  }
+}
+
 
 // ------------------------------------------------------------
 // Load questions.json (now also extracts APP_ID & VERSION & DEADLINE)
@@ -272,6 +361,7 @@ function saveAnswer(qid) {
     data.answers[currentAssessmentId] = {};
   }
   data.answers[currentAssessmentId][qid] = xorEncode(val);
+  data.lastSaved = new Date().toISOString();
   localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
 }
 
@@ -311,6 +401,7 @@ function saveStudentInfo() {
   data.name = document.getElementById("name").value.trim();
   data.id = document.getElementById("id").value.trim();
   data.teacher = document.getElementById("teacher").value;
+  data.lastSaved = new Date().toISOString();
   localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
 }
 
