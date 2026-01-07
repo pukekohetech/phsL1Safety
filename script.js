@@ -29,7 +29,7 @@ function initStorage(appId, version = "noversion") {
         console.warn("Migration from previous version failed:", e);
       }
     }
-  }}
+  
 
   // ------------------------------------------------------------
   // 3) Load data from current key (now guaranteed best possible)
