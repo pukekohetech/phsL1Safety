@@ -12,7 +12,7 @@ function initStorage(appId, version = "noversion") {
   STORAGE_KEY = `${appId}_${version}_DATA`;
 
   // ------------------------------------------------------------
-  // 2) Migrate from previous version key (if new key missing)
+  // Migrate from previous version key (if new key missing)
   // ------------------------------------------------------------
   if (!localStorage.getItem(STORAGE_KEY)) {
     const prevKey = findMostRecentStorageKeyForApp(appId, STORAGE_KEY);
@@ -29,12 +29,12 @@ function initStorage(appId, version = "noversion") {
         console.warn("Migration from previous version failed:", e);
       }
     }
-  
+  }
 
   // ------------------------------------------------------------
-  // 3) Load data from current key (now guaranteed best possible)
+  // Load data from current key
   // ------------------------------------------------------------
-  data = { answers: {} }; // reset default before load
+  data = { answers: {} };
 
   try {
     const saved = localStorage.getItem(STORAGE_KEY);
@@ -47,16 +47,12 @@ function initStorage(appId, version = "noversion") {
   }
 
   // ------------------------------------------------------------
-  // 4) OPTIONAL: cleanup old versions *after* migration succeeded
-  //    (Pick ONE of these approaches)
+  // OPTIONAL cleanup
   // ------------------------------------------------------------
-
-  // A) safest cleanup: keep last 3 versions
-  cleanupOldVersionsKeepLatest(appId, 3, STORAGE_KEY);
-
-  // B) OR aggressive cleanup: delete EVERYTHING except current
-  // cleanupOldVersionsDeleteAll(appId, STORAGE_KEY);
+  // cleanupOldVersionsKeepLatest(appId, 3, STORAGE_KEY);
+   cleanupOldVersionsDeleteAll(appId, STORAGE_KEY);
 }
+
 
 
   // load existing data if present
