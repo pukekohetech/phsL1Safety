@@ -89,7 +89,7 @@ const DEBUG = false; // ← Debug logging off in production
 // ------------------------------------------------------------
 // Requirements
 // ------------------------------------------------------------
-const MIN_PCT_FOR_SUBMIT = 100;
+const MIN_PCT_FOR_SUBMIT = 1;
 // Change this to e.g. 80 if you want 80% or better
 
 function findMostRecentStorageKeyForApp(appId, currentKey) {
@@ -581,6 +581,17 @@ function colourQuestions(results) {
   });
 }
 
+
+function enablePdfMode() {
+  const result = document.getElementById("result");
+  if (result) result.classList.add("pdf-mode");
+}
+
+function disablePdfMode() {
+  const result = document.getElementById("result");
+  if (result) result.classList.remove("pdf-mode");
+}
+
 // ------------------------------------------------------------
 // Deadline helpers
 // ------------------------------------------------------------
@@ -980,6 +991,10 @@ async function emailWork() {
   drawHeader(true);
   let currentY = marginTop;
 
+enablePdfMode();
+await new Promise(r => requestAnimationFrame(() => requestAnimationFrame(r)));
+
+try {
   for (const block of blocks) {
     const canvas = await window.html2canvas(block, {
       scale: 1.5,
@@ -990,7 +1005,9 @@ async function emailWork() {
       scrollY: -window.scrollY
     });
 
-    const imgData = canvas.toDataURL("image/png");
+  
+
+    const imgData = canvas.toDataURL("image/jpeg", 0.8);
     const imgProps = pdf.getImageProperties(imgData);
 
     const maxContentWidth = pageWidth - marginLeft - marginRight;
@@ -1012,9 +1029,14 @@ async function emailWork() {
       currentY = marginTop;
     }
 
-    pdf.addImage(imgData, "PNG", xPos, currentY, imgWidth, imgHeight);
+    pdf.addImage(imgData, "JPEG", xPos, currentY, imgWidth, imgHeight);
     currentY += imgHeight + 5;
   }
+
+      
+} finally {
+  disablePdfMode();
+}
 
   // Page numbers
   const pageCount = pdf.getNumberOfPages();
@@ -1075,6 +1097,8 @@ if (finalData.attachSignoff) {
   URL.revokeObjectURL(url);
 }
 
+  
+
 // ------------------------------------------------------------
 // Simple clipboard clear (best-effort)
 // ------------------------------------------------------------
@@ -1128,4 +1152,9 @@ document.addEventListener("DOMContentLoaded", async () => {
   await loadQuestions();
   initApp();
   applyDeadlineLockIfNeeded();
+
+  // Preload libs quietly
+  loadScriptOnce("https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js");
+  loadScriptOnce("https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js");
+  loadScriptOnce("https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js");
 });
