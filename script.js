@@ -199,7 +199,7 @@ async function fillPdfForm(pdfBytes, finalData) {
   safeSet("Date", new Date().toLocaleDateString("en-NZ")); // dd/mm/yyyy
 
   // Optional extras
-  // safeSet("Result", finalData.pct >= 100 ? "A" : "N");
+   safeSet("Result", finalData.pct >= 100 ? "A" : "N");
   // safeSet("AssessorSignature", ""); // leave blank
 
   // ✅ Make it print-ready and stop further editing
