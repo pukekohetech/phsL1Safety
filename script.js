@@ -11,9 +11,7 @@ let currentAssessmentId = null; // track which assessment is loaded
 function initStorage(appId, version = "noversion") {
   STORAGE_KEY = `${appId}_${version}_DATA`;
 
-  // ------------------------------------------------------------
   // Migrate from previous version key (if new key missing)
-  // ------------------------------------------------------------
   if (!localStorage.getItem(STORAGE_KEY)) {
     const prevKey = findMostRecentStorageKeyForApp(appId, STORAGE_KEY);
 
@@ -31,9 +29,7 @@ function initStorage(appId, version = "noversion") {
     }
   }
 
-  // ------------------------------------------------------------
   // Load data from current key
-  // ------------------------------------------------------------
   data = { answers: {} };
 
   try {
@@ -46,26 +42,11 @@ function initStorage(appId, version = "noversion") {
     console.warn("Failed to parse stored data:", e);
   }
 
-  // ------------------------------------------------------------
-  // OPTIONAL cleanup
-  // ------------------------------------------------------------
+  // OPTIONAL cleanup (⚠️ see warning below)
   // cleanupOldVersionsKeepLatest(appId, 3, STORAGE_KEY);
-   cleanupOldVersionsDeleteAll(appId, STORAGE_KEY);
+  // cleanupOldVersionsDeleteAll(appId, STORAGE_KEY);
 }
 
-
-
-  // load existing data if present
-  try {
-    const saved = localStorage.getItem(STORAGE_KEY);
-    if (saved) {
-      const parsed = JSON.parse(saved);
-      if (parsed && typeof parsed === "object") data = parsed;
-    }
-  } catch (e) {
-    console.warn("Failed to parse stored data:", e);
-  }
-}
 
 // ------------------------------------------------------------
 // XOR obfuscation helpers
