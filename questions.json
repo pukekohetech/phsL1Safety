@@ -30,6 +30,7 @@
     {
       "id": "24352-selfreflection1",
       "title": "Learner Self-reflection 1 – 24352 (v3)",
+      "attachSignoff": true,
       "subtitle": "US 24352 – Eye and Respiratory PPE",
       "usNumber": "24352",
       "usVersion": "v3",
@@ -1104,7 +1105,8 @@
     },
     {
       "id": "assessment-record-5",
-      "title": "Assessment Record Sheet - 24352 - final (v3) 5/6",
+      "title": "Assessment Record Sheet - 24352(v3) 5/6",
+      "attachSignoff": true,
       "subtitle": "Demonstrate and apply knowledge of safe working practices in the construction of a BCATS project",
       "usNumber": "US 24352",
       "usVersion": "v3",
@@ -1187,6 +1189,7 @@
     {
       "id": "assessment-record-6",
       "title": "Assessment Record Sheet - 24352 - final (v3) 6/6",
+      "attachSignoff": true,
       "subtitle": "Demonstrate and apply knowledge of safe working practices in the construction of a BCATS project",
       "usNumber": "US 24352",
       "usVersion": "v3",
