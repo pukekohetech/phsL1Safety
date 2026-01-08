@@ -173,6 +173,13 @@ async function fetchOptionalPdfBytes(url) {
   }
 }
 
+function getStudentEmail(studentId) {
+  const id = (studentId || "").trim();
+  if (!id) return "";
+  return `${id}@pukekohehigh.school.nz`;
+}
+
+
 async function fillPdfForm(pdfBytes, finalData) {
   // Load pdf-lib if needed
   if (!window.PDFLib) {
@@ -194,7 +201,9 @@ async function fillPdfForm(pdfBytes, finalData) {
     }
   };
 
-  safeSet("StudentName", finalData.studentName);
+//  safeSet("StudentName", finalData.studentName);
+  const studentEmail = getStudentEmail(finalData.studentId);
+safeSet("StudentName", `${finalData.studentName} ${studentEmail}`.trim());
   safeSet("AssessorName", finalData.teacherName);
   safeSet("Date", new Date().toLocaleDateString("en-NZ")); // dd/mm/yyyy
 
