@@ -1,5 +1,3 @@
-/* script.js – US 24355 app: FINAL + DEADLINE + HINTS ONLY UNDER QUESTIONS */
-/* Streamlined PDF header: shows ONLY "Submitted early/today/late" line (no Submitted/PDF Generated lines) */
 
 // ------------------------------------------------------------
 // Local storage – now dynamic & versioned
@@ -89,7 +87,7 @@ const DEBUG = false; // ← Debug logging off in production
 // ------------------------------------------------------------
 // Requirements
 // ------------------------------------------------------------
-const MIN_PCT_FOR_SUBMIT = 1;
+const MIN_PCT_FOR_SUBMIT = 100;
 // Change this to e.g. 80 if you want 80% or better
 
 function findMostRecentStorageKeyForApp(appId, currentKey) {
