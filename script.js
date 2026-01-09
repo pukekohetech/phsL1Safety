@@ -190,14 +190,29 @@ async function fillPdfForm(pdfBytes, finalData) {
   const doc = await PDFDocument.load(pdfBytes);
   const form = doc.getForm();
 
-  // ✅ Fill fields by name
-  const safeSet = (fieldName, value) => {
-    try {
-      form.getTextField(fieldName).setText(value || "");
-    } catch (e) {
-      console.warn(`Field not found: ${fieldName}`);
-    }
-  };
+  const safeSet = (fieldNameLike, value) => {
+  try {
+    const fields = form.getFields();
+
+    fields.forEach(f => {
+      const name = f.getName();
+      if (name.toLowerCase().includes(fieldNameLike.toLowerCase())) {
+        try {
+          // Only try text fields
+          if (f.constructor?.name === "PDFTextField") {
+            f.setText(value || "");
+          }
+        } catch (e) {
+          console.warn(`Could not set field: ${name}`, e);
+        }
+      }
+    });
+  } catch (e) {
+    console.warn(`safeSetMany failed for: ${fieldNameLike}`, e);
+  }
+};
+
+
 
 //  safeSet("StudentName", finalData.studentName);
   const studentEmail = getStudentEmail(finalData.studentId);
