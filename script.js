@@ -190,6 +190,25 @@ async function fillPdfForm(pdfBytes, finalData) {
   const doc = await PDFDocument.load(pdfBytes);
   const form = doc.getForm();
 
+  // ✅ Fill ALL matching text fields (across pages)
+const safeSetMany = (nameLike, value) => {
+  try {
+    form.getFields().forEach(f => {
+      try {
+        const n = f.getName();
+        if (n.toLowerCase().includes(nameLike.toLowerCase())) {
+          // Works even if class names differ
+          if (typeof f.setText === "function") {
+            f.setText(value || "");
+          }
+        }
+      } catch {}
+    });
+  } catch (e) {
+    console.warn(`safeSetMany failed for: ${nameLike}`, e);
+  }
+};
+
   // ✅ Fill fields by name
   const safeSet = (fieldName, value) => {
     try {
@@ -199,15 +218,13 @@ async function fillPdfForm(pdfBytes, finalData) {
     }
   };
 
-//  safeSet("StudentName", finalData.studentName);
-  const studentEmail = getStudentEmail(finalData.studentId);
-safeSet("StudentName", `${finalData.studentName} ${studentEmail}`.trim());
-  safeSet("AssessorName", finalData.teacherName);
-  safeSet("Date", new Date().toLocaleDateString("en-NZ")); // dd/mm/yyyy
+const studentEmail = getStudentEmail(finalData.studentId);
+const studentCombined = `${finalData.studentName} ${studentEmail}`.trim();
 
-  // Optional extras
-   safeSet("Result", finalData.pct >= 100 ? "A" : "N");
-  // safeSet("AssessorSignature", ""); // leave blank
+safeSetMany("StudentName", studentCombined);
+safeSetMany("AssessorName", finalData.teacherName);
+safeSetMany("Date", new Date().toLocaleDateString("en-NZ"));
+safeSetMany("Result", finalData.pct >= 100 ? "A" : "N");
 
   // ✅ Make it print-ready and stop further editing
   form.flatten();
