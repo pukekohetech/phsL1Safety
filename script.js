@@ -219,7 +219,7 @@ const studentCombined = `${finalData.studentName} ${studentEmail}`.trim();
 safeSetMany("StudentName", studentCombined);
 safeSetMany("AssessorName", finalData.teacherName);
 safeSetMany("Date", new Date().toLocaleDateString("en-NZ"));
-safeSetMany("Result", finalData.pct >= 100 ? "A" : "N");;
+safeSetMany("Result", finalData.pct >= 100 ? "A" : "N");
 
 
   // ✅ Make it print-ready and stop further editing
