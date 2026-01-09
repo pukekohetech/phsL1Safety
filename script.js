@@ -190,7 +190,7 @@ async function fillPdfForm(pdfBytes, finalData) {
   const doc = await PDFDocument.load(pdfBytes);
   const form = doc.getForm();
 
-  const safeSet = (fieldNameLike, value) => {
+  const safeSetMany = (fieldNameLike, value) => {
   try {
     const fields = form.getFields();
 
@@ -208,7 +208,7 @@ async function fillPdfForm(pdfBytes, finalData) {
       }
     });
   } catch (e) {
-    console.warn(`safeSetMany failed for: ${fieldNameLike}`, e);
+    console.warn(`safeSet failed for: ${fieldNameLike}`, e);
   }
 };
 
@@ -216,10 +216,10 @@ async function fillPdfForm(pdfBytes, finalData) {
 const studentEmail = `${finalData.studentId}@pukekohehigh.school.nz`;
 const studentCombined = `${finalData.studentName} ${studentEmail}`.trim();
 
-safeSet("StudentName", studentCombined);
-safeSet("AssessorName", finalData.teacherName);
-safeSet("Date", new Date().toLocaleDateString("en-NZ"));
-safeSet("Result", finalData.pct >= 100 ? "A" : "N");;
+safeSetMany("StudentName", studentCombined);
+safeSetMany("AssessorName", finalData.teacherName);
+safeSetMany("Date", new Date().toLocaleDateString("en-NZ"));
+safeSetMany("Result", finalData.pct >= 100 ? "A" : "N");;
 
 
   // ✅ Make it print-ready and stop further editing
