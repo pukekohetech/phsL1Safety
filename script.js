@@ -213,16 +213,14 @@ async function fillPdfForm(pdfBytes, finalData) {
 };
 
 
+const studentEmail = `${finalData.studentId}@pukekohehigh.school.nz`;
+const studentCombined = `${finalData.studentName} ${studentEmail}`.trim();
 
-//  safeSet("StudentName", finalData.studentName);
-  const studentEmail = getStudentEmail(finalData.studentId);
-safeSet("StudentName", `${finalData.studentName} ${studentEmail}`.trim());
-  safeSet("AssessorName", finalData.teacherName);
-  safeSet("Date", new Date().toLocaleDateString("en-NZ")); // dd/mm/yyyy
+safeSet("StudentName", studentCombined);
+safeSet("AssessorName", finalData.teacherName);
+safeSet("Date", new Date().toLocaleDateString("en-NZ"));
+safeSet("Result", finalData.pct >= 100 ? "A" : "N");;
 
-  // Optional extras
-   safeSet("Result", finalData.pct >= 100 ? "A" : "N");
-  // safeSet("AssessorSignature", ""); // leave blank
 
   // ✅ Make it print-ready and stop further editing
   form.flatten();
