@@ -87,7 +87,7 @@ const DEBUG = false; // ← Debug logging off in production
 // ------------------------------------------------------------
 // Requirements
 // ------------------------------------------------------------
-const MIN_PCT_FOR_SUBMIT = 1;
+const MIN_PCT_FOR_SUBMIT = 100;
 // Change this to e.g. 80 if you want 80% or better
 
 function findMostRecentStorageKeyForApp(appId, currentKey) {
@@ -190,37 +190,24 @@ async function fillPdfForm(pdfBytes, finalData) {
   const doc = await PDFDocument.load(pdfBytes);
   const form = doc.getForm();
 
-  const safeSetMany = (fieldNameLike, value) => {
-  try {
-    const fields = form.getFields();
+  // ✅ Fill fields by name
+  const safeSet = (fieldName, value) => {
+    try {
+      form.getTextField(fieldName).setText(value || "");
+    } catch (e) {
+      console.warn(`Field not found: ${fieldName}`);
+    }
+  };
 
-    fields.forEach(f => {
-      const name = f.getName();
-      if (name.toLowerCase().includes(fieldNameLike.toLowerCase())) {
-        try {
-          // Only try text fields
-          if (f.constructor?.name === "PDFTextField") {
-            f.setText(value || "");
-          }
-        } catch (e) {
-          console.warn(`Could not set field: ${name}`, e);
-        }
-      }
-    });
-  } catch (e) {
-    console.warn(`safeSet failed for: ${fieldNameLike}`, e);
-  }
-};
+//  safeSet("StudentName", finalData.studentName);
+  const studentEmail = getStudentEmail(finalData.studentId);
+safeSet("StudentName", `${finalData.studentName} ${studentEmail}`.trim());
+  safeSet("AssessorName", finalData.teacherName);
+  safeSet("Date", new Date().toLocaleDateString("en-NZ")); // dd/mm/yyyy
 
-
-const studentEmail = `${finalData.studentId}@pukekohehigh.school.nz`;
-const studentCombined = `${finalData.studentName} ${studentEmail}`.trim();
-
-safeSetMany("StudentName", studentCombined);
-safeSetMany("AssessorName", finalData.teacherName);
-safeSetMany("Date", new Date().toLocaleDateString("en-NZ"));
-safeSetMany("Result", finalData.pct >= 100 ? "A" : "N");
-
+  // Optional extras
+   safeSet("Result", finalData.pct >= 100 ? "A" : "N");
+  // safeSet("AssessorSignature", ""); // leave blank
 
   // ✅ Make it print-ready and stop further editing
   form.flatten();
