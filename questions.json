@@ -305,6 +305,11 @@
       "flags": "i"
     },
     {
+  "points": 1,
+  "check": "\\b(stop\\s?work|stop\\s?using|stop\\s?what\\s?you\\s?are\\s?doing|isolate|isolate\\s?machine|turn\\s?off|switch\\s?off|tag\\s?out|lock\\s?out|do\\s?not\\s?use|out\\s?of\\s?order|danger\\s?tag)\\b",
+  "flags": "i"
+},
+    {
       "points": 1,
       "check": "\\b(report|tell\\s?teacher|inform\\s?teacher|let\\s?teacher\\s?know|hazard|unsafe|broken|faulty|damaged|near\\s?miss|injury|accident)\\b",
       "flags": "i"
