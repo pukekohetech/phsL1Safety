@@ -470,9 +470,9 @@
   "type": "short",
   "maxPoints": 1,
   "rubric": [
-    {
+  {
       "points": 1,
-      "check": "\\b(long\\s?hair|hair)\\b.*\\b(caught|catch|grab(bed)?|stuck|tangle(d)?|entangle(d)?|wrap(ped)?|pulled|dragged|pulled\\s?in|dragged\\s?in)\\b.*\\b(machine|machinery|moving\\s?parts?|spinning|lathe|drill|chuck|spindle)\\b|\\b(scalp|scalped|ripped\\s?out|torn\\s?out|hair\\s?ripped\\s?out|head\\s?injury|neck\\s?injury|pulled\\s?toward(s)?\\s?the\\s?machine)\\b",
+      "check": "\\b(hair|long\\s?hair)\\b.*\\b(caught|catch|grab(bed)?|stuck|get\\s?caught|tangle(d)?|entangle(d)?|wrap(ped)?|pulled|dragged|pulled\\s?in|dragged\\s?in)\\b|\\b(caught|catch|grab(bed)?|stuck|get\\s?caught|tangle(d)?|entangle(d)?|wrap(ped)?|pulled|dragged|pulled\\s?in|dragged\\s?in)\\b.*\\b(hair|long\\s?hair)\\b.*\\b(machine|machines|machinery|moving\\s?parts?|spinning|tool|tools|lathe|drill|drill\\s?press|chuck|spindle|belt|motor)\\b|\\b(scalp|scalped|ripped\\s?out|torn\\s?out|hair\\s?ripped\\s?out|head\\s?injury|neck\\s?injury)\\b",
       "flags": "i"
     }
   ]
