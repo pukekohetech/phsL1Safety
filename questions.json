@@ -609,12 +609,12 @@
   "rubric": [
     {
       "points": 1,
-      "check": "\\b(poor\\s?fit|doesn'?t\\s?fit|fit\\s?properly|seal|sealed|poor\\s?seal|gap(s)?|leak(s|ing)?|noise\\s?gets\\s?in|sound\\s?gets\\s?in|doesn'?t\\s?block\\s?noise|not\\s?effective|ineffective|pads?|pad\\s?damaged|worn\\s?out|foam|cushion(s)?|crack(ed)?|split|broken|damaged|headband|loose)\\b",
+      "check": "\\b(poor\\s?fit|doesn'?t\\s?fit|fit\\s?properly|seal|sealed|poor\\s?seal|gap(s)?|leak(s|ing)?|noise\\s?(gets|comes)\\s?in|sound\\s?(gets|comes)\\s?in|lets?\\s?noise\\s?in|doesn'?t\\s?block\\s?noise|not\\s?effective|ineffective|less\\s?protection|won'?t\\s?protect|pads?|pad\\s?damaged|worn\\s?out|foam|cushion(s)?|crack(ed)?|split|broken|damaged|headband|loose)\\b",
       "flags": "i"
     },
     {
       "points": 1,
-      "check": "\\b(hearing\\s?loss|lose\\s?(your\\s?)?hearing|hearing\\s?damage|ear\\s?damage|tinnitus|ringing\\s?in\\s?(your\\s?)?ears|ears\\s?ring|deaf|deafness|go\\s?deaf|permanent|long\\s?term|noise\\s?damage)\\b",
+      "check": "\\b(hearing\\s?loss|lose\\s?(your\\s?)?hearing|hearing\\s?damage|ear\\s?damage|damage\\s?your\\s?ears?|tinnitus|ringing\\s?in\\s?(your\\s?)?ears|ears\\s?ring|deaf|deafness|go\\s?deaf|permanent|long\\s?term|noise\\s?damage|exposed\\s?to\\s?loud\\s?noise|loud\\s?noise\\s?damage)\\b",
       "flags": "i"
     }
   ]
