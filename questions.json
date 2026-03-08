@@ -279,61 +279,61 @@
   "type": "long",
   "maxPoints": 8,
   "rubric": [
-    {
-      "points": 1,
-      "check": "\\b(PPE|protective|safety\\s?gear|eye\\s?protection|glasses|goggles|hearing\\s?protection|earmuffs?|earplugs?|mask|dust\\s?mask|respirator|gloves?|boots?|closed\\s?toe|steel\\s?cap|helmet|hard\\s?hat|apron|overalls)\\b",
-      "flags": "i"
-    },
-    {
-      "points": 1,
-      "check": "\\b(tidy|clean|housekeeping|sweep|vacuum|wipe\\s?up|pack\\s?up|tidy\\s?up|clean\\s?up|put\\s?away|store\\s?tools|return\\s?tools|keep\\s?(bench|floor|walkway)\\s?clear|offcuts|rubbish|bin|spill)\\b",
-      "flags": "i"
-    },
-    {
-      "points": 1,
-      "check": "\\b(no\\s?running|don'?t\\s?run|walk\\s?only|no\\s?horseplay|don'?t\\s?mess\\s?around|no\\s?mucking\\s?around|don'?t\\s?distract|no\\s?pushing|no\\s?shoving|no\\s?throwing)\\b",
-      "flags": "i"
-    },
-    {
-      "points": 1,
-      "check": "\\b(tie\\s?back\\s?hair|tie\\s?hair\\s?up|hair\\s?restraint|hair\\s?net|no\\s?loose\\s?hair)\\b",
-      "flags": "i"
-    },
-    {
-      "points": 1,
-      "check": "\\b(loose\\s?clothing|baggy\\s?clothing|roll\\s?up\\s?sleeves|remove\\s?jewell?ery|no\\s?jewell?ery|no\\s?necklace|no\\s?ring|no\\s?bracelet|no\\s?scarf|no\\s?tie|drawstrings?)\\b",
-      "flags": "i"
-    },
-    {
-  "points": 1,
-  "check": "\\b(stop\\s?work|stop\\s?using|stop\\s?what\\s?you\\s?are\\s?doing|isolate|isolate\\s?machine|turn\\s?off|switch\\s?off|tag\\s?out|lock\\s?out|do\\s?not\\s?use|out\\s?of\\s?order|danger\\s?tag)\\b",
-  "flags": "i"
-},
-    {
-      "points": 1,
-      "check": "\\b(report|tell\\s?teacher|inform\\s?teacher|let\\s?teacher\\s?know|hazard|unsafe|broken|faulty|damaged|near\\s?miss|injury|accident)\\b",
-      "flags": "i"
-    },
-    {
-      "points": 1,
-      "check": "\\b(ask\\s?permission|permission|supervision|teacher\\s?present|follow\\s?instructions|trained|don'?t\\s?use\\s?machines\\s?alone|ask\\s?for\\s?help\\s?if\\s?unsure)\\b",
-      "flags": "i"
-    },
-    {
-  "points": 1,
-  "check": "\\b(guard(s)?|safety\\s?guard|keep\\s?guards?\\s?on|don'?t\\s?remove\\s?guards?|push\\s?stick|push\\s?block|finger(s)?\\s?away\\s?from\\s?blade|machine\\s?guarding)\\b",
-  "flags": "i"
-},
-{
-  "points": 1,
-  "check": "\\b(correct\\s?tool|right\\s?tool|use\\s?tools?\\s?properly|follow\\s?procedure|set\\s?up\\s?correctly|clamp|secure\\s?(the\\s?)?work|check\\s?tools?|inspect\\s?tools?|don'?t\\s?use\\s?damaged\\s?tools?|maintenance)\\b",
-  "flags": "i"
-},
-    {
-      "points": 1,
-      "check": "\\b(lift|lifting|manual\\s?handling|bend\\s?knees|team\\s?lift|two\\s?person\\s?lift|ask\\s?for\\s?help\\s?lifting|back\\s?straight|don'?t\\s?lift\\s?heavy|trolley|carry\\s?safely)\\b",
-      "flags": "i"
-    }
+      {
+          "points": 1,
+          "check": "\\b(PPE|personal\\s+protective\\s+equipment|protective\\s+equipment|protective\\s+gear|safety\\s+gear|safety\\s+equipment|wear\\s+the\\s+correct\\s+PPE|wear\\s+appropriate\\s+PPE|wear\\s+correct\\s+safety\\s+gear|eye\\s+protection|safety\\s+glasses|glasses|goggles|hearing\\s+protection|ear\\s+muffs?|earmuffs?|ear\\s+plugs?|earplugs?|dust\\s+mask|mask|respirator|face\\s+shield|visor|gloves?|apron|overalls?|boots?|work\\s+boots?|closed\\s*toe\\s+shoes?|covered\\s+shoes?|steel\\s*cap\\s+boots?|steelcaps?|hard\\s+hat|helmet)\\b",
+          "flags": "i"
+        },
+        {
+          "points": 1,
+          "check": "\\b(clean|tidy|keep\\s+(the\\s+)?workshop\\s+clean|keep\\s+(the\\s+)?workshop\\s+tidy|clean\\s+up|tidy\\s+up|pack\\s+up|pack\\s+away|put\\s+away|put\\s+tools?\\s+away|store\\s+tools?|return\\s+tools?|housekeeping|sweep|vacuum|wipe\\s+up|clear\\s+up|keep\\s+(the\\s+)?(bench|floor|area|workspace|walkway|work\\s+area)\\s+clear|keep\\s+pathways?\\s+clear|remove\\s+offcuts?|pick\\s+up\\s+rubbish|rubbish|waste|scraps?|offcuts?|bin\\s+the\\s+rubbish|spill|spills?)\\b",
+          "flags": "i"
+        },
+        {
+          "points": 1,
+          "check": "\\b(no\\s+running|don'?t\\s+run|never\\s+run|walk\\s+only|no\\s+horseplay|no\\s+messing\\s+around|don'?t\\s+mess\\s+around|never\\s+mess\\s+around|no\\s+mucking\\s+around|don'?t\\s+play\\s+around|don'?t\\s+distract\\s+others?|don'?t\\s+push|no\\s+pushing|no\\s+shoving|no\\s+throwing|behave\\s+properly|act\\s+responsibly|be\\s+careful|don'?t\\s+fool\\s+around|don'?t\\s+ muck\\s+around|stay\\s+focused)\\b",
+          "flags": "i"
+        },
+        {
+          "points": 1,
+          "check": "\\b(tie\\s+back\\s+(long\\s+)?hair|tie\\s+(your\\s+)?hair\\s+up|tie\\s+up\\s+(long\\s+)?hair|keep\\s+hair\\s+tied\\s+back|keep\\s+long\\s+hair\\s+back|hair\\s+restraint|hair\\s+net|put\\s+your\\s+hair\\s+up|no\\s+loose\\s+hair|long\\s+hair\\s+must\\s+be\\s+tied\\s+back|secure\\s+long\\s+hair)\\b",
+          "flags": "i"
+        },
+        {
+          "points": 1,
+          "check": "\\b(no\\s+loose\\s+clothing|loose\\s+clothing|baggy\\s+clothes?|baggy\\s+clothing|tight\\s*fitting\\s+clothes?|roll\\s+up\\s+your\\s+sleeves?|roll\\s+sleeves?\\s+up|remove\\s+jewell?ery|take\\s+off\\s+jewell?ery|no\\s+jewell?ery|don'?t\\s+wear\\s+jewell?ery|no\\s+necklace|no\\s+necklaces|no\\s+rings?|no\\s+bracelets?|no\\s+watch|no\\s+watches|no\\s+scarf|no\\s+scarves|no\\s+tie|no\\s+ties|remove\\s+tie|remove\\s+watch|drawstrings?|tuck\\s+in\\s+loose\\s+clothes?)\\b",
+          "flags": "i"
+        },
+        {
+          "points": 1,
+          "check": "\\b(stop\\s+work|stop\\s+using\\s+it|stop\\s+using\\s+the\\s+machine|stop\\s+what\\s+you\\s+are\\s+doing|turn\\s+it\\s+off|turn\\s+off\\s+the\\s+machine|switch\\s+it\\s+off|switch\\s+off\\s+the\\s+machine|shut\\s+it\\s+down|isolate|isolate\\s+the\\s+machine|tag\\s+out|lock\\s+out|lockout|do\\s+not\\s+use|don'?t\\s+use\\s+it|out\\s+of\\s+order|danger\\s+tag|unsafe\\s+machine|remove\\s+from\\s+use)\\b",
+          "flags": "i"
+        },
+        {
+          "points": 1,
+          "check": "\\b(report|report\\s+it|report\\s+hazards?|report\\s+unsafe\\s+behaviour|tell\\s+the\\s+teacher|tell\\s+teacher|inform\\s+the\\s+teacher|inform\\s+teacher|let\\s+the\\s+teacher\\s+know|let\\s+teacher\\s+know|notify\\s+the\\s+teacher|hazard|hazards|unsafe|dangerous|broken|faulty|damaged|defective|near\\s+miss|injury|injuries|accident|incident|report\\s+accidents?)\\b",
+          "flags": "i"
+        },
+        {
+          "points": 1,
+          "check": "\\b(ask\\s+permission|get\\s+permission|permission|ask\\s+the\\s+teacher\\s+first|teacher\\s+permission|supervision|under\\s+supervision|teacher\\s+present|teacher\\s+must\\s+be\\s+present|follow\\s+instructions|follow\\s+the\\s+instructions|listen\\s+to\\s+instructions|listen\\s+to\\s+the\\s+teacher|listen\\s+carefully|teacher'?s\\s+instructions|trained|be\\s+trained|do\\s+not\\s+use\\s+machines?\\s+alone|don'?t\\s+use\\s+machines?\\s+alone|ask\\s+for\\s+help\\s+if\\s+unsure|ask\\s+for\\s+help|if\\s+unsure\\s+ask|only\\s+use\\s+equipment\\s+if\\s+trained)\\b",
+          "flags": "i"
+        },
+        {
+          "points": 1,
+          "check": "\\b(guard|guards|safety\\s+guard|machine\\s+guard|machine\\s+guarding|keep\\s+guards?\\s+on|leave\\s+guards?\\s+on|don'?t\\s+remove\\s+guards?|never\\s+remove\\s+guards?|push\\s+stick|push\\s+block|use\\s+a\\s+push\\s+stick|use\\s+a\\s+push\\s+block|keep\\s+fingers?\\s+away\\s+from\\s+the\\s+blade|keep\\s+hands?\\s+away\\s+from\\s+moving\\s+parts?|keep\\s+hands?\\s+clear\\s+of\\s+blades?)\\b",
+          "flags": "i"
+        },
+        {
+          "points": 1,
+          "check": "\\b(correct\\s+tool|right\\s+tool|proper\\s+tool|use\\s+the\\s+right\\s+tool|use\\s+tools?\\s+properly|use\\s+equipment\\s+properly|follow\\s+procedure|follow\\s+the\\s+procedure|set\\s+up\\s+correctly|correct\\s+set\\s+up|clamp|clamp\\s+the\\s+work|secure\\s+the\\s+work|secure\\s+your\\s+work|check\\s+tools?|inspect\\s+tools?|check\\s+equipment|inspect\\s+equipment|don'?t\\s+use\\s+damaged\\s+tools?|don'?t\\s+use\\s+broken\\s+tools?|maintain\\s+tools?|maintenance)\\b",
+          "flags": "i"
+        },
+        {
+          "points": 1,
+          "check": "\\b(lift|lifting|manual\\s+handling|bend\\s+your\\s+knees|bend\\s+knees|team\\s+lift|two\\s+person\\s+lift|two\\s+people\\s+lift|ask\\s+for\\s+help\\s+lifting|get\\s+help\\s+lifting|back\\s+straight|do\\s+not\\s+lift\\s+heavy|don'?t\\s+lift\\s+heavy|use\\s+a\\s+trolley|trolley|carry\\s+safely|lift\\s+safely|safe\\s+lifting)\\b",
+          "flags": "i"
+        }
   ]
 }
 ,
