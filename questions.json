@@ -587,12 +587,12 @@
   "rubric": [
     {
       "points": 1,
-      "check": "\\b(filter(s)?|clog(ged)?|blocked|dirty\\s?filter|seal|sealed|fit|fitting|poor\\s?fit|doesn'?t\\s?fit|leak(s|ing)?|gap(s)?|strap(s)?|broken|damaged|hole(s)?|won'?t\\s?work|not\\s?effective|ineffective|lets?\\s?(dust|fumes?|vapou?r|chemicals?)\\s?(in|through)|breathe\\s?(in)?\\s?(dust|fumes?|vapou?r|chemicals?)|inhale(d)?\\s?(dust|fumes?|vapou?r|chemicals?)|dust\\s?gets\\s?through|fumes\\s?get\\s?through|lungs?|breath(ing)?)\\b",
+      "check": "\\b(filter(s)?|clog(ged|ging)?|blocked|dirty\\s?filter|seal(s|ing)?|sealed|perish(ed|ing)?|fit|fitting|poor\\s?fit|doesn'?t\\s?fit|leak(s|ing)?|gap(s)?|strap(s)?|broken|damaged|hole(s)?|won'?t\\s?work|not\\s?effective|ineffective|lets?\\s?(dust|fumes?|vapou?r|chemicals?|particles?|toxic\\s?particles?)\\s?(in|through)|allow(s|ing|ed)?\\s?(dust|fumes?|vapou?r|chemicals?|particles?|unfiltered\\s?air)\\s?(in|through)?|breathe\\s?(in)?\\s?(dust|fumes?|vapou?r|chemicals?|particles?)|inhale(d|ing)?\\s?(dust|fumes?|vapou?r|chemicals?|particles?|unfiltered\\s?air)|dust\\s?gets\\s?through|fumes\\s?get\\s?through|particles?\\s?get\\s?through|unfiltered\\s?air|lungs?|breath(ing)?)\\b",
       "flags": "i"
     },
     {
       "points": 1,
-      "check": "\\b(asthma|asthma\\s?attack|lung\\s?damage|lung\\s?disease|respiratory\\s?disease|breath(ing)?\\s?problems|short(ness)?\\s?of\\s?breath|chronic|long\\s?term|permanent|silicosis|cancer|COPD|black\\s?lung)\\b",
+      "check": "\\b(asthma|asthma\\s?attack|lung\\s?damage|lung\\s?disease|respiratory\\s?disease|breath(ing)?\\s?problems|short(ness)?\\s?of\\s?breath|chronic|long\\s?term|permanent|silicosis|cancer|COPD|black\\s?lung|lung\\s?infection(s)?|respiratory\\s?infection(s)?|infection(s)?|dermatitis|skin\\s?irritation|irritation|bacteria|mould|mold)\\b",
       "flags": "i"
     }
   ]
