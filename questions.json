@@ -485,11 +485,11 @@
   "type": "long",
   "maxPoints": 2,
   "rubric": [
-    {
-      "points": 1,
-      "check": "\\b(keep\\s?clear|stay\\s?(away|back)|stand\\s?back|keep\\s?away|keep\\s?distance|keep\\s?your\\s?distance|do\\s?not\\s?approach|don'?t\\s?approach|don'?t\\s?go\\s?near|do\\s?not\\s?go\\s?near|do\\s?not\\s?enter|no\\s?entry|restricted\\s?area|keep\\s?out|don'?t\\s?go\\s?past|stay\\s?behind)\\b",
-      "flags": "i"
-    },
+   {
+  "points": 1,
+  "check": "\\b(keep\\s?clear|stay\\s?clear|stay\\s?(away|back)|stand\\s?back|keep\\s?away|keep\\s?distance|keep\\s?your\\s?distance|do\\s?not\\s?approach|don'?t\\s?approach|don'?t\\s?go\\s?near|do\\s?not\\s?go\\s?near|do\\s?not\\s?enter|no\\s?entry|restricted\\s?area|keep\\s?out|don'?t\\s?go\\s?past|stay\\s?behind)\\b",
+  "flags": "i"
+},
     {
       "points": 1,
       "check": "\\b(moving\\s?machinery|moving\\s?parts?|danger|hazard|unsafe|caught|entangle(d)?|tangle(d)?|pulled\\s?in|dragged\\s?in|crush(ed|ing)?|injur(y|ies)|hurt|harm|cut|amputat(e|ion)|lose\\s?(a\\s?)?(finger|hand)|serious\\s?injury)\\b",
