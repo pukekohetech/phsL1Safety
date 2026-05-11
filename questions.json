@@ -505,15 +505,15 @@
   "hint": "Think about lungs and airborne particles.",
   "type": "long",
   "maxPoints": 2,
-  "rubric": [
+"rubric": [
     {
       "points": 1,
-      "check": "\\b(wear\\s?(a\\s?)?(mask|respirator|dust\\s?mask)|put\\s?on\\s?(a\\s?)?(mask|respirator)|mask\\s?required|masks?\\s?must\\s?be\\s?worn|respirator\\s?required|respiratory\\s?protection|breathing\\s?protection)\\b",
+      "check": "\\b(wear(s|ing)?\\s*(a\\s*)?(mask|respirator|dust\\s*mask|respiratory\\s*mask)|put\\s*on\\s*(a\\s*)?(mask|respirator|dust\\s*mask|respiratory\\s*mask|ppe|gear)|need(s)?\\s*(to\\s*wear\\s*)?(a\\s*)?(mask|respirator|dust\\s*mask|respiratory\\s*mask)|use\\s*(a\\s*)?(mask|respirator|dust\\s*mask|respiratory\\s*mask)|mask\\s*(required|needed)|respirator\\s*(required|needed)|dust\\s*mask|respiratory\\s*mask|respiratory\\s*protection|breathing\\s*protection|protective\\s*(gear|equipment)|ppe)\\b",
       "flags": "i"
     },
     {
       "points": 1,
-      "check": "\\b(dust|dusty|airborne|particles?|inhal(e|ing|ation)|breathe\\s?in|lungs?|respiratory|breath(ing)?|asthma|lung\\s?damage|silicosis|cancer|long\\s?term)\\b",
+      "check": "\\b(dust|dusty|airborne|air\\s*borne|particles?|inhal(e|ing|ation)|breathe\\s*in|breathing\\s*in|lungs?|respiratory|breath(ing)?|throat|throt|asthma|lung\\s*damage|silicosis|cancer|long\\s*term|harmful\\s*air|bad\\s*air)\\b",
       "flags": "i"
     }
   ]
