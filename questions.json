@@ -832,11 +832,11 @@
           "type": "short",
           "maxPoints": 1,
           "rubric": [
-            {
-              "points": 1,
-              "check": "\\b(safety (glasses|goggles)|face shield|welding helmet|mask|respirator|dust mask|ear(muffs|plugs)|gloves?|overalls?|apron|hard hat|steel[- ]?cap (boots?|shoes?)|safety boots?)\\b|\\bN\\/?A\\b",
-              "flags": "i"
-            }
+           {
+  "points": 1,
+  "check": "\\b(safety (glasses|goggles)|face shield|welding helmet|mask|respirator|dust mask|ear[\\s-]*(muff|muffs|plug|plugs)|gloves?|overalls?|apron|hard hat|steel[- ]?cap (boots?|shoes?)|safety boots?)\\b|\\bN\\/?A\\b",
+  "flags": "i"
+}
           ]
         },
         {
@@ -914,11 +914,11 @@
           "type": "short",
           "maxPoints": 1,
           "rubric": [
-            {
-              "points": 1,
-              "check": "\\b(safety (glasses|goggles)|face shield|welding helmet|mask|respirator|dust mask|ear(muffs|plugs)|gloves?|overalls?|apron|hard hat|steel[- ]?cap (boots?|shoes?)|safety boots?)\\b|\\bN\\/?A\\b",
-              "flags": "i"
-            }
+             {
+  "points": 1,
+  "check": "\\b(safety (glasses|goggles)|face shield|welding helmet|mask|respirator|dust mask|ear[\\s-]*(muff|muffs|plug|plugs)|gloves?|overalls?|apron|hard hat|steel[- ]?cap (boots?|shoes?)|safety boots?)\\b|\\bN\\/?A\\b",
+  "flags": "i"
+}
           ]
         },
         {
@@ -997,10 +997,10 @@
           "maxPoints": 1,
           "rubric": [
             {
-              "points": 1,
-              "check": "\\b(safety (glasses|goggles)|face shield|welding helmet|mask|respirator|dust mask|ear(muffs|plugs)|gloves?|overalls?|apron|hard hat|steel[- ]?cap (boots?|shoes?)|safety boots?)\\b|\\bN\\/?A\\b",
-              "flags": "i"
-            }
+  "points": 1,
+  "check": "\\b(safety (glasses|goggles)|face shield|welding helmet|mask|respirator|dust mask|ear[\\s-]*(muff|muffs|plug|plugs)|gloves?|overalls?|apron|hard hat|steel[- ]?cap (boots?|shoes?)|safety boots?)\\b|\\bN\\/?A\\b",
+  "flags": "i"
+}
           ]
         },
         {
@@ -1079,10 +1079,10 @@
           "maxPoints": 1,
           "rubric": [
             {
-              "points": 1,
-              "check": "\\b(safety (glasses|goggles)|face shield|welding helmet|mask|respirator|dust mask|ear(muffs|plugs)|gloves?|overalls?|apron|hard hat|steel[- ]?cap (boots?|shoes?)|safety boots?)\\b|\\bN\\/?A\\b",
-              "flags": "i"
-            }
+  "points": 1,
+  "check": "\\b(safety (glasses|goggles)|face shield|welding helmet|mask|respirator|dust mask|ear[\\s-]*(muff|muffs|plug|plugs)|gloves?|overalls?|apron|hard hat|steel[- ]?cap (boots?|shoes?)|safety boots?)\\b|\\bN\\/?A\\b",
+  "flags": "i"
+}
           ]
         },
         {
@@ -1161,11 +1161,11 @@
           "type": "short",
           "maxPoints": 1,
           "rubric": [
-            {
-              "points": 1,
-              "check": "\\b(safety (glasses|goggles)|face shield|welding helmet|mask|respirator|dust mask|ear(muffs|plugs)|gloves?|overalls?|apron|hard hat|steel[- ]?cap (boots?|shoes?)|safety boots?)\\b|\\bN\\/?A\\b",
-              "flags": "i"
-            }
+              {
+  "points": 1,
+  "check": "\\b(safety (glasses|goggles)|face shield|welding helmet|mask|respirator|dust mask|ear[\\s-]*(muff|muffs|plug|plugs)|gloves?|overalls?|apron|hard hat|steel[- ]?cap (boots?|shoes?)|safety boots?)\\b|\\bN\\/?A\\b",
+  "flags": "i"
+}
           ]
         },
         {
@@ -1243,11 +1243,11 @@
           "type": "short",
           "maxPoints": 1,
           "rubric": [
-            {
-              "points": 1,
-              "check": "\\b(safety (glasses|goggles)|face shield|welding helmet|mask|respirator|dust mask|ear(muffs|plugs)|gloves?|overalls?|apron|hard hat|steel[- ]?cap (boots?|shoes?)|safety boots?)\\b|\\bN\\/?A\\b",
-              "flags": "i"
-            }
+             {
+  "points": 1,
+  "check": "\\b(safety (glasses|goggles)|face shield|welding helmet|mask|respirator|dust mask|ear[\\s-]*(muff|muffs|plug|plugs)|gloves?|overalls?|apron|hard hat|steel[- ]?cap (boots?|shoes?)|safety boots?)\\b|\\bN\\/?A\\b",
+  "flags": "i"
+}
           ]
         },
         {
