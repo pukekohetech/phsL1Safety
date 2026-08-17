@@ -1185,12 +1185,13 @@ function getDeadlineStatus(now = new Date()) {
   const diffMs = deadlineDate - todayMid;
   const diffDays = Math.round(diffMs / 86400000);
 
-if (diffDays > 0) {
-  return { status: "upcoming", daysLeft: diffDays, label, dateStr: deadlineDate.toLocaleDateString() };
-} else if (diffDays === 0) {
-  return { status: "today", daysLeft: 0, label, dateStr: deadlineDate.toLocaleDateString() };
-} else {
-  return { status: "overdue", overdueDays: Math.abs(diffDays), label, dateStr: deadlineDate.toLocaleDateString() };
+  if (diffDays > 0) {
+    return { status: "upcoming", daysLeft: diffDays, label, dateStr: deadlineDate.toLocaleDateString() };
+  } else if (diffDays === 0) {
+    return { status: "today", daysLeft: 0, label, dateStr: deadlineDate.toLocaleDateString() };
+  } else {
+    return { status: "overdue", overdueDays: Math.abs(diffDays), label, dateStr: deadlineDate.toLocaleDateString() };
+  }
 }
 
 function lockAllFieldsForDeadline() {
