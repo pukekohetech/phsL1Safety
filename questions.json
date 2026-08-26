@@ -344,8 +344,8 @@
   "hint": "Link each rule to a realistic injury/accident (eyes, lungs, hearing, entanglement, trips/falls, strains).",
   "type": "long",
   "maxPoints": 8,
-  "rubric": [
-     {
+   "rubric": [
+    {
       "points": 1,
       "check": "\\b(eye|eyes|vision|sight|blind|blindness|chip\\s?in\\s?eye|dust\\s?in\\s?eye|spark(s)?|splinter|shard|scratch(ed|ing)?\\s?eye|eye\\s?injur(y|ies)|eye\\s?damage|permanent\\s?eye\\s?damage)\\b",
       "flags": "i"
@@ -377,12 +377,12 @@
     },
     {
       "points": 1,
-      "check": "\\b(guard(s)?\\s?(missing|removed|off)|unguarded|blade\\s?exposed|fingers?\\s?(cut|cuts|cutting|sliced|amputat(e|ed|ion))|kickback|pull(ed|ing)?\\s?in|caught\\s?in\\s?(the\\s?)?blade|hit\\s?by\\s?the\\s?blade)\\b",
+      "check": "\\b(guard(s)?\\s?(missing|removed|off)|unguarded|blade\\s?exposed|fingers?\\s?(cut|cuts|cutting|sliced|amputat(e|ed|ion))|kickback|pull(ed|ing)?\\s?in|caught\\s?in\\s?(the\\s?)?blade|hit\\s?by\\s?the\\s?blade)\\b|\\b(safe\\s*guards?|safety\\s*guards?|machine\\s*guards?|guards?|guarding)\\b.{0,260}\\b(missing|removed|off|not\\s?(used|kept|on|in\\s?place)|blade|exposed|protect|fall|falling|catch|caught|pull|pulled|cut|sliced|crush|amputat(e|ed|ion)|injur(y|ies)|injured|hurt|harm)\\b",
       "flags": "i"
     },
     {
       "points": 1,
-      "check": "\\b(wrong\\s?tool|incorrect\\s?tool|tool\\s?slip(ped|ping)?|loss\\s?of\\s?control|work\\s?piece\\s?(move(s|d)?|slip(s|ped)?|fly(s|ing)?|shift(s|ed)?)|not\\s?clamped|unclamped|hit\\s?(yourself|someone)|damage\\s?to\\s?project|break(s|ing)?\\s?the\\s?tool|improper\\s?use|misuse\\s?of\\s?equipment|untrained|not\\s?trained|unauthorised|unauthorized)\\b",
+      "check": "\\b(wrong\\s?tool|incorrect\\s?tool|tool\\s?slip(ped|ping)?|loss\\s?of\\s?control|work\\s?piece\\s?(move(s|d)?|slip(s|ped)?|fly(s|ing)?|shift(s|ed)?)|not\\s?clamped|unclamped|hit\\s?(yourself|someone)|damage\\s?to\\s?project|break(s|ing)?\\s?the\\s?tool|improper\\s?use|misuse\\s?of\\s?equipment|untrained|not\\s?trained|unauthorised|unauthorized)\\b|\\b(machine|tool|equipment)\\b.{0,100}\\b(without|no)\\b.{0,80}\\b(teacher'?s?|instructor'?s?|staff)\\b.{0,60}\\b(permission|approval|supervision|instruction|training)\\b|\\b(without|no)\\b.{0,80}\\b(teacher'?s?|instructor'?s?|staff)\\b.{0,60}\\b(permission|approval|supervision|instruction|training)\\b.{0,120}\\b(machine|tool|equipment|operate|use|start)\\b",
       "flags": "i"
     },
     {
@@ -392,12 +392,16 @@
     },
     {
       "points": 1,
-      "check": "\\b(high\\s?visibility|hi\\s?vis|visible|not\\s?seen|operator(s)?|vehicle(s)?|forklift|machinery|struck\\s?by|hit\\s?by|collision|run\\s?over|near\\s?miss|hazard(s)?\\s?remain|unaddressed|repeat\\s?accident|someone\\s?else\\s?could\\s?be\\s?injured|unsafe|injur(y|ies)|injured|hurt|harm|accident(s)?|incident(s)?|serious\\s?injury|hospital|cut(s)?|bruise(s)?|burn(s)?|crush(ed|ing)?|smashed\\s?fingers?)\\b",
+      "check": "\\b(high\\s?visibility|hi\\s?vis|visible|not\\s?seen|operator(s)?|vehicle(s)?|forklift|machinery|struck\\s?by|hit\\s?by|collision|run\\s?over|near\\s?miss|hazard(s)?\\s?remain|unaddressed|repeat\\s?accident|someone\\s?else\\s?could\\s?be\\s?injured|unsafe|injur(y|ies)|injured|hurt|harm|accident(s)?|incident(s)?|serious\\s?injury|hospital|cut(s)?|bruise(s)?|burn(s)?|crush(ed|ing)?|smashed\\s?fingers?)\\b|\\b(hazard(s)?|fault(s)?|danger|dangerous|unsafe|broken|damaged|defect(ive)?)\\b.{0,220}\\b(not\\s?(reported|fixed|removed|addressed)|remain(s|ed)?|unaddressed|teacher\\s?(doesn'?t|won'?t|wouldn'?t)\\s?know|someone|others?|people|student|injur(y|ies)|injured|hurt|harm|accident|incident)\\b|\\b(don'?t|doesn'?t|didn'?t|not|fail(ed)?\\s?to)\\b.{0,100}\\b(report|tell|inform)\\b.{0,180}\\b(hazard(s)?|fault(s)?|danger|unsafe|teacher|injur(y|ies)|injured|hurt|harm|accident|incident)\\b",
+      "flags": "i"
+    },
+    {
+      "points": 1,
+      "check": "\\b(run|running|ran|rush|rushing|horseplay|playing\\s?around|chase|chasing)\\b.{0,220}\\b(bump|bumped|collide|collided|collision|knock|knocked|trip|tripped|slip|slipped|fall|fell|machine|blade|equipment|tool|work\\s?piece|distract|injur(y|ies)|injured|hurt|harm|accident|incident)\\b",
       "flags": "i"
     }
   ]
 }
-
 ,
       {
   "id": "q2_jandals",
