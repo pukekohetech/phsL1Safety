@@ -154,6 +154,8 @@ const xorDecode = (value) => {
 // ------------------------------------------------------------
 let APP_TITLE, APP_SUBTITLE, TEACHERS, ASSESSMENTS;
 let DEADLINE = null; // from questions.json.DEADLINE
+let lateSubmissionOverride = false; // session-only teacher override
+let lateSubmissionOverrideAt = null;
 
 // ------------------------------------------------------------
 // DEBUG MODE
@@ -1157,6 +1159,34 @@ document.addEventListener("keydown", (e) => {
 
   const k = (e.key || "").toLowerCase();
 
+  // Teacher-only convenience shortcut: Ctrl/Cmd + Alt + Shift + L.
+  // The override lasts only for this page session and resets on refresh/close.
+  if (k === "l" && e.altKey && e.shiftKey) {
+    e.preventDefault();
+
+    if (lateSubmissionOverride) {
+      showToast("Teacher late-submission override is already active.");
+      return;
+    }
+
+    const approved = window.confirm(
+      "Teacher late-submission override\n\n" +
+      "Allow this student to edit and export after the deadline?"
+    );
+
+    if (!approved) {
+      showToast("Late-submission override cancelled.", false);
+      return;
+    }
+
+    lateSubmissionOverride = true;
+    lateSubmissionOverrideAt = new Date().toISOString();
+    unlockFieldsForLateSubmission();
+    setupDeadlineBanner();
+    showToast("Teacher late-submission override activated.");
+    return;
+  }
+
   if (k === "s") {
     e.preventDefault();
     saveProgressEncrypted();
@@ -1194,6 +1224,11 @@ function getDeadlineStatus(now = new Date()) {
   }
 }
 
+function deadlineBlocksSubmission(now = new Date()) {
+  const status = getDeadlineStatus(now);
+  return !!status && status.status === "overdue" && !lateSubmissionOverride;
+}
+
 function lockAllFieldsForDeadline() {
   const questionsDiv = document.getElementById("questions");
   if (questionsDiv) {
@@ -1224,6 +1259,36 @@ function lockAllFieldsForDeadline() {
 
   if (downloadBtn) downloadBtn.disabled = true;
   if (shareBtn) shareBtn.disabled = true;
+}
+
+function unlockFieldsForLateSubmission() {
+  const questionsDiv = document.getElementById("questions");
+  if (questionsDiv) {
+    questionsDiv.querySelectorAll("input, textarea, select").forEach((el) => {
+      el.readOnly = false;
+      el.disabled = false;
+      el.classList.remove("locked-field");
+    });
+  }
+
+  const nameEl = document.getElementById("name");
+  if (nameEl) {
+    nameEl.readOnly = false;
+    nameEl.classList.remove("locked-field");
+  }
+
+  // Preserve the existing device-bound Student ID lock.
+  const idEl = document.getElementById("id");
+  if (idEl && !data.idLocked) {
+    idEl.readOnly = false;
+    idEl.classList.remove("locked-field");
+  }
+
+  [document.getElementById("teacher"), document.getElementById("assessmentSelector")].forEach((el) => {
+    if (el) el.disabled = false;
+  });
+
+  updatePdfActionState();
 }
 
 function setupDeadlineBanner() {
@@ -1284,9 +1349,14 @@ function setupDeadlineBanner() {
     text = `${label}: ${dateStr} – Deadline is today!`;
     showToast("Deadline is today – make sure you submit your work.", false);
   } else if (st === "overdue") {
-    cls = "over";
-    text = `${label}: ${dateStr} – Deadline has passed. You are ${overdueDays} day${overdueDays === 1 ? "" : "s"} late.`;
-    lockAllFieldsForDeadline();
+    if (lateSubmissionOverride) {
+      cls = "warn";
+      text = `${label}: ${dateStr} – ${overdueDays} day${overdueDays === 1 ? "" : "s"} late. Teacher late-submission override is active.`;
+    } else {
+      cls = "over";
+      text = `${label}: ${dateStr} – Deadline has passed. You are ${overdueDays} day${overdueDays === 1 ? "" : "s"} late.`;
+      lockAllFieldsForDeadline();
+    }
   }
 
   banner.className = `deadline-banner ${cls}`;
@@ -1295,8 +1365,7 @@ function setupDeadlineBanner() {
 }
 
 function applyDeadlineLockIfNeeded() {
-  const status = getDeadlineStatus(new Date());
-  if (status && status.status === "overdue") lockAllFieldsForDeadline();
+  if (deadlineBlocksSubmission()) lockAllFieldsForDeadline();
 }
 
 // ------------------------------------------------------------
@@ -1314,8 +1383,7 @@ function clearPreparedPdf() {
 }
 
 function canExportCurrentResult() {
-  const deadlineNow = getDeadlineStatus(new Date());
-  return !!finalData && finalData.pct >= MIN_PCT_FOR_SUBMIT && (!deadlineNow || deadlineNow.status !== "overdue");
+  return !!finalData && finalData.pct >= MIN_PCT_FOR_SUBMIT && !deadlineBlocksSubmission();
 }
 
 function updatePdfActionState() {
@@ -1443,16 +1511,18 @@ function submitWork() {
     totalPoints,
     pct,
     deadlineInfo: deadlineNow,
+    lateSubmissionOverride,
+    lateSubmissionOverrideAt: lateSubmissionOverride ? lateSubmissionOverrideAt : null,
   };
 
-  const canExport = pct >= MIN_PCT_FOR_SUBMIT && (!deadlineNow || deadlineNow.status !== "overdue");
+  const canExport = pct >= MIN_PCT_FOR_SUBMIT && !deadlineBlocksSubmission();
   updatePdfActionState();
 
   if (canExport) {
     showToast("Great job! Preparing your PDF…", true);
   } else if (pct < MIN_PCT_FOR_SUBMIT) {
     showToast(`You have ${pct}%. You need at least ${MIN_PCT_FOR_SUBMIT}% to export your work.`, false);
-  } else if (deadlineNow && deadlineNow.status === "overdue") {
+  } else if (deadlineBlocksSubmission()) {
     showToast("The deadline has passed – exporting is disabled.", false);
   }
 
@@ -1478,8 +1548,7 @@ async function createAssessmentPdf() {
     return null;
   }
 
-  const deadlineNow = getDeadlineStatus(new Date());
-  if (deadlineNow && deadlineNow.status === "overdue") {
+  if (deadlineBlocksSubmission()) {
     alert("The submission deadline has passed – exporting is now disabled until next year.");
     return null;
   }
@@ -1564,8 +1633,11 @@ async function createAssessmentPdf() {
         } else if (info.status === "today") {
           pdf.text(`Submitted on the deadline date (${info.dateStr}).`, 10, infoY);
         } else if (info.status === "overdue") {
+          const lateLabel = finalData.lateSubmissionOverride
+            ? "Teacher-authorised late submission"
+            : "Late submission";
           pdf.text(
-            `Late submission: ${info.overdueDays} day${info.overdueDays === 1 ? "" : "s"} after deadline (${info.dateStr}).`,
+            `${lateLabel}: ${info.overdueDays} day${info.overdueDays === 1 ? "" : "s"} after deadline (${info.dateStr}).`,
             10,
             infoY
           );
